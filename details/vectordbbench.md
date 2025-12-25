@@ -1,24 +1,36 @@
-# VectorDBBench
+---
+title: VectorDBBench
+slug: vectordbbench
+url: https://github.com/zilliztech/VectorDBBench
+category: benchmarks-evaluation
+brand: zilliz
+brand_logo: https://avatars.githubusercontent.com/u/67472536?s=200&v=4
+source_url: https://github.com/zilliztech/VectorDBBench
+images:
+  - https://opengraph.githubassets.com/1/zilliztech/VectorDBBench
+tags:
+  - benchmark
+  - evaluation
+  - vector-databases
+license: MIT
+featured: false
+---
 
-**Category:** Benchmarks & Evaluation  
-**Source:** [https://zilliz.com/benchmark](https://zilliz.com/benchmark)
+## Overview
 
-## Description
-VectorDBBench is a benchmarking tool developed by ZillizTech, designed to evaluate and compare the performance and cost-effectiveness of various mainstream vector databases and cloud services. It provides unbiased benchmark results to help users select the most suitable vector database solutions for their needs.
+VectorDBBench is an open‑source benchmarking toolkit for vector databases. It provides implementation code, configuration, and scripts to run standardized benchmarks across multiple vector database systems locally or in CI environments.
 
 ## Features
-- **Benchmarking for Vector Databases:** Provides comparative performance and cost benchmarks for a wide range of vector databases and cloud services.
-- **Comprehensive Performance Metrics:** Measures and ranks databases using key metrics such as Queries Per Second (QPS), P99 Latency, and Recall (accuracy).
-- **Cost-Effectiveness Evaluation:** Includes cost ranking tables that detail the cost-performance ratio and estimate cost per million queries.
-- **Reproducible Results:** Designed for ease of use, enabling both professionals and non-professionals to reproduce tests and benchmark results.
-- **Comparison Tables:** Offers detailed ranking tables for QPS (throughput), P99 latency (response speed), and cost, with breakdowns by database, hardware configuration, and test scenario.
-- **Multiple Test Scenarios:** Supports various filter settings and query scenarios, including tests with different AI models (e.g., OpenAI, Cohere) and filter conditions (none, low, high).
-- **Open-Source and Cloud Database Coverage:** Benchmarks include both open-source and cloud-hosted vector databases.
-- **Transparent Scoring Rule:** Comprehensive scoring system for fair comparison, with scoring rules available for review.
-- **User-Friendly Interface:** Designed to be accessible for users of all experience levels.
+
+- **Standardized benchmarking framework** for evaluating vector databases under a common setup.
+- **Multi‑database support** through pluggable implementations in the `vectordb_bench` module.
+- **Configurable benchmark runs** via configuration files and environment variables (example in `.env.example`).
+- **Containerized environment** using the provided `Dockerfile` and `.devcontainer` setup for reproducible runs.
+- **CI integration** enabled by GitHub workflow definitions in `.github/workflows`.
+- **Automated tests** in the `tests` directory to validate benchmark logic and integrations.
+- **Scripted installation and setup** with resources under the `install` directory and `Makefile` targets.
+- **Open‑source, extensible design** under the MIT license, allowing customization and contribution.
 
 ## Pricing
-No pricing information is provided for VectorDBBench itself; it is presented as a free benchmarking tool.
 
-## Tags
-benchmark, performance, vector-databases, evaluation
+VectorDBBench is open source and available free of charge under the MIT license.
