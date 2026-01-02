@@ -6,8 +6,6 @@ A curated list of vector database solutions, libraries, and resources for AI app
 
 This directory was built and is maintained using the [Ever Works](https://ever.works) Directory Builder platform.  
 The public-facing website is based on the open-source [Directory Website Template](https://github.com/ever-works/ever-works-website-template).
-
-
 ## 📑 Table of Contents
 
 - [Vector Database Engines](#vector-database-engines)
@@ -466,4 +464,3 @@ This work is licensed under a
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
-
