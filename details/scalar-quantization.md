@@ -1,56 +1,73 @@
 ## Overview
 
-Scalar quantization compresses float values into narrower data types. Current implementations support int8 (8 bits), reducing vector index size fourfold.
+Scalar quantization strikes an excellent balance between compression and performance, compressing 32-bit floating-point values into 8-bit unsigned integers, reducing memory usage by 75%.
 
 ## How It Works
 
-Scalar quantization maps each float32 dimension (4 bytes) to an int8 representation (1 byte), achieving 4x memory compression through learned range mapping.
+1. Find min and max values in vector components
+2. Map range [min, max] to [0, 255]
+3. Convert each float32 to uint8
+4. Store quantized vectors
+5. Dequantize during search if needed
+
+## Benefits
+
+- **75% Memory Reduction**: From 32 bits to 8 bits per component
+- **Faster Processing**: Smaller data fits better in cache
+- **Good Accuracy**: Minimal quality loss compared to full precision
+- **Simple Implementation**: Straightforward conversion process
+- **Wide Support**: Available in most vector databases
 
 ## Performance Characteristics
 
-- **Compression**: 4x memory reduction
-- **Recall**: Maintains 98-99% recall in testing
-- **Compatibility**: Works with all embedding models
-- **Precision**: Higher accuracy than binary quantization
+- Minimal accuracy loss (typically <2%)
+- Significant memory savings
+- Improved query throughput
+- Better cache utilization
+- Reduced bandwidth requirements
 
-## Recent Developments (2025-2026)
+## Comparison with Other Techniques
 
-### 8-bit Rotational Quantization (RQ)
-Provides 4x compression while maintaining 98-99% recall in internal testing. Represents an evolution of traditional scalar quantization.
-
-### Azure AI Search Implementation
-Supports int8 scalar quantization, achieving fourfold reduction in vector index size with minimal accuracy loss.
-
-### PostgreSQL pgvector
-Supports both scalar and binary quantization for vector search and storage optimization.
-
-## Rescoring
-
-Rescoring is used to offset information loss:
-- Uses oversampling to retrieve extra vectors
-- Applies supplemental information to rescore initial results
-- Balances speed with accuracy
+- **vs. Binary Quantization**: Less aggressive, better accuracy
+- **vs. Product Quantization**: Simpler, faster, less compression
+- **vs. No Quantization**: 75% less memory, slightly lower accuracy
 
 ## Use Cases
 
-- Production vector databases requiring balance between speed and accuracy
-- Applications with large vector datasets
-- Systems where 4x compression is sufficient
-- Embeddings not centered around zero (where binary quantization performs poorly)
+- Large-scale vector databases
+- Memory-constrained environments
+- Production deployments
+- Cost optimization
+- High-throughput applications
 
-## Comparison with Other Methods
+## Implementation Considerations
 
-**vs. Binary Quantization**:
-- Scalar: 4x compression, higher accuracy
-- Binary: 32x compression, lower accuracy
+- Apply during indexing or online
+- Monitor accuracy metrics
+- Combine with proper monitoring
+- Consider per-vector or global ranges
+- Test impact on your specific use case
 
-**vs. Product Quantization**:
-- Scalar: Simpler, per-dimension quantization
-- Product: More complex, subvector-based compression
+## Best Practices (2026)
 
-## Best Practices
+- Use for memory optimization in production
+- Combine with other optimization techniques
+- Monitor for accuracy regressions
+- Benchmark against your data
+- Consider as first quantization step
 
-- Use for general-purpose vector search
-- Combine with rescoring for accuracy-critical applications
-- Monitor recall metrics when implementing
-- Consider binary quantization only if embeddings are zero-centered
+## Database Support
+
+- Qdrant (native support)
+- Milvus
+- Weaviate
+- Pinecone
+- Most modern vector databases
+
+## When to Use
+
+- Need significant memory reduction
+- Can tolerate minimal accuracy loss
+- Production systems requiring optimization
+- Large-scale deployments
+- Budget-conscious applications

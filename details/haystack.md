@@ -1,9 +1,42 @@
-### Description
-Haystack is a production-ready, open-source AI framework designed for building end-to-end search systems and AI applications. It enables the creation of complex agentic pipelines and retrieval-augmented generation (RAG) applications.
+## Overview
 
-### Features
-*   **Highly Customizable:** Features a flexible components and pipelines architecture, allowing users to build applications tailored to specific specifications and use-cases.
-*   **LLM and AI Tool Integrations:** Offers freedom of choice by integrating with leading LLM providers such as OpenAI, Anthropic, and Mistral, as well as vector databases like Weaviate and Pinecone, and other AI tools.
-*   **Production-Ready Deployment:** Built with production environments in mind, featuring fully serializable pipelines ideal for Kubernetes native workflows.
-*   **Monitoring and Logging:** Provides integrations for logging and monitoring to ensure transparency and operational insights.
-*   **Comprehensive Deployment Guides:** Includes guides for full-scale deployments across various cloud platforms and on-premise setups.
+Haystack is an open-source Python framework designed specifically for building production-grade RAG pipelines, AI agents, and semantic search systems that dominates in accuracy and evaluation capabilities.
+
+## Features
+
+- Mature, modular framework architecture
+- Pipeline-based approach for component composition
+- Lowest token usage (~1.57k per operation)
+- ~5.9 ms framework overhead
+- Easy combination of retrievers, readers, and generators
+- Production-ready with enterprise customers
+- Comprehensive evaluation tools
+
+## Enterprise Adoption
+
+Trusted by leading organizations:
+- The European Commission
+- The Economist
+- Oxford University Press
+- Meets requirements of regulated industries
+
+## Technical Capabilities
+
+- Modular pipeline architecture
+- Support for multiple vector databases
+- Advanced retrieval strategies
+- Built-in evaluation framework
+- Agent capabilities
+- Semantic search optimization
+
+## Use Cases
+
+- Enterprise RAG applications
+- Regulated industry deployments
+- Production semantic search
+- AI agent systems
+- Question answering platforms
+
+## Pricing
+
+Free and open-source framework, commercial support available through deepset

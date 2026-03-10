@@ -1,45 +1,59 @@
 ## Overview
 
-ColBERTv2 is the second generation of the ColBERT late interaction architecture, published in TACL'21. It provides effective and efficient retrieval via lightweight late interaction while maintaining the strong generalization properties of the original model.
+ColBERTv2 (Contextual Late Interactions BERT) is an advanced bi-encoder that represents text in multi-vector embeddings at the token level, introducing a novel late interaction mechanism for efficient and precise ranking.
 
-## Key Improvements Over ColBERT
+## How It Works
 
-- Lightweight architecture for improved efficiency
-- Maintains strong out-of-domain generalization
-- Optimized for production deployments
-- Improved balance between effectiveness and efficiency
+- Each token gets its own vector embedding
+- Encodes passages into matrices of token-level embeddings
+- Encodes queries into separate matrices
+- Uses scalable MaxSim operators for similarity
+- Late interaction compares vectors at final stage
 
-## Late Interaction Benefits
+## Improvements Over ColBERT v1
 
-Like the original ColBERT, ColBERTv2:
-- Operates at token level with fine-grained representations
-- Uses maxsim operator for document-query similarity
-- Encodes queries and documents independently
-- Delivers strong performance in out-of-domain settings
+- **Denoised Supervision**: Distillation from larger teacher models
+- **Hard Negative Mining**: Improved training with challenging examples
+- **Reduced Memory**: Addresses original's huge storage requirements
+- **Better Quality**: Enhanced retrieval accuracy
+- **Improved Efficiency**: Optimized for production deployment
 
-## PLAID Indexing
+## Technical Architecture
 
-ColBERTv2 works with PLAID (Product-quantized Late Interaction Approximate nearest neighbor for Distillation), which has become the de facto standard indexing method for multi-vector retrieval.
+- Multi-vector representation per document
+- Token-level granularity
+- Late interaction scoring
+- MaxSim aggregation
+- Efficient indexing strategies
 
-## Research Impact
+## Advantages
 
-Publications:
-- SIGIR'20: Original ColBERT
-- TACL'21: ColBERTv2
-- NeurIPS'21, NAACL'22, CIKM'22, ACL'23, EMNLP'23: Follow-up work
+- Captures complex query semantics
+- More accurate than single-vector bi-encoders
+- Handles nuanced information needs
+- Scalable to large collections
+- Fine-grained matching capabilities
 
-## Applications
+## Database Support (2026)
 
-- Passage retrieval
-- Question answering
-- Cross-modality retrieval
-- Reasoning-based search
-- RAG systems requiring high-quality retrieval
+- Weaviate 1.29+ (multi-vector embeddings)
+- Qdrant with FastEmbed
+- Vespa with native ColBERT embedder
+- Milvus with Array of Structs
+- VectorChord with MaxSim operators
 
-## Workshop
+## Use Cases
 
-The First Workshop on Late Interaction and Multi Vector Retrieval is scheduled for ECIR 2026, with Omar Khattab (ColBERT's creator) from MIT as keynote speaker.
+- Precision-critical search
+- Complex question answering
+- Long-document retrieval
+- Multi-hop reasoning
+- Academic paper search
 
-## Trade-offs
+## Performance
 
-While ColBERTv2 provides superior retrieval quality, the multi-vector approach requires more storage than single-vector methods, posing challenges for very large-scale deployments.
+Significant advancement over traditional bi-encoder models, with multi-embedding representations clearly capturing complex queries for more accurate retrievals.
+
+## Pricing
+
+Open-source model, self-hostable or via API providers

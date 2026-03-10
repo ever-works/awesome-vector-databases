@@ -1,43 +1,43 @@
 ## Overview
 
-Binary quantization compresses high-dimensional vectors by representing each component as a single bit, either 0 or 1. This method can achieve up to a 40x retrieval speed gain and results in up to 28 times reduced vector index size.
+Binary quantization refers to the conversion of float32 values in an embedding to 1-bit values, resulting in a 32x reduction in memory and storage usage while maintaining high retrieval accuracy.
 
-## How It Works
+## Technical Details
 
-The technique marks all numbers greater than zero as 1, and those zero or less become 0. Binary quantization performs very well when embeddings are centered around zero.
+To quantize float32 embeddings to binary:
+1. Normalize the embeddings
+2. Threshold at 0: values > 0 become 1, otherwise 0
+3. Store as binary vectors
 
-## Performance Characteristics
+## Performance Benefits
 
-- **Speed**: Up to 40x faster retrieval
-- **Compression**: Up to 28x reduced vector index size
-- **Accuracy**: Best for embeddings centered around zero
+- 32x reduction in memory usage
+- ~25x retrieval speedup
+- Retains 95%+ retrieval accuracy
+- Dramatic cost savings for large-scale deployments
 
 ## Compatibility
 
-Works particularly well with popular embedding models offered by:
-- OpenAI
-- Cohere
-- Mistral
+- Works with OpenAI embeddings
+- Supported by Qdrant, Vespa, and other major databases
+- Can be combined with Matryoshka embeddings
+- Compatible with most embedding models
 
-These models produce embeddings centered around zero, making them ideal candidates for binary quantization.
+## Combined Optimization
 
-## Recent Developments (2025-2026)
+- MRL (reduce dimensions 1024→128) + Binary quantization
+- Achieves up to 256x compression
+- ~10% quality reduction for maximum compression
+- ~3% quality reduction for 32x compression
 
-Starting from Qdrant v1.15.0, two additional quantization types were introduced:
-- **1.5-bit binary quantization**: Useful middle ground between scalar and standard binary
-- **2-bit binary quantization**: Provides more precision than 1-bit while maintaining high compression
+## Use Cases
 
-## Trade-offs
+- Large-scale vector search
+- Cost-sensitive deployments
+- Edge computing scenarios
+- High-throughput applications
+- Storage optimization
 
-### Rescoring
-Rescoring is an optional technique used to offset information loss due to vector quantization. It uses oversampling to pick up extra vectors and supplemental information to rescore initial results.
+## Implementation
 
-### Best Use Cases
-- Large-scale retrieval systems
-- Memory-constrained environments
-- Applications prioritizing speed over perfect accuracy
-- Embeddings naturally centered around zero
-
-## Comparison with Scalar Quantization
-
-Binary quantization offers more aggressive compression (32x) compared to scalar quantization (4x), but scalar quantization maintains higher accuracy for embeddings not centered around zero.
+Supported by major vector databases including Qdrant, Pinecone, Vespa, and integrated into popular embedding frameworks.

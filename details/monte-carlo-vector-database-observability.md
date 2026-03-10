@@ -1,32 +1,45 @@
 ## Overview
 
-Monte Carlo became the first-ever data observability platform to announce data observability for vector databases, crucial for RAG (retrieval-augmented generation) architectures and generative AI applications.
+Monte Carlo provides data observability for vector databases, specifically Pinecone, supporting the five pillars of data observability tailored for vector database environments.
 
-## Key Capabilities
+## Five Pillars of Vector Database Observability
 
-- Alerts when data is missing or duplicated in any namespaces within indices
-- Pinpoints when and where data anomalies occurred
-- Hourly tracking of vector count by each Index and Index Namespace
-- Machine learning-powered anomaly detection with no setup required
-- Monitors patterns in Vector Count by Index and Index Namespace
+1. **Freshness**: Data recency and update monitoring
+2. **Volume**: Data ingestion and storage tracking
+3. **Schema**: Structure and format validation
+4. **Lineage**: Data flow and dependency tracking
+5. **Quality**: Accuracy and consistency verification
 
-## Data Quality Focus
+## Features
 
-Monte Carlo helps ensure accuracy by observing the quality of text files as they are transformed into vectors and embedded into vector databases. These capabilities help teams deploying and scaling generative AI use cases ensure that the data powering LLMs is reliable and trustworthy at each stage of the pipeline.
+- Automated anomaly detection
+- Data quality monitoring
+- Vector database-specific metrics
+- Integration with RAG pipelines
+- Incident management
+- Root cause analysis
 
-## Supported Platforms
+## Supported Databases
 
 - Pinecone (primary integration)
-- Additional vector database support
+- Extensible to other vector databases
 
 ## Use Cases
 
-- GenAI pipeline monitoring
-- RAG architecture reliability
-- LLM data quality assurance
-- Vector database anomaly detection
-- Data observability for AI applications
+- Production RAG system monitoring
+- Data quality assurance
+- Vector database health tracking
+- GenAI application reliability
+- Compliance and governance
 
-## Evolution
+## Benefits
 
-Integration announced in late 2023, positioning Monte Carlo as a leader in AI data quality observability. Closed-source solution that has made data observability mainstream as of 2026.
+- Early detection of data issues
+- Improved RAG accuracy
+- Reduced downtime
+- Better data governance
+- Operational excellence
+
+## Pricing
+
+Enterprise pricing based on data volume and features

@@ -1,21 +1,57 @@
-**Description**
-Ragas is a framework designed for evaluating Retrieval-Augmented Generation (RAG) systems, supporting multiple ways of validating results.
+## Overview
 
-**Features**
-*   **LLM Application Evaluation**: Enables evaluation of your first LLM application.
-*   **RAG System Evaluation**: Provides capabilities to evaluate simple RAG setups.
-*   **Synthetic Testset Generation**: Allows generation of synthetic test datasets specifically for RAG systems.
-*   **Comprehensive Evaluation Metrics**: Offers a wide array of metrics for assessing RAG and LLM performance, categorized as:
-    *   **Retrieval Augmented Generation Metrics**:
-        *   Context Precision
-        *   Context Recall
-        *   Context Entities Recall
-        *   Noise Sensitivity
-        *   Response Relevancy
-        *   Faithfulness
-    *   **Nvidia Metrics**:
-        *   Answer Accuracy
-        *   Context Relevance
-        *   Response Groundedness
-    *   **Agents or Tool Use Cases**
-*   **Core Components**: Utilizes key components such as Prompts, Evaluation Samples, and Evaluation Datasets to facilitate thorough assessments.
+RAGAS is one of the most popular open-source evaluation frameworks for RAG pipelines, providing research-backed metrics to objectively measure the performance of LLM applications.
+
+## Core Metrics
+
+### Retrieval Quality
+- **Context Precision**: Evaluates ranking of relevant chunks
+- **Context Recall**: Measures completeness of retrieved information
+- **Context Relevancy**: Assesses alignment with user query
+- **Context Entities Recall**: Tracks entity coverage
+
+### Generation Quality
+- **Faithfulness**: Ensures generated answers align with context
+- **Response Relevancy**: Measures answer appropriateness
+- **Answer Relevance**: Evaluates semantic correctness
+- **Noise Sensitivity**: Tests robustness to irrelevant information
+
+## Key Features
+
+- Research-backed evaluation approaches
+- Comprehensive metric suite
+- Open-source and extensible
+- Integration with popular frameworks
+- Automated evaluation pipelines
+- Support for custom metrics
+
+## Evaluation Process
+
+1. Define evaluation dataset
+2. Run RAG pipeline on test queries
+3. Compute RAGAS metrics
+4. Analyze results and identify improvements
+5. Iterate on retrieval and generation
+
+## Integration Support
+
+- LangChain integration
+- LlamaIndex compatibility
+- Custom pipeline support
+- Popular LLM platforms
+
+## Use Cases
+
+- RAG pipeline evaluation
+- Model comparison and selection
+- Production monitoring
+- A/B testing of retrieval strategies
+- Quality assurance for AI systems
+
+## Industry Adoption (2026)
+
+Widely adopted by enterprises for RAG evaluation, with comprehensive metrics going beyond traditional methods to assess both retrieval quality and generation accuracy.
+
+## Pricing
+
+Free and open-source
