@@ -1,43 +1,44 @@
 ## Overview
 
-Cosine similarity is one of the most widely used similarity metrics, especially in natural language processing, measuring the cosine of the angle between two vectors while ignoring differences in their size or magnitude.
+Cosine similarity is the most widely used similarity metric in vector databases, measuring the cosine of the angle between two vectors in multi-dimensional space.
 
-## How It Works
+## Formula
 
-- Measures the angle between two vectors
-- Computed by taking the dot product divided by the product of magnitudes
-- Not affected by vector size, only direction
-- Values range from -1 (exactly opposite) to +1 (exactly same)
-- 0 indicates orthogonality (perpendicular vectors)
+Cosine similarity = (A · B) / (||A|| × ||B||)
 
-## When to Use
+Where:
+- A · B is the dot product
+- ||A|| and ||B|| are vector magnitudes
 
-- Text embeddings and semantic search
-- When direction matters more than magnitude
-- Natural language processing tasks
-- Comparing normalized embeddings
-- Semantic similarity assessment
+## Range and Interpretation
 
-## Best Practices
+- **1**: Vectors point in same direction (identical)
+- **0**: Vectors are orthogonal (unrelated)
+- **-1**: Vectors point in opposite directions
 
-- Match the metric used to train your embedding model
-- Use for models trained with cosine similarity (e.g., all-MiniLM-L6-v2)
-- Preferred when relative direction matters
-- Common choice for text semantics
+## Advantages
 
-## Relationship to Other Metrics
+- **Magnitude Independent**: Focuses on direction, not length
+- **Normalized**: Values always between -1 and 1
+- **Efficient**: Fast computation
+- **Intuitive**: Easy to interpret
 
-- When vectors are normalized, dot product ≈ cosine similarity
-- Related to Euclidean distance mathematically
-- Different from Euclidean in handling magnitude
+## Use Cases
 
-## Implementation
+- Text embedding similarity
+- Document retrieval
+- Recommendation systems
+- Image similarity
+- Semantic search
 
-- Widely supported in all major vector databases
-- Fast computation especially for normalized vectors
-- Standard metric in embedding APIs
-- Native support in Pinecone, Weaviate, Qdrant, Milvus
+## Common in Vector Databases
 
-## Performance
+- Pinecone: Default metric
+- Weaviate: Supported metric
+- Milvus: IP (inner product) variant
+- Qdrant: Native support
+- pgvector: Built-in operator
 
-Value closer to 1 indicates higher semantic similarity, making it intuitive for ranking and retrieval tasks in production systems.
+## Pricing
+
+Algorithm, no licensing costs.

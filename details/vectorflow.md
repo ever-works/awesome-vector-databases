@@ -1,31 +1,37 @@
-# Vectorflow
+## Overview
 
-[Vectorflow](https://www.getvectorflow.com/) is a vector database and embedding pipeline service optimized for real-time vector indexing and search in distributed environments. It is designed for AI and machine learning use cases, offering both managed and open source deployment options.
+VectorFlow is an open-source, high-throughput, fault-tolerant vector embedding pipeline with a simple API endpoint. It ingests large volumes of raw data, processes it into vectors, and stores or returns them quickly and reliably.
 
-## Features
+## Key Features
 
-- **Vector Embeddings as a Service:** Simple API for embedding raw data, supporting various embedding and vector database types.
-- **High Throughput:** Engineered to handle high data throughput with low latency, suitable for demanding AI model requirements.
-- **Speed & Parallelization:** Built-in parallelization for high-speed data transformations.
-- **Massive Volume Support:** Designed to process and manage large volumes of data efficiently.
-- **Reliability & Availability:** Built-in retry capabilities to ensure resilient data transformation pipelines.
-- **Enterprise-Grade:** Built with the needs of enterprises in mind, providing robust, reliable, and secure solutions.
-- **Scalable Infrastructure:** Scales seamlessly to accommodate growing data and business needs.
-- **Cloud Security:** Can be hosted in your own cloud environment for full data control and sovereignty.
-- **Simple API:** User-friendly API abstracts away complexity, making integration straightforward.
-- **Managed Service:** Fully hosted solution; no need to manage servers or infrastructure.
-- **Open Source Option:** Docker image available for self-hosting on your own infrastructure.
+### Technology Agnostic
 
-## Deployment Options
+- **Universal Source Support**: Ingest from any data source type
+- **Multiple Embedding Models**: Support for various embedding providers
+- **Flexible Destinations**: Write to different vector databases
+- **API-Based**: Simple REST API interface
 
-- **Managed Service:** VectorFlow hosts and manages the embedding pipeline and vector database infrastructure.
-- **Open Source / Self-Hosted:** Docker image provided for deployment on your own servers or cloud.
+### High Throughput
+
+- **Parallel Processing**: Easily parallelized embedding operations
+- **Scalable Architecture**: Handle large volumes of data quickly
+- **Batch Processing**: Efficient batch operations
+- **Performance Optimized**: Built for speed
+
+### Fault Tolerance
+
+- **Automatic Retries**: Ensures all data is embedded
+- **Error Recovery**: Robust error handling
+- **Reliability**: Production-grade reliability guarantees
+- **Data Integrity**: No data loss during processing
+
+## Supported Vector Databases
+
+Currently supports:
+- **Pinecone**: Managed vector database
+- **Qdrant**: High-performance vector search
+- **Weaviate**: AI-native vector database
 
 ## Pricing
 
-No specific pricing plans are provided in the available content. For details, refer to the [official website](https://www.getvectorflow.com/).
-
-## Categories & Tags
-
-- **Category:** Commerce
-- **Tags:** vector-database, real-time, distributed, ai
+Free and open-source.
