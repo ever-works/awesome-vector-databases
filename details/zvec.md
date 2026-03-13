@@ -1,33 +1,39 @@
 ## Overview
 
-Zvec is a lightweight, lightning-fast, in-process vector database released by Alibaba Tongyi Lab in February 2026. It runs as a library inside your application with no external service or daemon required, making it the SQLite of vector databases.
+Zvec is a lightweight embedded vector database designed for RAG systems. It is useful in edge environments where applications run directly on devices such as laptops, embedded systems, or IoT devices.
 
 ## Key Features
 
-- **In-Process Architecture**: Runs wherever your code runs — notebooks, servers, CLI tools, or edge devices
-- **Dense + Sparse Vectors**: Work with both dense and sparse embeddings, with native support for multi-vector queries
-- **Hybrid Search**: Combine semantic similarity with structured filters for precise results
-- **Built on Proxima**: Powered by Alibaba's production-grade, battle-tested vector search engine
-- **WAL Support**: Provides Write-Ahead Logging for data durability
-- **RAG Ready**: Full CRUD operations, schema evolution, multi-vector retrieval, built-in reranking (weighted fusion and RRF)
+### Local Execution
 
-## Performance
+Since everything runs locally, vector search can be performed:
+- Without network latency
+- Without cloud dependencies
+- Allowing the system to function even when offline
 
-Zvec delivers >8,000 QPS on VectorDBBench with the Cohere 10M dataset, achieving more than 2× the performance of previous leaderboard leaders while reducing index build time.
+### Lightweight Design
 
-## Platform Support
+Optimized to run on resource-constrained devices while maintaining good performance for vector similarity search operations.
 
-- Python 3.10 to 3.12
-- Linux x86_64, Linux ARM64, macOS ARM64
-- Install with: `pip install zvec`
+### RAG System Integration
+
+Specifically designed to support Retrieval-Augmented Generation (RAG) systems in edge computing scenarios.
+
+## Edge Environment Benefits
+
+- **No Cloud Required**: Complete functionality without internet connection
+- **Low Latency**: All operations happen locally
+- **Privacy**: Data never leaves the device
+- **Cost Effective**: No cloud infrastructure costs
 
 ## Use Cases
 
-- Retrieval Augmented Generation (RAG)
-- Semantic search on edge devices
-- Agent workloads requiring local execution
-- Mobile and constrained hardware deployments
+- Edge AI applications requiring local RAG
+- Laptop-based AI assistants
+- Embedded systems with AI capabilities
+- IoT devices with semantic search
+- Development and testing of RAG systems offline
 
 ## Pricing
 
-Free and open-source under Apache 2.0 license. No licensing costs.
+Free and open-source.

@@ -1,36 +1,54 @@
----
-title: VectorDBBench
-slug: vectordbbench
-url: https://github.com/zilliztech/VectorDBBench
-category: benchmarks-evaluation
-brand: zilliz
-brand_logo: https://avatars.githubusercontent.com/u/67472536?s=200&v=4
-source_url: https://github.com/zilliztech/VectorDBBench
-images:
-  - https://opengraph.githubassets.com/1/zilliztech/VectorDBBench
-tags:
-  - benchmark
-  - evaluation
-  - vector-databases
-license: MIT
-featured: false
----
-
 ## Overview
 
-VectorDBBench is an open‑source benchmarking toolkit for vector databases. It provides implementation code, configuration, and scripts to run standardized benchmarks across multiple vector database systems locally or in CI environments.
+VDBBench is an open-source vector database benchmarking tool designed for comparing and evaluating vector databases. It's designed for users who require high-performance data storage and retrieval systems.
 
-## Features
+## Database Support
 
-- **Standardized benchmarking framework** for evaluating vector databases under a common setup.
-- **Multi‑database support** through pluggable implementations in the `vectordb_bench` module.
-- **Configurable benchmark runs** via configuration files and environment variables (example in `.env.example`).
-- **Containerized environment** using the provided `Dockerfile` and `.devcontainer` setup for reproducible runs.
-- **CI integration** enabled by GitHub workflow definitions in `.github/workflows`.
-- **Automated tests** in the `tests` directory to validate benchmark logic and integrations.
-- **Scripted installation and setup** with resources under the `install` directory and `Makefile` targets.
-- **Open‑source, extensible design** under the MIT license, allowing customization and contribution.
+Supports testing of:
+- Milvus
+- Zilliz Cloud
+- Elasticsearch
+- Qdrant Cloud
+- Weaviate Cloud
+- PgVector
+
+## Key Features
+
+### Real-World Testing
+
+VDBBench is the only benchmark tool that tests vector databases across the complete spectrum of production-critical scenarios:
+- Static collection tests
+- Filtering scenarios
+- Streaming cases
+
+### Comparison Capabilities
+
+Offers the ability to select and compare results from multiple tests simultaneously, making it easy to understand relative performance across different vector databases.
+
+## Modern Datasets
+
+VDBBench uses vectors generated from state-of-the-art embedding models that power today's AI applications, moving beyond legacy datasets like SIFT and GloVe.
+
+## Benchmark Metrics
+
+VDBBench measures:
+- p99 serial search latency
+- Maximum concurrent QPS at 90% data capacity
+- Performance while insertion workload remains active
+
+## Availability
+
+- **GitHub**: https://github.com/zilliztech/VectorDBBench
+- **PyPI**: Can be installed via pip as vectordb-bench
+- **Leaderboard**: Public results viewable at the VDBBench Leaderboard
+
+## Use Cases
+
+- Evaluating vector databases for production deployments
+- Comparing performance across different solutions
+- Validating POC requirements match production capabilities
+- Performance regression testing
 
 ## Pricing
 
-VectorDBBench is open source and available free of charge under the MIT license.
+Free and open-source.

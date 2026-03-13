@@ -1,62 +1,49 @@
 ## Overview
 
-The MaxSim operator is a similarity aggregator that selects the maximum similarity score between each query token and all document tokens, enhancing precision in retrieval models. It underpins late-interaction architectures in neural retrieval.
+MaxSim (Maximum Similarity) is a scoring function used in late interaction retrieval models like ColBERT. It computes the relevance score between a query and document by finding the maximum similarity between each query token and all document tokens, then summing these maxima.
 
 ## How MaxSim Works
 
-### Token-Level Computation
-1. For each query token, compute similarity score (dot product or cosine similarity) with every document token
-2. For each query token, keep only the maximum similarity score
-3. Sum all maximum scores to produce document-level score
+For each query token:
+1. Compute similarity with all document tokens
+2. Take the maximum similarity value
+3. Sum these maximum values across all query tokens
 
-### Comparison with Single-Vector
-Rather than performing a single cosine similarity computation between vectors representing whole documents, MaxSim:
-- Computes token-level similarities
-- Iterates through every query token
-- Compares each query token to every document token
-- Keeps maximum value for each query token (hence "Max")
-- Sums them up for final document score
+## Key Characteristics
 
-## Key Benefits
+### Token-Level Matching
 
-- **Token-level nuances**: Preserves fine-grained semantic information
-- **Scalability**: Efficient for large-scale ranking tasks
-- **Precision**: Enhanced retrieval accuracy through detailed matching
-- **Generalization**: Strong out-of-domain performance
+MaxSim enables fine-grained matching:
+- Each query term finds its best match in the document
+- Captures multi-aspect queries well
+- Handles term importance naturally
 
-## Late Interaction Models Using MaxSim
+### Computational Efficiency
 
-- **ColBERT**: Original late interaction model
-- **ColBERTv2**: Optimized version
-- **ColPali**: Multimodal variant
-- **ColQwen**: Qwen-based implementation
+While conceptually expensive, MaxSim can be optimized through pre-computed document embeddings and approximate nearest neighbor search.
 
-## Mathematical Foundation
+## Use in ColBERT
 
-MaxSim effectively calculates Chamfer similarity. Recent research (2026) focuses on:
-- Understanding Chamfer similarity properties
-- Designing approximations with strong guarantees
-- Optimizing CPU implementations
+ColBERT pioneered using MaxSim for dense retrieval, achieving state-of-the-art retrieval performance.
 
-## Workshop at ECIR 2026
+## Modern Applications
 
-Late Interaction Workshop scheduled at ECIR 2026 focuses on advancing understanding and applications of MaxSim operators in:
-- Text retrieval
-- Multimodal retrieval
-- Cross-modal search
-- Reasoning-based search
+- ColBERT for text retrieval
+- ColPali for visual document retrieval
+- Jina ColBERT models
+- Various late interaction models
 
-## Performance Characteristics
+## Trade-offs
 
-- More computationally expensive than single-vector approaches
-- Significantly better accuracy and generalization
-- Well-suited for scenarios requiring high precision
-- Benefits from hardware optimization (CPU/GPU)
+**Advantages**:
+- Higher accuracy than single-vector
+- Better query understanding
+- Interpretable results
 
-## Applications
+**Disadvantages**:
+- More storage (multiple vectors per document)
+- More complex serving infrastructure
 
-- Passage retrieval for RAG systems
-- Question answering
-- Document search
-- Multimodal retrieval (images, text, video)
-- Any scenario requiring fine-grained semantic matching
+## Pricing
+
+Implemented in open-source libraries (ColBERT, Vespa, etc.)

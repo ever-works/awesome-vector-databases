@@ -1,75 +1,48 @@
 ## Overview
 
-Semantic chunking splits text by grouping sentences based on the semantic similarity of their embeddings, detecting topic shifts mathematically using embedding similarity thresholds.
+Semantic chunking, sometimes called intelligent chunking, focuses on preserving the document's meaning and structure. Instead of using a fixed chunk size, it strategically divides the document at meaningful breakpoints—like paragraphs, sentences, or thematically linked sections.
 
 ## How It Works
 
-1. Generate embeddings for each sentence
-2. Calculate similarity between consecutive sentences
-3. Detect significant similarity drops (topic shifts)
-4. Split at points where similarity difference exceeds threshold
-5. Default: 95th percentile threshold
+Semantic chunking is an advanced technique that uses text embeddings to split documents based on their semantic content instead of arbitrary positions or formatting cues. Rather than slicing at fixed intervals, the algorithm looks for meaningful transitions in content and tries to preserve cohesive ideas within each chunk.
 
-## Example Detection
+## Methods
 
-- Most sentences: 0.85 similar
-- Two consecutive sentences: 0.65 similar
-- Split triggered due to significant drop
-- Indicates topic boundary
+### Percentile-Based Chunking
+
+Splits occur when differences between sentences exceed a set percentile.
+
+### Standard Deviation-Based Chunking
+
+Chunks form when semantic differences go beyond a certain number of standard deviations, isolating major content shifts.
+
+### Interquartile-Based Chunking
+
+Splits text using the interquartile range, focusing on significant differences while ignoring minor variations.
 
 ## Advantages
 
-- Content-aware segmentation
-- Respects natural topic boundaries
-- Adapts to content structure
-- Preserves semantic coherence within chunks
-- Language model aware
+Semantic chunking is one of the most accurate RAG chunking strategies for multi-topic documents:
+- Related ideas remain grouped together
+- Improves both recall quality and generation coherence
+- Better context preservation
+- Higher recall (91-92% vs 85-90% for recursive splitting)
 
-## Challenges
+## Trade-offs
 
-### Performance Considerations
-- Vecta 2026 benchmark: 54% accuracy
-- Produces very small chunks (avg 43 tokens)
-- Higher embedding costs
-- More complex implementation
+Semantic chunking gives higher recall but costs more to run, as it requires embedding every sentence in your documents.
 
-### Practical Issues
-- Requires embedding generation for all sentences
-- Computational overhead
-- Variable chunk sizes
-- May need post-processing to meet size constraints
+## Recommended Starting Points
 
-## When to Use
+Recursive character splitting at 400-512 tokens with 10-20% overlap works well for most text content and is the recommended starting point before investing in semantic chunking.
 
-- Content with clear topic shifts
-- High-budget applications
-- Precision-critical use cases
-- Research and experimentation
-- Documents with natural semantic boundaries
+## Performance
 
-## When to Avoid
+Chroma's research showed:
+- Recursive splitting: 85-90% recall at 400 tokens
+- Semantic chunking: 91-92% recall
+- The 2-3% improvement costs embedding every sentence
 
-- Cost-sensitive applications
-- Need for consistent chunk sizes
-- Simple, well-structured content
-- Production systems requiring proven reliability
+## Pricing
 
-## Implementation Approaches
-
-- LangChain SemanticChunker variants:
-  - LLMSemanticChunker: 0.919 recall
-  - ClusterSemanticChunker: 0.913 recall
-- Custom embedding-based implementations
-- Threshold tuning required
-
-## Best Practices
-
-- Test against simpler methods first
-- Monitor chunk size distribution
-- Consider hybrid approaches
-- Budget for embedding costs
-- Validate against metrics
-
-## 2026 Recommendation
-
-Move to semantic chunking only if metrics show need for extra performance and budget allows costs; start with RecursiveCharacterTextSplitter for most use cases.
+Implementation available in various RAG frameworks (LangChain, etc.)

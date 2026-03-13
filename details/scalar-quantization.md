@@ -1,73 +1,70 @@
 ## Overview
 
-Scalar quantization strikes an excellent balance between compression and performance, compressing 32-bit floating-point values into 8-bit unsigned integers, reducing memory usage by 75%.
+Scalar Quantization (SQ) is a simpler compression technique than Product Quantization that reduces the precision of each vector component, typically from 32-bit floating point to 8-bit integers, achieving 4x memory reduction.
 
-## How It Works
+## How Scalar Quantization Works
 
-1. Find min and max values in vector components
-2. Map range [min, max] to [0, 255]
-3. Convert each float32 to uint8
-4. Store quantized vectors
-5. Dequantize during search if needed
+### Quantization Process
 
-## Benefits
+1. **Find Range**: Determine min and max values for each dimension
+2. **Map**: Map the continuous range to discrete integer values (e.g., 0-255 for 8-bit)
+3. **Encode**: Convert each float component to its quantized integer
+4. **Store**: Store compact 8-bit representations
 
-- **75% Memory Reduction**: From 32 bits to 8 bits per component
-- **Faster Processing**: Smaller data fits better in cache
-- **Good Accuracy**: Minimal quality loss compared to full precision
-- **Simple Implementation**: Straightforward conversion process
-- **Wide Support**: Available in most vector databases
+### Search Process
 
-## Performance Characteristics
+1. Quantize query vector using same mapping
+2. Compute approximate distances using quantized vectors
+3. Optionally rerank top candidates using original vectors
 
-- Minimal accuracy loss (typically <2%)
-- Significant memory savings
-- Improved query throughput
-- Better cache utilization
-- Reduced bandwidth requirements
+## Memory Reduction
 
-## Comparison with Other Techniques
+- **32-bit float → 8-bit int**: 4x compression
+- **32-bit float → 4-bit int**: 8x compression
+- Example: 768-dim vector: 3,072 bytes → 768 bytes (8-bit) or 384 bytes (4-bit)
 
-- **vs. Binary Quantization**: Less aggressive, better accuracy
-- **vs. Product Quantization**: Simpler, faster, less compression
-- **vs. No Quantization**: 75% less memory, slightly lower accuracy
+## Variants
+
+### Asymmetric Scalar Quantization
+
+- Database vectors: quantized
+- Query vectors: kept in full precision
+- Better accuracy than symmetric quantization
+
+### Per-Dimension vs Global
+
+- **Per-dimension**: Different min/max for each dimension
+- **Global**: Single min/max across all dimensions
+
+## Trade-offs
+
+**Advantages**:
+- Simple to implement
+- Minimal accuracy loss (1-2% typical)
+- Fast compression and decompression
+- Works well with modern SIMD instructions
+
+**Disadvantages**:
+- Less compression than Product Quantization
+- Still requires significant memory for large datasets
+
+## Comparison with Other Methods
+
+**vs Product Quantization**:
+- Less compression but better accuracy
+- Simpler and faster
+- No training required
+
+**vs Binary Quantization**:
+- Better accuracy but less compression
 
 ## Use Cases
 
-- Large-scale vector databases
-- Memory-constrained environments
-- Production deployments
-- Cost optimization
-- High-throughput applications
+- When 4x compression is sufficient
+- Applications requiring high accuracy
+- Real-time search scenarios
+- When simplicity is valued
 
-## Implementation Considerations
+## Pricing
 
-- Apply during indexing or online
-- Monitor accuracy metrics
-- Combine with proper monitoring
-- Consider per-vector or global ranges
-- Test impact on your specific use case
-
-## Best Practices (2026)
-
-- Use for memory optimization in production
-- Combine with other optimization techniques
-- Monitor for accuracy regressions
-- Benchmark against your data
-- Consider as first quantization step
-
-## Database Support
-
-- Qdrant (native support)
-- Milvus
-- Weaviate
-- Pinecone
-- Most modern vector databases
-
-## When to Use
-
-- Need significant memory reduction
-- Can tolerate minimal accuracy loss
-- Production systems requiring optimization
-- Large-scale deployments
-- Budget-conscious applications
+Implemented in most vector databases (Qdrant, Milvus, Weaviate, etc.)

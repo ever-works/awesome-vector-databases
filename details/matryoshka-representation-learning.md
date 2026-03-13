@@ -1,52 +1,60 @@
 ## Overview
 
-Matryoshka Representation Learning (MRL) creates a hierarchy of embeddings with flexible dimensionalities, putting the most important information at the front of the vector to enable slicing while retaining high performance.
+Matryoshka Representation Learning (MRL) is a training technique that enables models to produce embeddings where truncated versions maintain good performance. Named after Russian nesting dolls, it allows you to use different embedding sizes from the same model without retraining.
 
-## Key Concept
+## How It Works
 
-Embedding models trained with MRL support:
-- Variable output dimensions (e.g., 2048, 1024, 512, 256)
-- Front-loading of important information
-- Dimension reduction without retraining
-- Minimal quality loss when truncated
+During training, the model learns to encode information at multiple granularities:
+- Important information in early dimensions
+- Progressively more detailed information in later dimensions
+- Each prefix (e.g., first 128, 256, 512 dims) forms a valid embedding
 
-## Technical Approach
+## Key Benefits
 
-- Information prioritized at beginning of vector
-- Enables truncation to smaller dimensions
-- Maintains semantic meaning across sizes
-- Compatible with quantization techniques
+### Cost Savings
 
-## Performance Benefits
+75% cost savings when storing 768-dimensional versus 3,072-dimensional vectors:
+- Less storage required
+- Faster similarity search
+- Lower infrastructure costs
 
-- Flexible dimension sizing for different use cases
-- Significant storage savings
-- Faster similarity computations
-- Reduced bandwidth requirements
-- Lower computational costs
+### Flexibility
 
-## Combining with Quantization
+One model, multiple use cases:
+- Use 128-dim for initial filtering
+- Use 512-dim for production search
+- Use 1024-dim for highest accuracy scenarios
 
-MRL is fully perpendicular to quantization:
-- Shrink from 1024 to 128 dimensions
-- Apply binary quantization
-- Achieve up to 256x compression
-- Minimal quality degradation
+### No Retraining
 
-## Model Support
+Truncate vectors to smaller dimensions without retraining the model, unlike traditional dimensionality reduction techniques.
 
-- Voyage AI models (voyage-3.5, voyage-4 series)
-- Cohere embed-v4
-- Modern embedding models increasingly support MRL
+## Performance Characteristics
+
+- Minimal accuracy loss when truncating to reasonable sizes
+- Better than PCA or other post-hoc dimension reduction
+- Enables dynamic precision-recall trade-offs
+
+## Modern Adoption
+
+Most modern embedding models in 2026 support Matryoshka Representation Learning:
+- Nomic Embed
+- Mixedbread AI models
+- Cohere Embed v4
+- Voyage AI models
+- Many Hugging Face models
 
 ## Use Cases
 
-- Multi-tier search systems
-- Cost optimization
-- Edge deployment
-- Progressive retrieval
-- Bandwidth-constrained applications
+- Multi-stage retrieval pipelines
+- Resource-constrained deployments
+- Trading accuracy for speed/cost
+- Progressive refinement search
 
-## Research
+## Implementation
 
-Originally published in 2022, now widely adopted in production embedding models as of 2026.
+Simply truncate the embedding vector to desired dimension.
+
+## Pricing
+
+Available in many open-source and commercial embedding models.

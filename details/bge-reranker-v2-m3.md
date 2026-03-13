@@ -1,32 +1,51 @@
 ## Overview
 
-BGE-reranker-v2-m3 is an open-source multilingual reranking model from the Beijing Academy of Artificial Intelligence (BAAI) using transformer-based cross-encoder architecture designed specifically for reranking tasks.
+BGE-reranker-v2-m3 from BAAI (Beijing Academy of Artificial Intelligence) supports 100+ languages with Apache 2.0 licensing, making it a popular choice for production deployments where control and cost matter.
 
-## Features
+## Key Features
 
-- Under 600 million parameters for efficient deployment
-- Cross-encoder architecture for accurate relevance scoring
-- Multilingual support across many languages
-- Open-source under Apache 2.0 license
-- Can run on consumer GPUs
-- Direct similarity output without requiring embeddings
+### Multilingual Support
 
-## Technical Details
+Supports over 100 languages, making it ideal for international applications and cross-lingual retrieval scenarios.
 
-- Full-attention over input pairs for maximum accuracy
-- Takes question and document as input
-- Outputs similarity scores directly
-- More accurate than bi-encoders (embedding models)
-- More time-consuming than embedding models (trade-off for accuracy)
+### Open-Source Licensing
+
+Released under Apache 2.0 license, which means:
+- No legal concerns for commercial use
+- Can be self-hosted
+- Full control over the model
+- No vendor lock-in
+
+### Performance
+
+BGE-v2-m3 on GPU matched Cohere's latency for zero ongoing cost, with 50-100ms GPU latency that beats API options.
+
+## Deployment Options
+
+### Self-Hosted
+
+bge-reranker is open-source and can be self-hosted, reducing costs while maintaining high accuracy. It is suitable for teams that prefer full control over their models.
+
+### Multilingual Production with GPU
+
+Recommended for multilingual production environments with GPU availability. The 50-100ms GPU latency beats API options, and you avoid ongoing costs. Apache 2.0 licensing means no legal concerns.
 
 ## Use Cases
 
-- Re-ranking top-k documents from embedding models
-- Improving RAG system accuracy
-- Two-stage retrieval pipelines
-- Question answering systems
-- Document relevance scoring
+- Multilingual search reranking
+- Cross-lingual information retrieval
+- Enterprise RAG systems
+- International e-commerce search
+- Document retrieval across languages
 
-## Performance
+## Integration
 
-Strong Mean Reciprocal Rank (MRR) scores, often achieving results close to top commercial models while being open-source and self-hostable.
+Can be integrated with:
+- LangChain
+- Haystack
+- Custom RAG pipelines
+- Vector databases
+
+## Pricing
+
+Free and open-source under Apache 2.0 license.

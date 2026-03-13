@@ -1,43 +1,69 @@
 ## Overview
 
-Binary quantization refers to the conversion of float32 values in an embedding to 1-bit values, resulting in a 32x reduction in memory and storage usage while maintaining high retrieval accuracy.
+Binary Quantization is an extreme compression technique that converts each vector dimension to a single bit (0 or 1), achieving up to 32x memory reduction compared to 32-bit floats and enabling ultra-fast similarity search using Hamming distance.
 
-## Technical Details
+## How Binary Quantization Works
 
-To quantize float32 embeddings to binary:
-1. Normalize the embeddings
-2. Threshold at 0: values > 0 become 1, otherwise 0
-3. Store as binary vectors
+### Quantization Process
+
+1. **Threshold**: Determine a threshold (often 0 or mean value)
+2. **Binarize**: Convert each dimension to 1 if above threshold, 0 otherwise
+3. **Pack**: Pack bits efficiently for storage
+4. **Store**: Store binary vectors (1 bit per dimension)
+
+### Search Process
+
+1. Binarize query vector using same threshold
+2. Compute Hamming distance (count differing bits)
+3. Use XOR and popcount for ultra-fast computation
+4. Optionally rescore top candidates with original vectors
+
+## Memory Reduction
+
+- **32-bit float → 1 bit**: 32x compression
+- Example: 768-dim vector: 3,072 bytes → 96 bytes
+- Enables keeping billions of vectors in memory
 
 ## Performance Benefits
 
-- 32x reduction in memory usage
-- ~25x retrieval speedup
-- Retains 95%+ retrieval accuracy
-- Dramatic cost savings for large-scale deployments
+### Speed
 
-## Compatibility
+- Hamming distance via XOR + popcount: extremely fast
+- Modern CPUs have hardware popcount instructions
+- Can process vectors 10-100x faster than float comparisons
 
-- Works with OpenAI embeddings
-- Supported by Qdrant, Vespa, and other major databases
-- Can be combined with Matryoshka embeddings
-- Compatible with most embedding models
+### Accuracy Considerations
 
-## Combined Optimization
+- Accuracy loss more significant than PQ or SQ
+- Works well with models trained for binary embeddings
+- Typically 5-15% recall reduction vs full precision
 
-- MRL (reduce dimensions 1024→128) + Binary quantization
-- Achieves up to 256x compression
-- ~10% quality reduction for maximum compression
-- ~3% quality reduction for 32x compression
+## When Binary Quantization Works Best
 
-## Use Cases
+### Model Characteristics
 
-- Large-scale vector search
-- Cost-sensitive deployments
-- Edge computing scenarios
-- High-throughput applications
-- Storage optimization
+- High-dimensional embeddings (768+)
+- Models with well-distributed values
+- Embeddings specifically trained for binary quantization
 
-## Implementation
+### Use Cases
 
-Supported by major vector databases including Qdrant, Pinecone, Vespa, and integrated into popular embedding frameworks.
+- First-stage retrieval (rerank with full precision)
+- Massive-scale search (billions of vectors)
+- Memory-constrained environments
+- Real-time search requirements
+
+## Limitations
+
+- Significant accuracy loss for some datasets
+- Not suitable for all embedding models
+- Requires careful threshold selection
+- May need rescoring step
+
+## Modern Implementations
+
+Many embedding models now support Matryoshka Representation Learning combined with binary quantization for flexible compression-accuracy trade-offs.
+
+## Pricing
+
+Implemented in vector databases (Qdrant, Milvus, Weaviate, etc.)

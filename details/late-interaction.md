@@ -1,54 +1,69 @@
 ## Overview
 
-Late interaction is a neural ranking paradigm that defers the interaction between query and document representations until the final similarity computation. This enables more expressive matching while maintaining efficiency.
+Late Interaction is a retrieval paradigm where query and document are encoded independently into multiple vectors (one per token), and their interaction is computed efficiently at search time. This approach bridges the gap between fast bi-encoders and accurate cross-encoders.
 
-## How It Works
+## How Late Interaction Works
 
-1. **Independent Encoding**: Query and document are encoded separately into token-level embeddings
-2. **Storage**: Document embeddings stored in vector database
-3. **Query Time**: Interaction computed between query and document tokens
-4. **Scoring**: MaxSim or other functions aggregate token interactions
+### Encoding Phase
 
-## Key Innovation
+1. Encode query into multiple token vectors (e.g., 32 tokens → 32 vectors)
+2. Encode document into multiple token vectors (e.g., 180 tokens → 180 vectors)
+3. Store document vectors in index
 
-Unlike traditional dense retrieval that compresses documents into single vectors, late interaction preserves token-level information, enabling:
-- Fine-grained semantic matching
-- Better handling of long documents
-- More interpretable relevance signals
+### Retrieval Phase
 
-## Pioneered by ColBERT
+1. For each query token vector, find its maximum similarity with any document token vector
+2. Sum these maximum similarities across all query tokens
+3. This computes the query-document relevance score
 
-ColBERT introduced late interaction to balance:
-- **Cross-Encoders**: Highly accurate but slow (encode query-document pairs together)
-- **Bi-Encoders**: Fast but less accurate (single vector per document)
-- **Late Interaction**: Best of both worlds
+## Key Advantages
 
-## Advantages
+### Better Than Bi-Encoders
 
-- Higher relevance than single-vector approaches
-- Much faster than cross-encoders
-- Token-level interpretability
-- Better for long documents
-- Maintains semantic richness
+- Captures fine-grained token-level interactions
+- Higher accuracy for complex queries
+- Better handling of multi-aspect queries
+
+### Faster Than Cross-Encoders
+
+- Pre-compute document representations
+- No need to encode query-document pairs at search time
+- Can leverage vector search infrastructure
+
+## ColBERT: Popular Implementation
+
+ColBERT (Contextualized Late Interaction over BERT) is the most well-known late interaction model:
+- Produces 128-dim vectors per token
+- Uses MaxSim operator for scoring
+- Achieves state-of-the-art results
+
+## Performance Characteristics
+
+- **Accuracy**: Between bi-encoders and cross-encoders
+- **Speed**: Much faster than cross-encoders
+- **Storage**: More than single-vector bi-encoders (multiple vectors per document)
+
+## Modern Applications
+
+- ColPali for visual document retrieval
+- ColBERT for text retrieval
+- Multimodal late interaction models
+- RAG systems requiring high precision
+
+## Storage Considerations
+
+Stores multiple vectors per document:
+- 200-word document → ~180 token vectors
+- Requires more storage than single-vector embeddings
+- Often compressed using quantization
 
 ## Use Cases
 
-- Long-document retrieval
-- High-precision search applications
-- Multi-stage ranking pipelines
-- RAG systems requiring high relevance
-- Technical documentation search
+- High-precision retrieval
+- Long document search
+- Multi-aspect queries
+- When accuracy matters more than storage
 
-## Models Using Late Interaction
+## Pricing
 
-- **ColBERT**: Original late interaction model
-- **Jina ColBERT v2**: Multilingual late interaction
-- **ColBERTv2**: Improved version with better efficiency
-
-## Integration in RAG
-
-Typically used as re-ranking stage after initial retrieval with BM25 or dense vectors.
-
-## Performance
-
-Late interaction ranking models deliver high-quality ranking results on large-scale datasets, crucial for production RAG systems.
+Implemented in open-source libraries (ColBERT, RAGatouille, etc.)
