@@ -1,47 +1,107 @@
 ## Overview
 
-MTEB (Massive Text Embedding Benchmark) is the comprehensive standard for evaluating text embedding models, covering over 1000 languages and diverse tasks from classification to specialized domains like legal, code, and healthcare retrieval.
+MTEB (Massive Text Embedding Benchmark) is a comprehensive benchmark suite for evaluating embedding models across diverse NLP tasks like retrieval, classification, clustering, reranking, and semantic similarity.
 
-## Benchmark Structure
+## Coverage
 
-### English Leaderboard
+- **58 datasets** across multiple domains
+- **112 languages** for multilingual evaluation
+- **8 task types**:
+  1. Retrieval
+  2. Clustering
+  3. Semantic Textual Similarity (STS)
+  4. Classification
+  5. Reranking
+  6. Pair Classification
+  7. Bitext Mining
+  8. Summarization
 
-- **58 datasets** across 8 embedding tasks
-- Standardized evaluation protocols
-- Task-specific metrics (accuracy, Spearman correlation, nDCG@10)
+## Evaluation Metrics
 
-### Task Categories
+### Task-Appropriate Metrics
 
-1. **Bitext Mining**: Finding parallel sentences across languages
-2. **Classification**: Document categorization
-3. **Clustering**: Grouping similar texts
-4. **Pair Classification**: Determining text pair relationships
-5. **Reranking**: Refining search result order
-6. **Retrieval**: Finding relevant documents
-7. **STS (Semantic Textual Similarity)**: Measuring text similarity
-8. **Summarization**: Evaluating summary quality
+- **Retrieval**: nDCG@10, Recall@K
+- **Similarity**: Spearman correlation
+- **Clustering**: Normalized Mutual Information (NMI)
+- **Classification**: Accuracy, F1-score
 
-## Top Performing Models (2026)
+### Retrieval Process
 
-- **NV-Embed (NVIDIA)**: Score 69.32, new accuracy record
-- **gte-Qwen3-8B**: Top performer on multilingual and English leaderboards
-- **BGE Models (BAAI)**: Consistent top rankings
-- **Instructor**: Strong performance across tasks
+1. Embed queries and documents
+2. Rank documents using cosine similarity
+3. Score with nDCG@10
 
-## Use Cases
+## BEIR Integration
 
-- Model selection for applications
-- Comparing embedding approaches
-- Tracking SOTA performance
-- Research benchmarking
-- Deployment decision-making
+MTEB directly uses the open source benchmark BEIR in its retrieval part, which contains 15 datasets covering:
+- Scientific papers (SCIDOCS)
+- Question answering (Natural Questions)
+- Fact verification (FEVER)
+- News (TREC NEWS)
+- Biomedical (TREC COVID)
+- Argumentative search
 
-## Access
+## Leaderboard
 
-- **Leaderboard**: huggingface.co/spaces/mteb/leaderboard
-- **GitHub**: embeddings-benchmark/mteb
-- **Results Data**: embeddings-benchmark/results
+MTEB maintains a public leaderboard showing:
+- Overall scores across all tasks
+- Task-specific performance
+- Multilingual capabilities
+- Model rankings
+
+Top models include:
+- NVIDIA NV-Embed-v2
+- Cohere embed-v4
+- Jina embeddings-v3
+- OpenAI text-embedding-3-large
+
+## Practical Usage Workflow
+
+1. **Screening**: Use MTEB for fast model filtering (e.g., >60 on retrieval)
+2. **Robustness Check**: Run BEIR to verify domain transfer
+3. **Production Validation**: Test on labeled production data
+4. **A/B Testing**: Deploy and measure real-world performance
+
+## Evaluation with MTEB
+
+```python
+from mteb import MTEB
+from sentence_transformers import SentenceTransformer
+
+model = SentenceTransformer("model-name")
+evaluation = MTEB(tasks=["Banking77Classification"])
+results = evaluation.run(model)
+```
+
+## Why MTEB Matters
+
+- **Standardized Comparison**: Fair comparison across models
+- **Comprehensive Coverage**: Multiple tasks and languages
+- **Community Standard**: Industry-wide adoption
+- **Reproducibility**: Consistent evaluation methodology
+- **Model Selection**: Data-driven model choice for RAG and search
+
+## Limitations
+
+- May not reflect specific domain performance
+- Benchmark tasks may not match production use cases
+- Static datasets may become outdated
+- High scores don't guarantee production success
+
+## Resources
+
+- **GitHub**: https://github.com/embeddings-benchmark/mteb
+- **Hugging Face**: https://huggingface.co/mteb
+- **Leaderboard**: https://huggingface.co/spaces/mteb/leaderboard
+- **Documentation**: https://embeddings-benchmark.github.io/mteb/
+
+## Integration
+
+- Sentence Transformers
+- Hugging Face
+- Evaluation frameworks
+- Research papers
 
 ## Pricing
 
-Free and open-source benchmark.
+Free and open-source benchmark framework.

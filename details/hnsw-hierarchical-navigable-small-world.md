@@ -1,46 +1,74 @@
 ## Overview
 
-HNSW is a graph-based indexing algorithm that builds a multi-layered structure of navigable small world graphs for efficient approximate nearest neighbor search.
+Hierarchical Navigable Small World (HNSW) is a graph-based algorithm that performs approximate nearest neighbor searches (ANN) in vector databases. HNSW is among the top-performing indexes for vector similarity search.
 
-## Key Characteristics
+## Core Concepts
 
-- **Logarithmic complexity**: O(log N) search time
-- **Hierarchical layers**: Multiple resolution levels
-- **Graph structure**: Navigable small world networks
-- **High recall**: 90%+ typical accuracy
-- **Fast queries**: Millisecond-range latencies
+HNSW builds upon two fundamental concepts:
 
-## How It Works
+1. **Navigable Small World (NSW) graphs**: Creates proximity graphs with both long-range and short-range links, reducing search times to logarithmic complexity
 
-1. **Build hierarchy**: Create multiple graph layers
-2. **Top-down search**: Start at top layer
-3. **Navigate graphs**: Move through connected nodes
-4. **Refine results**: Zoom into lower layers
-5. **Return neighbors**: Bottom layer results
+2. **Skip lists**: Borrows the concept of maintaining multiple layers, where HNSW uses layers of NSW graphs instead of linked lists
 
-## Parameters
+## Architecture
 
-- **M**: Max connections per node (16-48 typical)
-- **efConstruction**: Build-time search depth
-- **efSearch**: Query-time search depth
+Hierarchical NSW incrementally builds a multi-layer structure:
+- **Top layers**: Longest links for rapid coarse navigation
+- **Bottom layers**: Shortest links for fine-grained search
+- Each layer contains a proximity graph for nested subsets of elements
+
+## Search Process
+
+1. Start at the top layer with longest links
+2. Greedily navigate to closest neighbors
+3. Descend through layers progressively
+4. Reach bottom layer for final precise search
+
+## Performance Characteristics
+
+- **Time Complexity**: (poly/)logarithmic search times
+- **Accuracy**: High recall rates (>95%)
+- **Scalability**: Handles billions of vectors
+- **Benchmark Performance**: Among best performers in ANN benchmarks
 
 ## Advantages
 
-- Excellent recall-speed tradeoff
-- Scalable to billions of vectors
-- Incremental updates supported
-- Well-tested and proven
+- Excellent balance of speed and accuracy
+- Incremental index construction
+- No training required (unlike IVF methods)
+- Supports dynamic updates (insertions/deletions)
+- Robust performance across different datasets
 
-## Used In
+## Trade-offs
 
-- Weaviate
-- Qdrant
-- Milvus
-- pgvectorscale
-- HNSWlib
+- **Memory Overhead**: Requires storing graph structure
+- **Index Size**: Larger than compressed alternatives like PQ
+- **Build Time**: Can be slower than simpler methods for small datasets
+
+## Implementations
+
+- hnswlib (C++/Python)
 - FAISS
+- Milvus
+- Qdrant
+- Weaviate
 - Elasticsearch
+- Most modern vector databases
+
+## Research Foundation
+
+**Original Paper**: "Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs" (Malkov & Yashunin, 2016)
+
+ArXiv: https://arxiv.org/abs/1603.09320
+
+## Use Cases
+
+- Semantic search
+- Recommendation systems
+- Image similarity search
+- LLM applications with RAG
+- Real-time vector search
 
 ## Pricing
 
-Open algorithm, no licensing.
+Open algorithm implemented in various databases, no licensing cost.

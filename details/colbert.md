@@ -1,39 +1,53 @@
 ## Overview
 
-ColBERT introduces a late interaction architecture that independently encodes the query and the document using BERT and then employs a cheap yet powerful interaction step that models their fine-grained similarity.
+ColBERT (Contextualized Late Interaction over BERT) introduces a late interaction architecture that independently encodes queries and documents using BERT, then employs a powerful interaction step to model fine-grained similarity.
 
-## Late Interaction Architecture
+## Multi-Vector Representation
 
-Late interaction operates at the token level:
-- Uses one vector for each token
-- Represents both documents and queries as bags of tokens
-- Document relevance computed via maxsim operator
-- Compares every query token to every document token
+Unlike single-vector models, ColBERT produces multi-vector representations at the granularity of each token:
+- Generates dense vector representations for each token in a query or document
+- Creates a bag of contextualized embeddings for queries and documents
+- Each token gets its own contextualized embedding vector
+
+## Late Interaction Mechanism
+
+ColBERT computes relevance scores via late interaction:
+1. Find maximum cosine similarity (MaxSim) of each query vector with all document vectors
+2. Combine outputs via summation
+3. This allows rich semantic matching while remaining efficient
 
 ## Key Advantages
 
-- Strong generalization and robustness, particularly in out-of-domain settings
-- Fine-grained, token-level representations
-- Well-suited for novel use cases: reasoning-based or cross-modality retrieval
-- More expressive than single-vector methods
+- **Contextually Rich**: Surpasses single-vector representation models in quality
+- **Scalable**: Efficient computation for large corpora
+- **Fine-Grained Matching**: Token-level interactions capture subtle semantic relationships
 
-## Evolution
+## Trade-offs
 
-- **ColBERT** (SIGIR'20): Original late interaction approach
-- **ColBERTv2** (TACL'21): Effective and efficient retrieval via lightweight late interaction
-- **PLAID indexing**: De facto standard indexing method for multi-vector retrieval
+**Storage Requirements**: Requires an embedding for each token, resulting in significantly more storage than single-vector models. However, token embeddings can be stored at lower dimensions and quantization levels to reduce costs.
 
-## Challenges
+## Recent Extensions
 
-The multi-vector approach requires storing significantly more data than single-vector methods, posing challenges for:
-- Storage efficiency
-- Index size
-- Retrieval speed at scale
+- **ColPali**: Multimodal late interaction for visual documents
+- **ColQwen**: Vision language model variant
+- **Video-ColBERT**: Text-to-video retrieval
 
-## Research Impact
+## Performance
 
-Pioneered modern multi-vector retrieval methods. A First Workshop on Late Interaction and Multi Vector Retrieval is scheduled for ECIR 2026, demonstrating the growing importance of this approach.
+ColBERT achieves state-of-the-art results on passage retrieval benchmarks (SIGIR'20, TACL'21, NeurIPS'21, NAACL'22, CIKM'22, ACL'23, EMNLP'23).
 
-## Availability
+## Use Cases
 
-Open-source on GitHub with active research community.
+- Passage retrieval
+- Document search
+- Question answering
+- Semantic search with high precision requirements
+
+## Integrations
+
+- Qdrant (via FastEmbed)
+- Available through various vector database platforms
+
+## Pricing
+
+Free and open-source, available on GitHub.

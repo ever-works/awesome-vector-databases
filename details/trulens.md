@@ -1,36 +1,128 @@
 ## Overview
 
-TruLens is an open-source platform for evaluating and monitoring LLM applications, with specialized capabilities for RAG systems. It pioneered the "RAG Triad" evaluation framework that's become an industry standard.
+TruLens is an open source library for evaluating and tracing AI agents, including RAG systems and other LLM applications. Originally created by TruEra, TruLens is now a community-driven project with active oversight and support from Snowflake following TruEra's acquisition.
 
-## Features
+## Key Features
 
-- **RAG Triad Metrics**: Groundedness, answer relevance, and contextual relevance
-- **Feedback Functions**: Programmatic evaluation of application components
-- **Trace Visualization**: Detailed execution flow tracking
-- **LLM-as-Judge**: Use LLMs to evaluate other LLM outputs
-- **Component-Level Evaluation**: Assess individual parts of RAG pipelines
-- **Real-Time Monitoring**: Track application performance in production
-- **Custom Metrics**: Define your own evaluation criteria
-- **Integration**: Works with major LLM frameworks
+### OpenTelemetry Integration
 
-## RAG Triad
+Combines OpenTelemetry-based tracing with trustworthy evaluations, including both ground truth metrics and reference-free (LLM-as-a-Judge) feedback. TruLens instrumentation is OpenTelemetry compatible, allowing interoperation with other observability systems.
 
-1. **Groundedness**: Whether the answer is factually consistent with the retrieved context
-2. **Answer Relevance**: How relevant the generated answer is to the query
-3. **Context Relevance**: How relevant the retrieved context is to the query
+### RAG Triad Evaluation
+
+The RAG triad consists of 3 core evaluations:
+
+1. **Context Relevance**: Are retrieved contexts relevant to the query?
+2. **Groundedness**: Is the answer grounded in the retrieved context?
+3. **Answer Relevance**: Does the answer address the question?
+
+Satisfactory evaluations on each provides confidence that the LLM app is free from hallucination.
+
+### Evaluation Capabilities
+
+Evaluate critical components of your app's execution flow:
+- Retrieved context quality
+- Tool calls
+- Agent plans
+- Response generation
+- End-to-end performance
+
+## Framework Support
+
+TruLens automatically instruments popular frameworks:
+
+- **TruChain**: For LangChain applications
+- **TruGraph**: For LangGraph applications
+- **TruLlama**: For LlamaIndex applications
+- **Custom Apps**: Flexible instrumentation API
+
+## Installation
+
+```bash
+pip install trulens
+```
+
+## Basic Usage
+
+```python
+from trulens.core import TruSession
+from trulens.apps.langchain import TruChain
+
+# Initialize session
+session = TruSession()
+
+# Wrap your app
+tru_app = TruChain(
+    chain,
+    app_name="My RAG App",
+    app_version="v1"
+)
+
+# Use as normal - tracing happens automatically
+response = tru_app("What is RAG?")
+
+# View results in dashboard
+session.run_dashboard()
+```
+
+## Feedback Functions
+
+Define custom evaluation criteria:
+
+```python
+from trulens.feedback import Feedback
+from trulens.providers.openai import OpenAI
+
+# Initialize provider
+provider = OpenAI()
+
+# Define feedback
+f_context_relevance = Feedback(
+    provider.context_relevance
+).on_input().on("context").aggregate(np.mean)
+```
+
+## Dashboard
+
+Built-in dashboard for:
+- Real-time monitoring
+- Trace visualization
+- Feedback scores
+- Performance metrics
+- Comparative analysis
+
+## Key Advantages
+
+- **OpenTelemetry Standard**: Industry-standard tracing
+- **Framework Agnostic**: Works with any LLM framework
+- **Production Ready**: Built for scale and reliability
+- **Comprehensive**: Covers evaluation and tracing
+- **Active Development**: Community-driven with enterprise backing
 
 ## Use Cases
 
-- Evaluating RAG system accuracy
-- Debugging hallucination issues
-- Monitoring production AI applications
-- A/B testing different prompts or models
-- Ensuring response quality
+- RAG system evaluation and debugging
+- Agent behavior monitoring
+- Multi-turn conversation quality
+- Production observability
+- Experiment tracking
+- A/B testing
 
-## Integration
+## Integration Partners
 
-Supports LangChain, LlamaIndex, and custom applications. MLflow's third-party scorer framework includes TruLens alongside RAGAS and Phoenix.
+- LangChain & LangGraph
+- LlamaIndex
+- Pinecone
+- Snowflake
+- OpenTelemetry ecosystem
+
+## Resources
+
+- **Documentation**: https://www.trulens.org/
+- **GitHub**: https://github.com/truera/trulens
+- **Blog**: https://www.trulens.org/blog/
+- **Community**: Active Discord
 
 ## Pricing
 
-Open-source and free to use.
+Free and open-source library. Costs only for LLM API calls used in feedback functions.

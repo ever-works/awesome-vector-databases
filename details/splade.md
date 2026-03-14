@@ -1,60 +1,55 @@
 ## Overview
 
-SPLADE (Sparse Lexical and Expansion) is one of the most performant learnable sparse embedding models, using pretrained language models like BERT to enhance sparse vector embeddings.
+SPLADE (Sparse Lexical and Expansion Model) uses pretrained language models like BERT to identify connections between words/sub-words and uses that knowledge to enhance sparse vector embeddings.
 
 ## How SPLADE Works
 
-### Two Main Mechanisms
+Unlike dense embeddings, SPLADE outputs vectors aligned with a vocabulary (similar to bag-of-words), but with learned weights reflecting semantic and contextual information.
 
-1. **Term Weighting**: Weights relevance of different terms
-2. **Term Expansion**: Includes alternative but semantically relevant terms beyond original sequence
+### Term Expansion Example
 
-### Technical Implementation
+For the keyword "study":
+- **BM25**: Single non-zero value for "study"
+- **SPLADE**: Multiple non-zero values for "study", "learn", "research", "investigate", etc.
 
-- Applies MLM (Masked Language Modeling) across all token positions
-- Calculates probability each token corresponds to every vocabulary word
-- Creates learned sparse vectors with relevance-based weights
-- Highly sparse representations
+## Key Advantages
 
-## Key Innovation
+- **Semantic Understanding**: Leverages context from transformers, improving recall over BM25
+- **Term Expansion**: Includes alternative but relevant terms beyond the original sequence
+- **Interpretability**: Maintains sparse vector format similar to traditional lexical search
+- **Better Recall**: Significantly better performance compared to BM25 in IR evaluation tasks
 
-SPLADE can **learn term expansions** rather than using rule-based methods, enabling it to discover semantic connections automatically.
+## Technical Specifications
 
-## Performance
+- **Vector Dimension**: 30,522 (based on BERT vocabulary)
+- **Architecture**: Built on BERT transformers
+- **Sparsity**: Contains many zero values like traditional sparse vectors, but with learned weights
 
-- Outperforms BM25 in information retrieval
-- Competitive with state-of-the-art dense approaches
-- Strong results in document classification
-- Maintains interpretability of sparse vectors
+## SPLADE vs BM25
 
-## Advantages
-
-### vs BM25
-- Learned term relationships
-- Semantic understanding
-- Better recall and precision
-
-### vs Dense Embeddings
-- Interpretable weights
-- Exact term matching preserved
-- Lower storage for very high dimensions
-- Explainable relevance
+| Feature | BM25 | SPLADE |
+|---------|------|--------|
+| Non-zero values | Single term only | Multiple related terms |
+| Semantic understanding | None | Yes (via BERT) |
+| Term expansion | No | Yes |
+| Context awareness | No | Yes |
+| Performance | Baseline | Superior recall |
 
 ## Use Cases
 
-- Hybrid search systems
-- Interpretable retrieval
-- Domain-specific search
-- RAG systems needing transparency
-- Combining with dense vectors
+- Hybrid search (combining with dense vectors)
+- Keyword search with semantic understanding
+- Entity resolution
+- Document retrieval
+- Information retrieval systems
 
-## Integration
+## Supported Platforms
 
-- **Qdrant**: FastEmbed SPLADE support
-- **Pinecone**: Sparse-dense hybrid search
-- **Elasticsearch**: Sparse vector fields
-- **BGE-M3**: Includes SPLADE-style sparse retrieval
+- Qdrant
+- Pinecone
+- Chroma
+- Various vector databases with sparse vector support
 
 ## Pricing
 
-Open-source models available on HuggingFace. Compute costs for inference.
+Open-source model, free to use.
