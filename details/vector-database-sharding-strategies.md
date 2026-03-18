@@ -1,71 +1,115 @@
-## Overview
+## Why Sharding?
 
-Vector databases support horizontal scaling through sharding, which distributes data across multiple nodes, and replication, which creates redundant copies for high availability.
+As vector collections grow beyond single-node capacity, sharding distributes data across multiple nodes for:
+- Horizontal scalability
+- Parallel query processing
+- Higher throughput
+- Fault tolerance
 
-## Key Sharding Strategies
+## Sharding Strategies
 
-### Range-Based Sharding
-Partitions vector data across shards by dividing it into non-overlapping key intervals based on sorted keys.
+**Hash-Based Sharding**:
+- Hash vector ID to determine shard
+- Even distribution
+- Simple implementation
+- Random data distribution
 
-**Advantages**:
-- Simple to implement
-- Efficient for range-based queries
+**Range-Based Sharding**:
+- Partition by ID ranges
+- Sequential data grouped together
+- Can lead to hot spots
+- Good for time-series data
 
-**Disadvantages**:
-- Data skew and uneven load distribution if keys not uniformly distributed
-
-### Hash-Based Sharding
-Uses 64-bit Murmur-3 hash algorithm based on each object's UUID to determine shard placement through a virtual shard system.
-
-**Advantages**:
-- Spreads data evenly across shards
-- Predictable distribution
-
-**Disadvantages**:
-- Ignores semantic relationships
-- Can scatter related vectors across shards
-
-### Geographic Sharding
-Distributes vector data based on geographic attributes (user region, location), assigning each shard to a specific geographic zone.
-
-**Advantages**:
-- Reduces cross-region network latency by storing data closer to users
-- Helps comply with data sovereignty regulations
-
-**Disadvantages**:
-- Uneven load if users concentrated in certain regions
-
-### Vector-Aware Sharding
-Groups vectors into clusters using algorithms like k-means or HNSW, with each cluster assigned to a shard. Queries routed to the most relevant shards based on proximity to query vector.
-
-**Advantages**:
-- Maintains semantic relationships
+**Semantic Sharding**:
+- Cluster similar vectors together
 - Reduces cross-shard queries
-- Improved query efficiency
+- More complex
+- Better query performance
 
-**Disadvantages**:
-- Resource-intensive re-clustering when adding/removing vectors
-- Complexity in maintaining cluster balance
+**Hybrid Approach**:
+- Combine semantic clustering with hash
+- Balance distribution and locality
 
-## Query Execution Patterns
+## Query Routing
 
-### Scatter-Gather
-Queries are sent to all shards, and results are retrieved and combined. Each shard processes its portion of the index and returns local results, which are then merged and ranked.
+**Broadcast**:
+- Query all shards
+- Merge results
+- Simple but inefficient
 
-### Selective Routing
-Vector-aware sharding enables routing queries only to relevant shards, reducing network overhead.
+**Selective Routing**:
+- Route to relevant shards only
+- Requires metadata/clustering
+- More efficient
 
-## Challenges and Trade-offs
+**Hierarchical**:
+- Query coordinator → shard leaders → replicas
+- Better for large clusters
 
-- **Accuracy**: Global nearest neighbors might reside in different shards
-- **Latency**: Network overhead from querying multiple shards
-- **Dynamic Updates**: Re-clustering is resource-intensive
-- **Load Balancing**: Certain shards may grow faster, creating hotspots
+## Replication
 
-## Sharding vs. Partitioning
+**Why Replicate**:
+- High availability
+- Read scalability
+- Disaster recovery
 
-Sharding focuses on distributing data across multiple machines for horizontal scalability, while partitioning primarily organizes data within a single machine for local optimization.
+**Strategies**:
+- Master-slave: One writer, multiple readers
+- Multi-master: Multiple writers (complex)
+- Typical: 2-3 replicas
 
-## Industry Adoption
+## Rebalancing
 
-By 2026, over 30% of enterprises are projected to integrate vector databases to support foundation models - up from less than 2% in 2023.
+**When Needed**:
+- Adding/removing nodes
+- Uneven shard sizes
+- Hot spot detection
+
+**Approaches**:
+- Background data movement
+- Virtual shards (easier rebalancing)
+- Consistent hashing
+
+## Database Support
+
+**Native Sharding**:
+- Milvus (automatic sharding)
+- Weaviate (horizontal scaling)
+- Qdrant (distributed mode)
+- Vespa (native distribution)
+
+**Manual Sharding**:
+- Multiple Pinecone indexes
+- Multiple Chroma collections
+- Application-level routing
+
+## Best Practices
+
+1. Plan for growth (don't shard too early)
+2. Use consistent hashing
+3. Monitor shard balance
+4. Implement health checks
+5. Test failure scenarios
+6. Have rebalancing strategy
+7. Consider network topology
+8. Monitor cross-shard queries
+
+## Performance Considerations
+
+- Cross-shard queries add latency
+- Network bandwidth important
+- Replication increases write cost
+- Balance parallelism vs overhead
+
+## When to Shard
+
+**Don't shard if**:
+- < 50M vectors
+- Single node handles load
+- Simplicity preferred
+
+**Consider sharding if**:
+- > 100M vectors
+- Need higher throughput
+- Geographic distribution
+- Regulatory requirements
