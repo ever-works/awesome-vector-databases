@@ -1,57 +1,110 @@
 ## Overview
 
-Approximate Nearest Neighbors (ANN) algorithms find near-neighbors quickly by sacrificing perfect accuracy for speed, essential for large-scale vector search.
+Approximate Nearest Neighbor (ANN) search is a family of algorithms that find nearest neighbors with high probability while being orders of magnitude faster than exact search. ANN is essential for large-scale vector search applications.
 
 ## Why ANN?
 
-### Exact Search Problems
-- Linear scan: O(N) complexity
-- Infeasible for billions of vectors
-- Prohibitive latency
+Exact nearest neighbor search has O(n×d) complexity:
+- n = dataset size
+- d = vector dimensions
+- Impractical for >1M vectors
 
-### ANN Solution
-- Sub-linear search: O(log N) or better
-- 90-99% recall typical
-- Millisecond latencies
+## ANN achieves O(log n) or better by:
+- Building specialized index structures
+- Searching a subset of the dataset
+- Accepting near-perfect (95-99%) recall
 
-## Algorithm Categories
+## Major ANN Approaches
 
-### Graph-Based
-- HNSW, NSW, Vamana
-- Best recall-speed tradeoff
+### Graph-Based Methods
+**HNSW (Hierarchical Navigable Small World)**
+- Most popular ANN algorithm
+- Excellent recall-speed trade-off
+- Fast queries, moderate build time
+- Used in: Weaviate, Qdrant, Milvus
 
-### Clustering
-- IVF, SPANN
-- Partitions space
+**DiskANN/Vamana**
+- SSD-optimized graph index
+- Billion-scale capability
+- Used in: Azure Cosmos DB, PostgreSQL
 
-### Hashing
-- LSH
-- Very high dimensions
+### Clustering-Based Methods
+**IVF (Inverted File Index)**
+- Partitions space into clusters
+- Fast for very large datasets
+- Used in: Pinecone, FAISS
 
-### Trees
-- Annoy, KD-Tree
-- Lower dimensions
+**IVF-PQ (with Product Quantization)**
+- Combines clustering + compression
+- Memory-efficient
+- Used in: FAISS, Milvus
+
+### Tree-Based Methods
+**Annoy (Approximate Nearest Neighbors Oh Yeah)**
+- Random projection trees
+- Memory-efficient
+- Created by Spotify
+
+**KD-trees / Ball trees**
+- Classical spatial data structures
+- Less effective in high dimensions
+
+### Hash-Based Methods
+**LSH (Locality-Sensitive Hashing)**
+- Hash similar items to same buckets
+- Sublinear query time
+- Good for very high dimensions
 
 ## Key Metrics
 
-- **Recall**: % of true neighbors found
-- **Latency**: Query time
-- **Throughput**: Queries per second
-- **Memory**: Storage requirements
+### Recall
+Fraction of true nearest neighbors found:
+- 100% = exact search
+- 95-99% = typical ANN target
+- 90% = fast but lower quality
 
-## Tradeoffs
+### Queries Per Second (QPS)
+- Throughput measure
+- Higher is better
+- Depends on recall target
 
-- Accuracy vs Speed
-- Memory vs Performance
-- Build time vs Query time
-- Update efficiency
+### Build Time
+- Time to create index
+- One-time cost
+- Varies widely by algorithm
 
-## Benchmarks
+## Recall-Speed Trade-off
 
-- ANN-Benchmarks
-- Big-ANN Challenge
-- MTEB (for embeddings)
+All ANN algorithms allow tuning:
+- Higher recall → slower queries
+- Lower recall → faster queries
+- Configure per application needs
+
+Example HNSW parameters:
+- ef_search: controls search quality
+- Higher ef_search = better recall, slower
+
+## Benchmarking
+
+**ANN-Benchmarks.com**
+- Standard comparison framework
+- Tests algorithms on real datasets
+- Shows recall vs QPS curves
+
+**Key findings**:
+- HNSW: best overall
+- ScaNN: strong for specific configs
+- IVF-PQ: memory-constrained scenarios
+
+## Choosing an ANN Algorithm
+
+Consider:
+- Dataset size (millions vs billions)
+- Query latency requirements
+- Memory constraints
+- Update frequency
+- Recall requirements
 
 ## Pricing
 
-Algorithms, no licensing.
+Core technology; implementations vary by platform.

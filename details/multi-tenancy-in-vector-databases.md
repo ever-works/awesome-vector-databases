@@ -1,291 +1,247 @@
-## What is Multi-Tenancy?
+## Overview
 
-Multi-tenancy allows multiple customers (tenants) to share the same database infrastructure while maintaining data isolation, security, and performance.
-
-## Why Multi-Tenancy for Vector DBs?
-
-**Benefits**:
-- Cost efficiency (shared infrastructure)
-- Easier management (single deployment)
-- Resource pooling
-- Faster provisioning
-
-**Challenges**:
-- Data isolation
-- Performance isolation (noisy neighbors)
-- Security boundaries
-- Scaling complexity
+Multi-tenancy enables serving multiple customers (tenants) from shared vector database infrastructure while maintaining data isolation, security, and performance. Critical for SaaS applications using vector search or RAG.
 
 ## Isolation Strategies
 
-### 1. Separate Databases
+### 1. Collection/Index Per Tenant
+**Approach**: Separate database collection for each tenant
 
-**Approach**: One database per tenant
+**Advantages:**
+- Complete data isolation
+- Independent scaling per tenant
+- Easy backup/restore
+- Simpler security model
+- Performance isolation
 
-**Pros**:
-- Strong isolation
-- Easy backup/restore per tenant
-- Simple security model
-- Independent scaling
+**Disadvantages:**
+- Higher operational overhead
+- More expensive (index per tenant)
+- Harder to manage at scale (1000s of tenants)
+- Resource fragmentation
 
-**Cons**:
-- High operational overhead
-- Expensive at scale
-- Complex management
-- Resource waste (over-provisioning)
+**Best For**: <100 tenants, high-value customers
 
-**Best For**: Enterprise customers, strict compliance
+### 2. Namespace Isolation
+**Approach**: Logical partitions within single collection
 
-### 2. Separate Collections/Indexes
+**Advantages:**
+- Shared index efficiency
+- Lower cost
+- Easier management
+- Good performance
 
-**Approach**: Shared database, separate collections per tenant
+**Disadvantages:**
+- No physical isolation
+- Shared resources
+- Requires namespace support
 
-**Pros**:
-- Good isolation
-- Easier than separate DBs
-- Per-tenant configuration
-- Simpler management
+**Best For**: Medium scale (100-10000 tenants)
+**Supported By**: Pinecone, Qdrant
 
-**Cons**:
-- Collection limit constraints
-- Still some operational overhead
-- Shared resource contention
+### 3. Metadata Filtering
+**Approach**: Single collection with tenant_id filter
 
-**Best For**: Mid-market, 100s-1000s of tenants
+**Advantages:**
+- Simplest implementation
+- Lowest cost
+- Easy to scale
+- Shared optimization
 
-### 3. Partition Keys
+**Disadvantages:**
+- Filter overhead
+- No resource isolation
+- Security depends on filters
+- Potential performance impact
 
-**Approach**: Single collection with tenant_id as partition key
+**Best For**: Large scale (1000s-100000s tenants)
 
-**Pros**:
-- Most efficient
-- Minimal overhead
-- Scales to millions of tenants
-- Simple operations
+## Implementation Examples
 
-**Cons**:
-- Relies on correct filtering
-- Risk of data leakage
-- Limited per-tenant config
-- Shared performance
-
-**Best For**: SMB, high tenant count
-
-### 4. Hybrid Approach
-
-**Approach**: Tier-based isolation
-- Enterprise: Separate databases
-- Business: Separate collections
-- Free/Starter: Partition keys
-
-**Best For**: SaaS with multiple tiers
-
-## Implementation Patterns
-
-### Partition Key Pattern
-
+### Pinecone Namespaces
 ```python
-# Insert with tenant_id
-db.insert(
-    id="doc1",
-    vector=embedding,
-    metadata={"tenant_id": "acme-corp", ...}
+# Upsert with namespace
+index.upsert(
+    vectors=vectors,
+    namespace=f"tenant_{tenant_id}"
 )
 
-# Query with tenant filter
-results = db.search(
-    query_vector=embedding,
-    filter={"tenant_id": "acme-corp"},
-    k=10
+# Query with namespace
+results = index.query(
+    vector=query_embedding,
+    namespace=f"tenant_{tenant_id}",
+    top_k=10
 )
 ```
 
-**Critical**: ALWAYS include tenant_id in queries!
-
-### Namespace Pattern
-
+### Metadata Filtering (Qdrant)
 ```python
-# Weaviate-style
-collection = client.collection(
-    name="documents",
-    tenant="acme-corp"
+client.search(
+    collection_name="shared",
+    query_vector=embedding,
+    query_filter=Filter(
+        must=[FieldCondition(
+            key="tenant_id",
+            match=MatchValue(value=tenant_id)
+        )]
+    )
 )
+```
 
-results = collection.query.near_vector(
-    near_vector=embedding,
-    limit=10
-)
+### Collection Per Tenant (Weaviate)
+```python
+# Create tenant collection
+client.schema.create_class({
+    "class": f"Documents_Tenant_{tenant_id}",
+    "vectorizer": "text2vec-openai"
+})
+
+# Query tenant collection
+results = client.query.get(
+    f"Documents_Tenant_{tenant_id}",
+    ["content"]
+).with_near_vector({"vector": query_embedding}).do()
 ```
 
 ## Security Considerations
 
-**1. Query-Time Filtering**:
+### Data Isolation
+- Physical vs logical separation
+- Encryption at rest
+- Encryption in transit
+- Access control lists
+
+### Query Isolation
+Prevent cross-tenant queries:
 ```python
-# Bad: Trusting client
-filter = request.filter  # Dangerous!
-
-# Good: Enforce tenant_id
-filter = {**request.filter, "tenant_id": current_user.tenant_id}
-```
-
-**2. API Key Scoping**:
-- Associate keys with tenants
-- Validate on every request
-- Audit key usage
-
-**3. Row-Level Security**:
-- Database-enforced policies
-- Can't be bypassed
-- PostgreSQL RLS example
-
-**4. Tenant Verification**:
-```python
-def verify_tenant_access(user, resource):
-    if user.tenant_id != resource.tenant_id:
+# Always validate tenant_id
+def search(user, query):
+    tenant_id = get_tenant_id(user)
+    if not is_authorized(user, tenant_id):
         raise UnauthorizedError()
-```
-
-## Performance Isolation
-
-**Resource Quotas**:
-- QPS limits per tenant
-- Storage limits
-- Compute limits
-
-**Rate Limiting**:
-```python
-@rate_limit("100/minute", key="tenant_id")
-def search(request):
-    ...
-```
-
-**Priority Queuing**:
-- Enterprise gets priority
-- Free tier deprioritized
-- Fair queuing within tier
-
-## Monitoring Per-Tenant
-
-**Metrics to Track**:
-- Query count per tenant
-- Latency by tenant
-- Storage usage
-- Error rates
-- Cost attribution
-
-**Alerting**:
-- Quota exceeded
-- Anomalous usage
-- Performance degradation
-- Security events
-
-## Scaling Strategies
-
-**Horizontal Sharding**:
-- Shard by tenant_id
-- Route based on tenant
-- Balance load
-
-**Tenant Migration**:
-- Move large tenants to dedicated
-- Rebalance shards
-- Zero-downtime migration
-
-**Tiering**:
-- Hot tenants: SSD, more resources
-- Cold tenants: HDD, shared resources
-
-## Cost Attribution
-
-**Track Per-Tenant**:
-```python
-# Log with tenant_id
-log_cost(
-    tenant_id=tenant_id,
-    operation="search",
-    cost=calculate_cost(query)
-)
-```
-
-**Billing**:
-- Usage-based pricing
-- Per-tenant reports
-- Quota management
-
-## Data Isolation Testing
-
-**Critical Tests**:
-```python
-def test_tenant_isolation():
-    # Tenant A data
-    db.insert("a1", vector_a, {"tenant_id": "A"})
     
-    # Tenant B data
-    db.insert("b1", vector_b, {"tenant_id": "B"})
-    
-    # Query as Tenant A
-    results = db.search(
-        vector_a,
-        filter={"tenant_id": "A"}
+    return vector_db.search(
+        query,
+        filter={"tenant_id": tenant_id}
     )
-    
-    # Should NEVER see Tenant B data
-    assert all(r.metadata["tenant_id"] == "A" for r in results)
 ```
 
-## Database Support
+### Rate Limiting
+- Per-tenant quotas
+- Prevent noisy neighbors
+- Fair resource allocation
 
-**Native Multi-Tenancy**:
-- Weaviate (namespace-based)
-- Qdrant (payload filtering)
-- Pinecone (namespaces)
+## Performance Considerations
 
-**Manual Implementation**:
-- PostgreSQL + pgvector (RLS)
-- Milvus (partition keys)
-- Chroma (metadata filtering)
+### Filter Selectivity
+Metadata filtering efficiency:
+- High selectivity (<10%): Good
+- Medium selectivity (10-50%): Okay
+- Low selectivity (>50%): Poor
+
+### Index Strategy
+For metadata filtering:
+- Index tenant_id field
+- Composite indexes if needed
+- Monitor query performance
+
+### Resource Allocation
+Prevent tenant monopolization:
+- Query timeouts
+- Concurrency limits
+- Memory caps
+- CPU throttling
+
+## Cost Optimization
+
+### Shared Infrastructure
+```
+Collection per tenant:
+  100 tenants × $70/month = $7,000/month
+
+Shared with filtering:
+  1 large collection = $200/month
+  95% cost savings!
+```
+
+### Hybrid Approach
+- Large tenants: Dedicated collections
+- Small tenants: Shared collection
+- Optimize cost vs performance
+
+## Scaling Patterns
+
+### Vertical
+- Bigger instances
+- More RAM/CPU
+- Limited scalability
+
+### Horizontal
+- Shard by tenant_id
+- Distribute across instances
+- Better for massive scale
+
+### Tiered
+- Hot tenants: Dedicated
+- Warm tenants: Namespaces
+- Cold tenants: Shared filtered
+
+## Migration Strategies
+
+### Starting Point
+Small scale (filtering):
+- Simple, low cost
+- Easy to implement
+
+### Growth Path
+1. Filtering (0-1000 tenants)
+2. Namespaces (1000-10000 tenants)
+3. Hybrid (10000+ tenants)
+4. Dedicated for enterprise
+
+## Monitoring
+
+Per-tenant metrics:
+- Query volume
+- Latency (P50, P95, P99)
+- Error rates
+- Storage usage
+- Costs
 
 ## Best Practices
 
-1. **Enforce at API Layer**: Don't trust clients
-2. **Test Isolation Rigorously**: Critical for security
-3. **Monitor Per-Tenant**: Detect issues early
-4. **Implement Quotas**: Prevent abuse
-5. **Plan for Growth**: Shard strategy from day one
-6. **Document Boundaries**: Clear isolation model
-7. **Audit Access**: Who accessed what
-8. **Test Migration**: Be able to move tenants
-9. **Cost Attribution**: Track spending
-10. **Security Reviews**: Regular audits
+1. **Start Simple**: Filtering sufficient initially
+2. **Plan for Growth**: Design for scale
+3. **Monitor Per-Tenant**: Track resource usage
+4. **Enforce Isolation**: Never mix tenant data
+5. **Test Security**: Verify data separation
+6. **Document Strategy**: Clear tenant model
+7. **Cost Management**: Track and optimize
 
 ## Common Pitfalls
 
-1. **Forgetting tenant_id in queries**: Data leak!
-2. **No resource limits**: One tenant kills all
-3. **Inadequate testing**: Isolation bugs
-4. **No monitoring**: Can't detect issues
-5. **Hard-coded configs**: Not per-tenant
-6. **No migration plan**: Stuck with initial choice
-7. **Trusting client filters**: Security hole
+### Missing Filters
+```python
+# BAD: No tenant filter
+results = db.search(query)
 
-## Migration Between Models
+# GOOD: Always filter
+results = db.search(
+    query,
+    filter={"tenant_id": validated_tenant_id}
+)
+```
 
-**Partition → Collection**:
-1. Create new collection for tenant
-2. Copy data with background job
-3. Dual-write during transition
-4. Switch read traffic
-5. Verify and cleanup
+### Performance Degradation
+- Monitor as tenant count grows
+- Benchmark at scale
+- Plan migration early
 
-**Collection → Database**:
-1. Provision new database
-2. Snapshot and restore
-3. Update routing
-4. Verify and cleanup
+### Security Gaps
+- Test cross-tenant isolation
+- Audit access controls
+- Penetration testing
 
-## When to Choose Each
+## Pricing
 
-**Partition Keys**: Default for SaaS
-**Collections**: 100s of tenants, need isolation
-**Databases**: Enterprise, strict compliance
-**Hybrid**: Multiple customer tiers
+Costs vary dramatically by strategy; filtering cheapest, dedicated most expensive.

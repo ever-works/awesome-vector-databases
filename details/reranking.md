@@ -1,90 +1,134 @@
 ## Overview
 
-Reranking is a two-stage retrieval pattern that significantly improves RAG accuracy. Fast initial retrieval gets candidates, then a sophisticated reranker provides precise final rankings.
+Reranking is a two-stage retrieval approach where:
+1. **First Stage**: Fast retrieval (bi-encoder, BM25) gets top-k candidates (e.g., 100 results)
+2. **Second Stage**: Slower but more accurate model reorders these candidates
 
 ## Why Reranking?
 
-Initial retrieval prioritizes speed and recall:
-- **Bi-encoders**: Fast but less accurate
-- **BM25**: Good for keywords but misses semantics
+### Initial Retrieval Limitations
+- Bi-encoders: Fast but less accurate
+- Encode query and document separately
+- Limited interaction between query and document
 
-Rerankers prioritize precision:
-- **Cross-encoders**: Slow but highly accurate
-- **ColBERT**: Balance of speed and accuracy
+### Reranker Advantages
+- **Cross-Encoders**: Process query-document pairs jointly
+- **Better Accuracy**: Captures nuanced relevance signals
+- **Feasible**: Only applied to small candidate set (10-100 docs)
 
-## Standard Pipeline (2026)
+## Types of Rerankers
 
-1. **Initial Retrieval**: Get top-100 to 200 candidates
-   - Vector search (dense embeddings)
-   - Keyword search (BM25)
-   - Fused via RRF
+### Cross-Encoder Models
+- Joint encoding of query + document
+- BERT-based: ms-marco-MiniLM, BGE-reranker
+- Most accurate but slow
+- ~10-100ms per query-doc pair
 
-2. **Reranking**: Re-score top-k candidates
-   - Cross-encoder models (BGE, Cohere)
-   - ColBERT MaxSim
-   - Return top-N final results
+### Learned Rerankers
+- Lightweight models trained on retrieval data
+- Faster than cross-encoders
+- Examples: Cohere rerank, Jina reranker
+
+### Late Interaction
+- ColBERT-style reranking
+- Token-level interactions
+- Balance of speed and accuracy
+
+## Reranking Process
+
+```
+Query: "How do transformers work?"
+
+1. Initial Retrieval (bi-encoder):
+   - Retrieve top-100 candidates
+   - Fast (~10ms)
+
+2. Reranking (cross-encoder):
+   - Score each of 100 candidates
+   - Reorder by relevance
+   - Return top-10
+   - Slower (~1s for 100 docs)
+
+3. Final Results:
+   - Highest quality top-10 results
+   - Much better than initial retrieval alone
+```
 
 ## Performance Impact
 
-Reranking delivers 15-40% higher retrieval accuracy and more relevant results compared to embeddings alone.
+Typical improvements:
+- 10-30% better NDCG@10
+- 15-40% better MRR (Mean Reciprocal Rank)
+- Especially valuable for RAG quality
 
-## Popular Rerankers
+## Popular Reranker Models
 
-- **Cohere Rerank**: API-based, 100+ languages
-- **BGE Reranker**: Open-source, self-hostable
-- **ColBERT**: Late interaction, fast
-- **Jina ColBERT v2**: Multilingual, token-level
-- **Mixedbread**: Code-optimized
+### Open Source
+- **BGE-reranker-large**: High quality, BAAI
+- **ms-marco-MiniLM-L-12-v2**: Fast, Microsoft
+- **Jina reranker-v2**: Multilingual support
 
-## Cost vs Quality Trade-offs
+### Commercial APIs
+- **Cohere Rerank**: State-of-the-art, multilingual
+- **Voyage AI Rerank**: High performance
+- **OpenAI** (via fine-tuned models)
 
-### High Quality
-- Cohere Rerank 3.5
-- Cross-encoder rerankers
-- Best accuracy, higher API costs
+## Use Cases
 
-### Balanced
-- BGE reranker (self-hosted)
-- ColBERT models
-- Good accuracy, lower cost
+- **RAG Systems**: Improve context quality for LLMs
+- **Search Engines**: Better result ordering
+- **Question Answering**: Find most relevant passages
+- **Recommendation**: Refine initial candidates
+- **Enterprise Search**: Precision-critical applications
 
-### Fast
-- Smaller reranker models
-- Lower latency, slight accuracy trade-off
+## Implementation Example
 
-## Implementation Pattern
+```python
+# 1. Initial retrieval
+candidates = vector_db.search(query_embedding, top_k=100)
 
+# 2. Reranking
+reranked = reranker.rank(
+    query=query,
+    documents=[c.text for c in candidates],
+    top_k=10
+)
+
+# 3. Use top results
+context = reranked[:5]
 ```
-top_100 = vector_search(query) + bm25_search(query)
-fused = rrf(top_100)
-top_10 = reranker(query, fused[:50])
-return top_10
-```
 
-## When to Use
+## Trade-offs
 
-- Production RAG systems
-- High-value queries
-- Accuracy-critical applications
-- Multi-source retrieval
-- Hybrid search systems
+### Advantages
+- Significantly better accuracy
+- More nuanced relevance
+- Handles complex queries better
+- Improves RAG quality
 
-## When to Skip
-
-- Simple use cases
-- Budget constraints
-- Latency requirements <50ms
-- Small candidate sets
+### Disadvantages
+- Added latency
+- Additional computational cost
+- More complex pipeline
+- Requires separate model/API
 
 ## Best Practices
 
-- Retrieve more initially (100-200)
-- Rerank subset (20-50)
-- Return final top-k (5-10)
-- Monitor latency vs accuracy
-- Test different rerankers
-- Consider self-hosting for cost
+- Retrieve more candidates initially (50-200)
+- Rerank to smaller final set (5-20)
+- Use async/parallel processing
+- Cache reranking results when possible
+- Monitor latency budget
+- A/B test impact on quality
 
-## 2026 Standard
+## Integration
 
-Reranking has become standard in production RAG systems, with most frameworks supporting it out of the box.
+Supported by:
+- LangChain (Cohere, custom)
+- LlamaIndex (multiple rerankers)
+- Haystack (reranking nodes)
+- Direct API calls (Cohere, Voyage)
+
+## Pricing
+
+Varies by reranker API or self-hosted compute costs.
