@@ -1,40 +1,46 @@
 ## Overview
 
-StreamingDiskANN is a new index type developed by Timescale, inspired by Microsoft's DiskANN algorithm. It's explicitly designed for dynamically changing datasets that update continuously.
+StreamingDiskANN is a custom index type in pgvectorscale inspired by Microsoft's DiskANN algorithm, optimized for disk-based storage with efficient streaming updates.
 
 ## Key Features
 
-- **Disk-Based Storage**: Stores ANN index on disk rather than memory, using SSDs to handle terabytes of vectors
-- **Streaming Post-Filtering**: Uses get_next() function to continuously retrieve nearest vectors until filter conditions are met
-- **No Cutoff**: Unlike traditional ef_search, uses streaming model to potentially traverse entire graph
-- **Dynamic Updates**: Designed for datasets that change continuously
+- Disk-based index supporting billions of vectors
+- Streaming updates without full rebuilds
+- SSD-optimized for sequential I/O
+- Memory-efficient with configurable cache
+- PostgreSQL-native implementation
+
+## Architecture
+
+The index uses:
+- Graph-based ANN structure (HNSW-like)
+- Disk layout optimized for SSDs
+- Incremental updates via streaming
+- LRU cache for hot data
+- Background compaction
 
 ## Performance
 
-On 50 million Cohere embeddings (768 dimensions), PostgreSQL with pgvectorscale achieves:
-- 28x lower p95 latency vs Pinecone's storage optimized index
-- 16x higher query throughput
-- 99% recall accuracy
+On 50 million Cohere embeddings:
+- 471 QPS at 99% recall
+- 28x lower p95 latency vs Pinecone
+- 16x higher throughput vs Qdrant
+- 75% lower cost when self-hosted
 
-## Technical Advantages
+## Comparison to Alternatives
 
-**Cost Efficiency**: Using SSDs enables terabyte-scale storage without prohibitive RAM costs
+- **In-memory HNSW**: Faster but memory-limited
+- **Traditional DiskANN**: Requires full rebuilds
+- **StreamingDiskANN**: Best of both worlds
 
-**Accurate Filtering**: Streaming approach guarantees accurate results even with secondary filters applied
+## Integration
 
-**PostgreSQL Integration**: Seamlessly integrated via pgvectorscale extension
-
-## Use Cases
-
-- Large-scale vector search (billions of vectors)
-- Applications with strict memory constraints
-- Filtered vector search scenarios
-- Real-time data ingestion with vector search
-
-## Implementation
-
-Available through pgvectorscale PostgreSQL extension.
+Seamlessly integrates with PostgreSQL:
+- Standard SQL syntax
+- Transaction support
+- pg vector compatibility
+- Familiar tooling
 
 ## Pricing
 
-Free and open-source (PostgreSQL license).
+Open-source as part of pgvectorscale.
