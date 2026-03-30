@@ -460,6 +460,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [Instaclustr for Managed Apache Cassandra 5.0](https://www.instaclustr.com/platform/cassandra-5-0/) - A managed service offering Apache Cassandra 5.0, which can be utilized as a vector database for AI applications. ([Read more](/details/instaclustr-for-managed-apache-cassandra-50.md)) `Managed Service` `Cassandra` `Nosql`
 - [Instaclustr for PostgreSQL](https://www.instaclustr.com/platform/managed-postgresql/) - A managed service for PostgreSQL that includes support for pgvector, enabling PostgreSQL to function as a vector database for AI workloads. ([Read more](/details/instaclustr-for-postgresql.md)) `Managed Service` `Postgresql` `Ai`
 - [Weaviate Cloud](https://weaviate.io/cloud) - Weaviate Cloud is the fully managed cloud deployment of the Weaviate vector database, providing a hosted environment for building and operating AI applications with scalable vector search, without managing infrastructure. ([Read more](/details/weaviate-cloud.md)) `Managed Service` `Cloud Native` `Vector Search`
+- [Rivestack](https://rivestack.io) - Managed PostgreSQL with built-in pgvector for AI workloads. Features HNSW indexing, NVMe storage, a SQL editor that converts search queries to embeddings, daily snapshots, and 14-day PITR. Free tier available. `Managed Service` `Postgresql` `pgvector`
 
 ## Multi Model & Hybrid Databases
 
