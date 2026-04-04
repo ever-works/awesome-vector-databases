@@ -2,10 +2,6 @@
 
 **Source:** [GitHub - rapidsai/cuvs](https://github.com/rapidsai/cuvs)
 
-**Category:** Open-source
-
-**Tags:** open-source, gpu-acceleration, vector-search, high-performance
-
 ---
 
 ## Description

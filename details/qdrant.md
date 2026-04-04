@@ -23,9 +23,3 @@ Qdrant is an open-source vector database and similarity search engine, purpose-b
 ## Pricing
 - **Free Tier:** Available for getting started and local deployments.
 - **Managed Cloud:** Enterprise-grade managed cloud with scalable pricing (specific details not provided in the available content).
-
-## Tags
-open-source, vector-search, similarity-search, rag
-
----
-**Note:** For full pricing details, visit the [official Qdrant website](https://qdrant.tech/).

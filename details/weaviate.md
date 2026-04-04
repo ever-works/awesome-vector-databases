@@ -18,9 +18,3 @@
 
 ## Pricing
 - No specific pricing information provided in the available content. Weaviate offers a free open-source version and mentions serverless and enterprise cloud options. For detailed pricing, refer to [Weaviate Pricing](https://weaviate.io/pricing).
-
-## Category
-**Vector Database Engines**
-
-## Tags
-open-source, cloud-native, semantic-search, scalable

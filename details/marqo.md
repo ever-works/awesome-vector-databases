@@ -1,30 +1,47 @@
-# Marqo
+## Overview
 
-[Marqo](https://www.marqo.ai/) is an open-source neural search engine that leverages vector representations to enable semantic search over textual data. It provides a high-level interface for building advanced search applications and abstracts away the complexity of vector databases.
+Marqo is an AI-native product discovery platform that goes beyond keyword search by combining brand-specific models trained for specific domains (fashion, groceries, homewear) with real-time behavioral data. It integrates LLM-based image search directly into the search model and adapts in real time to shopper intent and behavior, seamlessly shifting between results, carousels, guided discovery, and conversational search.
+
+## How It Works
+
+1. **Install the pixel** — Marqo's pixel is installed in a single line of code and starts capturing user interaction data (clicks, carts, purchases) to learn what customers want and how they shop.
+2. **Train a search engine tailored to your brand** — Marqo uses the product catalog, shopper behavior, and a proprietary LLM training framework to build a personalized AI search engine tailored to the ecommerce brand and its customers.
+3. **Plug in and go live** — Deploy via API or with one-click integrations for Shopify, Adobe Commerce, and Salesforce Commerce Cloud.
 
 ## Features
-- **Semantic Search:** Uses AI to interpret query intent and deliver accurate, relevant results, even for highly descriptive or uncommon search terms.
-- **Personalization:** Learns from user behaviors (clicks, add-to-carts, purchases) to personalize search results for each user.
-- **Automated Tagging:** Reduces or replaces manual tagging by analyzing images, text, and historical behavior to optimize search rankings.
-- **Custom LLM Training:** Trains brand- and domain-specific language models (LLMs) using proprietary frameworks to fine-tune search for each business.
-- **Multimodal Search:** Supports searching with images and text (text-to-image, image-to-text, or combined queries).
-- **Recommendations:** Provides product recommendations based on customer profile and interaction data.
-- **Customizable Search:** Allows boosting products based on margin, sponsorship status, or other business KPIs.
-- **Automated Collections:** Automatically generates tags and collections based on relevance and conversion data.
-- **Easy Integration:** Connects with product catalogs and PIM systems; minimal UI changes required.
-- **Retrieval Augmented Generation & Classification:** Supports advanced applications such as retrieval augmented generation and classification tasks.
-- **Cloud and On-Premise Options:** Marqo is available as open-source and as a managed cloud service (Marqo Cloud).
 
-## Category
-- Vector Database Engines
+- **Image Search** — Power image-based product search with text-to-image or image-to-text capabilities using LLM-based image search integrated directly into the search model.
+- **Customized Search** — Customize search for specific domains and user behavior. Boost products based on margin, sponsorship status, or other factors to meet business KPIs.
+- **Recommendations** — Power product recommendations by finding similar products and showing customers products with the highest likelihood to convert based on their profile.
+- **Automated Merchandising** — Automate ranking, boosts, filters, and collections through AI, reducing manual merchandising work.
+- **Real-Time Adaptation** — Adapts in real time to shopper intent and behavior, shifting between results, carousels, guided discovery, and conversational search.
+- **Multi-Modal Search** — Supports text, image, and multimodal queries.
+- **Conversion Optimization** — Optimizes search conversion using click-stream, purchase, and event data, delivering more intelligent results with every interaction.
+- **Multilingual Comprehension** — Supports queries in multiple languages with accurate semantic understanding.
 
-## Tags
-- open-source
-- semantic-search
-- vector-search
-- ai
+## Comparison with Legacy Search Platforms
+
+| Feature | Marqo | Legacy Search Platforms |
+|---|---|---|
+| Customization | Brand-specific models trained for specific domains | Limited customization |
+| Search Relevance | LLM-based AI models trained specifically for the domain | Keyword-based search or outdated neural hashing approaches |
+| Configuration | Automated generation of tags and collections based on relevance and conversion | Manual configuration of tags and collections |
+| Optimization | Search results optimized to meet business KPIs | Limited ability to influence results |
+| Image and Multimodal Search | LLM-based image search integrated directly into the search model | No support for reverse image search or outdated/low relevance technology |
+
+## Case Study: KICKS CREW
+
+Sneaker retailer KICKS CREW saw measurable outcomes after implementing Marqo:
+- **+16.0%** increase in revenue added to cart from search
+- **+17.7%** uplift in sitewide conversion rate
+
+## Integrations
+
+- API-based deployment
+- One-click integration with Shopify
+- One-click integration with Adobe Commerce
+- One-click integration with Salesforce Commerce Cloud
 
 ## Pricing
-- **Marqo Cloud:** Managed cloud service (details not specified in provided content; check website for latest pricing).
-- **Professional Services:** Additional support and services available (contact Marqo for details).
-- **Open Source:** Core Marqo is open-source and available for self-hosting.
+
+Contact Marqo for pricing details. The platform promises measurable ROI in 14 days.

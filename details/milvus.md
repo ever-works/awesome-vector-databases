@@ -30,6 +30,3 @@ Milvus is a mature, open-source vector database maintained by Zilliz. It is desi
 
 ## Pricing
 No explicit pricing information is provided for Milvus open source deployments. Zilliz Cloud, the fully managed Milvus service, may have its own pricing structure, but details are not included in the provided content.
-
-## Tags
-open-source, vector-search, scalable, gpu-acceleration

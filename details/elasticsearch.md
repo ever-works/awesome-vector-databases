@@ -9,7 +9,7 @@
 - **Full-Text Search**: Fast and relevant full-text search with fine-tuned relevancy and support for structured, unstructured, geo, and metric data.
 - **Analytics**: Aggregations and analytics on large datasets, enabling trends and pattern analysis.
 - **Elasticsearch Query Language (ES|QL)**: Advanced query language for transforming and simplifying data investigation and workflows.
-- **AI Integration**: The Elasticsearch Relevance Engine™ enables semantic search, integration with LLMs (Large Language Models), hybrid search, and use of transformer models.
+- **AI Integration**: The Elasticsearch Relevance Engine enables semantic search, integration with LLMs (Large Language Models), hybrid search, and use of transformer models.
 - **Resiliency**: Built-in fault tolerance, cross-cluster replication, and high availability features.
 - **Flexible Data Storage**: Supports local fast queries or remote storage (e.g., S3) for cost-effective data management; runtime fields for flexible data onboarding.
 - **Machine Learning**: Automate anomaly detection and analytics on data.
@@ -20,14 +20,5 @@
 - **Deployment Options**: Available as open source, on-premises, hosted on Elastic Cloud (AWS, GCP, Azure), and as a fully managed serverless offering.
 - **Use Cases**: Log monitoring, infrastructure monitoring, APM, synthetic monitoring, search and discovery, geospatial analysis, SIEM, and endpoint security.
 
-## Category
-- Vector Database Engines
-
-## Tags
-- Open-source
-- Vector search
-- Hybrid search
-- Scalable
-
 ## Pricing
-- **Not specified in provided content.** (Elastic offers open source downloads, hosted cloud, and serverless options; specific pricing details can be found on their website.)
+Not specified in provided content. Elastic offers open source downloads, hosted cloud, and serverless options; specific pricing details can be found on their website.

@@ -27,9 +27,3 @@
 
 ## Pricing
 - **Free and open-source**
-
-## Tags
-open-source, ann, similarity-search, scalable
-
-## Category
-SDKs & Libraries

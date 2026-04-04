@@ -24,7 +24,9 @@
 - Vector Database Engines
 
 ## Tags
-- vector-search
-- real-time
-- analytics
-- ai
+- embedded
+- lance-format
+- disk-based
+- python
+- javascript
+- local-first

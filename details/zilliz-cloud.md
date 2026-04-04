@@ -28,9 +28,3 @@
 - **Pay-As-You-Go**: Upgrade to a pay-as-you-go plan when ready to launch applications.
 
 (Specific pricing details are not provided in the content.)
-
-## Category
-- Vector Database Engines
-
-## Tags
-- cloud-native, managed-service, vector-search, milvus

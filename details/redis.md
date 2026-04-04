@@ -1,37 +1,47 @@
-# Redis
+## Overview
 
-[Redis](https://redis.io/) is an in-memory data store that supports a range of modern data workloads, including caching, vector search, and NoSQL database use cases. Through its RediSearch and RedisAI modules, Redis extends its capabilities to include native vector search, indexing, and hybrid queries, making it suitable for real-time AI and semantic search applications.
+Redis is an in-memory data store that provides vector search capabilities through its RediSearch module. It delivers sub-millisecond latency and supports hybrid search combining BM25 text search with vector similarity, alongside a fully managed Redis Cloud vector database offering.
 
-## Features
+## Key Features
 
-- **In-memory Data Store:** Fast, low-latency access for caching and real-time analytics.
-- **Vector Search:** Native vector indexing and similarity search using RediSearch. Supports HNSW indexing, KNN queries, and hybrid (text+vector) search.
-- **Document Database:** Store and manage JSON documents, with indexing and search support.
-- **NoSQL Database:** Key-value storage with support for multiple data structures (strings, hashes, lists, sets, sorted sets, bitmaps, hyperloglogs, geospatial indexes, streams).
-- **RediSearch Module:** Enables full-text search, secondary indexing, and vector search on structured and unstructured data.
-- **RedisAI Module:** Manage and deploy deep learning models directly within Redis for real-time inference.
-- **Semantic Search & RAG:** Supports semantic caching and retrieval augmented generation (RAG) for AI workloads.
-- **Real-time Analytics:** High throughput and low latency for analytics and transactional workloads.
-- **Scalability & High Availability:** Cluster support, replication, and automatic failover for 99.999% availability.
-- **Multi-cloud Support:** Available on AWS, Google Cloud, and Microsoft Azure via Redis Cloud.
-- **Integration:** Works with a wide range of programming languages and client libraries.
-- **Auto Tiering:** Optimizes memory usage by automatically moving data between memory and storage tiers.
+- **Vector Search**: Native vector indexing and similarity search via RediSearch module using HNSW
+- **Sub-Millisecond Latency**: Ultra-fast query response powered by in-memory architecture
+- **Hybrid Search**: Combines BM25 text search with vector similarity and filtering in a single query
+- **Multiple Data Types**: Supports key-value, documents, streams, geospatial, and more alongside vectors
+- **Scalability**: Cluster support with replication and automatic failover
+- **Real-Time Data**: Immediate visibility of updates and inserts
+
+## Deployment Options
+
+### Redis Community Edition
+- Open source and free
+- Self-hosted
+
+### Redis Cloud
+- Fully managed service on AWS, Google Cloud, and Azure
+- Redis Vector Database offering
+- Usage-based pricing with scalable tiers
+- Enterprise-grade SLAs and support
+
+### Redis Enterprise
+- On-premises or hybrid deployment
+- Advanced features for production workloads
+
+## Use Cases
+
+- Semantic caching
+- Retrieval-augmented generation (RAG)
+- Real-time recommendation systems
+- Feature stores for ML
+- Session and context management for AI agents
 
 ## Pricing
 
-Redis offers multiple deployment options:
+### Community Edition
+Free and open source.
 
-- **Community Edition:** Open source and free to use.
-- **Redis Cloud:** Managed cloud service on AWS, Google Cloud, and Azure. Pricing varies based on usage and configuration. [Pricing details](https://redis.io/pricing/) can be found on the Redis website.
-- **Redis Software:** Enterprise-grade software for on-premises or hybrid deployments. Pricing is available upon request.
+### Redis Cloud
+Usage-based pricing varies by tier and configuration. Pricing details at redis.io/pricing.
 
-## Category
-
-- Vector Database Engines
-
-## Tags
-
-- vector-search
-- in-memory
-- hybrid-search
-- real-time
+### Redis Enterprise
+Available upon request for on-premises deployments.

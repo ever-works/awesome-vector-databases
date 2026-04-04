@@ -30,7 +30,7 @@ Pinecone is a fully managed, purpose-built vector database for production-scale 
 ### Data Model & Organization
 - **Vector embeddings storage** – stores and serves high-dimensional vector representations from models.
 - **Bring-your-own vectors** – use your own embedding models and ingest their vectors.
-- **Hosted embedding models** – option to use Pinecone’s provided models for generating embeddings.
+- **Hosted embedding models** – option to use Pinecone's provided models for generating embeddings.
 - **Namespaces** – logical partitions of data to support isolation (e.g., multitenancy or domain separation).
 
 ### Integrations & Ecosystem
