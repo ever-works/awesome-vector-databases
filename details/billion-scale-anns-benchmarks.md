@@ -11,14 +11,6 @@ A benchmarking framework for evaluating approximate nearest neighbor search (ANN
 - Tools for dataset preparation, evaluation, and result visualization
 - Open-source and extensible for new datasets or algorithms
 
-## Category
-- Benchmarks & Evaluation
-
-## Tags
-benchmark, anns, scalability, performance
-
-## Source
-[https://github.com/harsha-simhadri/big-ann-benchmarks](https://github.com/harsha-simhadri/big-ann-benchmarks)
-
 ## Pricing
+
 - No pricing information provided (open source project).
