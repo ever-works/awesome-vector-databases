@@ -40,8 +40,8 @@ Uses Dockerfile and docker-compose for unified gRPC/HTTP server startup. Key env
 | HTTP_PORT | HTTP Server port | 3000 |
 | GRPC_HOST | gRPC Server host | 0.0.0.0 |
 | GRPC_PORT | gRPC Server port | 50051 |
-| STORAGE_TYPE | inmemory \| rocksdb | inmemory |
-| INDEX_TYPE | flat \| kdtree \| hnsw | flat |
+| STORAGE_TYPE | inmemory || rocksdb | inmemory |
+| INDEX_TYPE | flat || kdtree || hnsw | flat |
 | LOGGING | Enable logs | true |
 | DISABLE_HTTP | Disable HTTP Server | false |
 
