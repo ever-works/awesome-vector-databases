@@ -8,7 +8,7 @@ Milvus is a mature, open-source vector database maintained by Zilliz. It is desi
 
 ## Features
 - **Open Source:** Freely available and maintained by an active community.
-- **Multiple Deployment Options:**
+- **Multiple Deployment Options:
   - **Milvus Lite:** Lightweight version for easy and quick start.
   - **Milvus Standalone:** Robust, single-machine deployment for smaller scale.
   - **Milvus Distributed:** Kubernetes-based deployment for enterprise-grade scalability.
