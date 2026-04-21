@@ -1,6 +1,6 @@
 # OpenSearch
 
-**Category:** Search & Retrieval  
+**Category:** Vector Database Engines  
 **Tags:** aws, faiss, nmslib, neural-search, open-source
 
 [Website](https://opensearch.org/)

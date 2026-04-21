@@ -30,14 +30,6 @@
 - **Cluster support:**
   - Distributed cluster mode for scaling to billions of documents across many servers (available in Redis Cloud and Redis Enterprise Software)
 
-## Category
-
-- SDKs & Libraries
-
-## Tags
-
-vector-search, redis, open-source, similarity-search
-
 ## License
 
 - Redis Source Available License 2.0 (RSALv2) or Server Side Public License v1 (SSPLv1)
