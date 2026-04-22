@@ -26,7 +26,7 @@ Milvus Distributed is the horizontally scalable, distributed deployment mode of 
   - Suitable for mission‑critical and always‑on applications.
 
 - **Comprehensive deployment toolkit**
-  - Kubernetes/Helm‑based deployment (per "Get Started" prereq: Helm).
+  - Kubernetes/Helm‑based deployment (per \"Get Started\" prereq: Helm).
   - Integrates with Milvus ecosystem tools such as:
     - Milvus CLI
     - Attu (web-based management UI)
