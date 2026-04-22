@@ -19,14 +19,3 @@
 ## Pricing
 - **LanceDB Cloud**: Currently in private beta. Pricing details are not disclosed; early access can be requested.
 - **LanceDB Open Source**: Available for free as open source software.
-
-## Category
-- Vector Database Engines
-
-## Tags
-- embedded
-- lance-format
-- disk-based
-- python
-- javascript
-- local-first
