@@ -14,14 +14,5 @@
 - **Highly Customizable:** Allows configuration of vector dimensions, number of replicas, and other advanced settings.
 - **Easy Installation:** Designed for quick and simple deployment.
 
-## Category
-- Vector Database Engines
-
-## Tags
-- open-source
-- distributed
-- scalable
-- real-time
-
 ## Pricing
 No pricing information was provided; Vald is open-source.

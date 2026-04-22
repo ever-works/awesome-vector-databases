@@ -1,18 +1,12 @@
 # Milvus Lite
 
-**Category:** SDKs & Libraries  
+**Category:** Embedded Vector Databases  
 **Website:** https://milvus.io/  
 **Brand:** Milvus
 
-Milvus Lite is a lightweight, pip-installable variant of the Milvus vector database that runs directly as a library in your development environment (e.g., notebooks or laptops). It is intended for learning, experimentation, and rapid prototyping of AI and vector search applications.
+Milvus Lite is a lightweight, pip-installable variant of the Milvus vector database that runs as a library in notebooks or laptops, ideal for learning, experimentation, and rapid prototyping of AI and vector search applications.
 
-![Milvus Lite](https://milvus.io/img/milvus-overview.png)
-
----
-
-## Description
-
-Milvus Lite is a “VectorDB-as-a-library” deployment option of Milvus. It runs locally in notebooks or on laptops and can be installed via `pip`. It provides core vector database capabilities in a minimal footprint, suitable for small-scale usage, education, and prototyping before moving to larger Milvus deployments.
+![Milvus Lite](https://milvus.io/assets/milvus-lite.svg)
 
 ---
 
@@ -41,14 +35,6 @@ Milvus Lite is a “VectorDB-as-a-library” deployment option of Milvus. It run
 
 ---
 
-## Typical Use Cases
-
-- Learning how vector databases work and how to use Milvus APIs.
-- Experimenting with embeddings and vector search workflows in notebooks.
-- Rapid prototyping of GenAI or RAG-style applications on a local machine.
-
----
-
 ## Pricing
 
-No pricing information is provided in the available content. Milvus Lite is described as an open-source deployment option of Milvus; refer to the official documentation or repository for licensing and usage details.
+Free and open-source under the Apache 2.0 license.
