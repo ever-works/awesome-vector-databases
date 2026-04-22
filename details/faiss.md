@@ -1,13 +1,12 @@
-# FAISS
-
-Library for vector similarity search.
-
 ## Features
 
 - IVF, PQ, HNSW indexes
-- GPU acceleration
-- Batch/range search
-- C++/Python
+- GPU/CPU acceleration
+- Efficient KNN search
+
+## Use Cases
+
+- Custom similarity search applications
 
 ## Pricing
 

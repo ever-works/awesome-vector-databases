@@ -1,14 +1,14 @@
-# PGVector
-
-PostgreSQL extension for vector search.
-
 ## Features
 
-- HNSW/IVFFlat indexes
-- Multiple distance metrics
-- SQL integration
-- Hybrid search with full-text
+- HNSW/IVF indexes for vector similarity search
+- Disk persistence
+- ACID transactions
+- Hybrid search via pg_trgm
+
+## Use Cases
+
+- RAG on relational data
 
 ## Pricing
 
-Free open-source.
+Free and open-source.

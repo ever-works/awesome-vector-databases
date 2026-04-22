@@ -15,7 +15,7 @@ Deep Lake is Activeloop's open-source database designed for complex, unstructure
 
 ## Managed Tensor Database (2026)
 
-Serverless managed service that eliminates self-hosting complexity and substantially lowers costs. Specify `runtime = {\"tensor_db\": True}` when creating Vector Store.
+Serverless managed service that eliminates self-hosting complexity and substantially lowers costs. Specify `runtime = {"tensor_db": True}` when creating Vector Store.
 
 ## Storage Architecture
 

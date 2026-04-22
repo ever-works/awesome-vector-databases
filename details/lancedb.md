@@ -1,13 +1,13 @@
-# LanceDB
-
-Open-source columnar vector DB for AI.
-
 ## Features
 
-- Arrow/Lance format
+- Apache Arrow integration
+- Zero-copy access
 - SQL queries
 - Multimodal support
-- Hybrid search, filters
+
+## Use Cases
+
+- AI lakehouses and RAG
 
 ## Pricing
 
