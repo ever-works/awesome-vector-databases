@@ -1,6 +1,6 @@
 ## Overview
 
-Mem0 ("mem-zero") is a universal, self-improving AI memory layer that enhances AI assistants and agents with intelligent memory, enabling personalized AI interactions with significant performance and cost improvements.
+Mem0 (\"mem-zero\") is a universal, self-improving AI memory layer that enhances AI assistants and agents with intelligent memory, enabling personalized AI interactions with significant performance and cost improvements.
 
 ## Breakthrough Performance (2026)
 

@@ -1,39 +1,27 @@
 ## Overview
 
-AutoGen is an open-source programming framework from Microsoft Research for building AI agents and facilitating cooperation among multiple agents to solve tasks. It offers a unified multi-agent conversation framework as a high-level abstraction for using foundation models.
+AutoGen enables multi-agent systems where agents converse, use tools, and retrieve from vector stores.
+
+## Vector Integration
+
+Supports retrieval from vector DBs via tool calling and custom functions, e.g., Qdrant retrievers in agent loops.
 
 ## Features
 
-- **Customizable Agents**: Agents integrate LLMs, tools, and humans via automated agent chat
-- **Multiple Conversation Patterns**: Supports two-agent chat, sequential chat (chained conversations), and group chat (3+ agents)
-- **Automated Collaboration**: Agents can collectively perform tasks autonomously or with human feedback
-- **Tool Integration**: Agents can use tools via code execution
-- **Asynchronous Architecture**: Version 0.4 features event-driven, asynchronous messaging for better scalability
-- **AutoGen Studio**: No-code GUI for building multi-agent applications
-
-## Conversation Patterns
-
-- **Two-agent chat**: Simple conversation between two agents
-- **Sequential chat**: Sequence of chats between two agents, chained by a carryover mechanism
-- **Group chat**: Single chat involving more than two agents with dynamic speaker selection
+- **Tool Calling**: Code execution, API calls, custom functions
+- **Memory**: Conversation history, group chat memory
+- **Agents**: Customizable agents with LLM backends
 
 ## Use Cases
 
-The framework has demonstrated effectiveness across various domains:
-- Mathematics problem solving
-- Code generation and debugging
-- Question-answering systems
-- Supply-chain optimization
-- Online decision-making
-- Content generation
+- Group chat agents for complex problem-solving
+- Tool-using chatbots
+- Collaborative task agents
 
-## Architecture
+## Comparisons
 
-AutoGen v0.4 features an asynchronous, event-driven architecture with:
-- Asynchronous messaging between agents
-- Support for both event-driven and request/response patterns
-- Improved scalability and performance
+AutoGen emphasizes conversational multi-agent vs LangChain's structured chains.
 
 ## Pricing
 
-Free and open-source under the Apache 2.0 license.
+Open-source (Apache 2.0).

@@ -1,54 +1,29 @@
 ## Overview
 
-This 2026 research survey presents a systematic review of recent advances in combinations of Large Language Models (LLMs) and vector databases. Published on arXiv (2402.01763) in January 2026, it addresses critical challenges in LLM applications.
+Survey on LLM + vector DB synergies, focusing on RAG architectures.
 
-## Key Topics Covered
+## Features
 
-### Integration Challenges
+- Hallucination mitigation via retrieval
+- Hybrid search for LLMs
+- Benchmark reviews in RAG contexts
 
-- **Hallucination Mitigation**: How vector databases provide factual grounding for LLM outputs
-- **Bias Reduction**: Using diverse vector stores to balance LLM responses
-- **Real-Time Knowledge**: Enabling LLMs to access current information through vector retrieval
-- **Context Management**: Efficient handling of large context windows with vector search
+## Theory/Practice Gaps
 
-### Technical Approaches
+- Theoretical retrieval optimality vs LLM context limits
+- Academic RAG vs production latency constraints
 
-- Retrieval-Augmented Generation (RAG) architectures
-- Hybrid search strategies combining dense and sparse retrieval
-- Vector database selection criteria for LLM applications
-- Performance optimization techniques
-- Cost-effectiveness analysis
+## Use Cases
 
-### Applications Analyzed
+- Academic selection for LLM retrieval papers
+- RAG system design guidance
 
-- Question-answering systems
-- Chatbots and conversational AI
-- Code generation and programming assistants
-- Document analysis and summarization
-- Enterprise knowledge management
+## Comparisons
 
-## Research Methodology
+| Aspect | This Survey | VLDB | NeurIPS |
+|--------|-------------|------|---------|
+| Focus | LLM+RAG | VDBMS | ANN algos |
 
-The survey analyzes:
-- 100+ research papers from 2023-2026
-- Production system architectures
-- Benchmark comparisons
-- Real-world deployment case studies
+## Publication
 
-## Key Findings
-
-- Vector databases significantly reduce LLM hallucinations
-- Hybrid retrieval approaches outperform pure vector or keyword search
-- Proper chunking strategies critical for retrieval quality
-- Cost-performance trade-offs vary significantly across use cases
-
-## Target Audience
-
-- AI researchers and practitioners
-- LLM application developers
-- System architects designing RAG systems
-- Graduate students in AI/ML
-
-## Citation
-
-Published on arXiv, freely accessible for academic and commercial use.
+ArXiv 2402.01763 (2024)

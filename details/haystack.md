@@ -1,42 +1,30 @@
-## Overview
+## RAG Integration
 
-Haystack is an open-source Python framework designed specifically for building production-grade RAG pipelines, AI agents, and semantic search systems that dominates in accuracy and evaluation capabilities.
+Haystack integrates RAG via customizable pipelines: index documents with splitters/embedders, retrieve via hybrid retrievers, rerank candidates, and generate with LLMs, all orchestrated in modular flows.
 
 ## Features
 
-- Mature, modular framework architecture
-- Pipeline-based approach for component composition
-- Lowest token usage (~1.57k per operation)
-- ~5.9 ms framework overhead
-- Easy combination of retrievers, readers, and generators
-- Production-ready with enterprise customers
-- Comprehensive evaluation tools
-
-## Enterprise Adoption
-
-Trusted by leading organizations:
-- The European Commission
-- The Economist
-- Oxford University Press
-- Meets requirements of regulated industries
-
-## Technical Capabilities
-
-- Modular pipeline architecture
-- Support for multiple vector databases
-- Advanced retrieval strategies
-- Built-in evaluation framework
-- Agent capabilities
-- Semantic search optimization
+- **Chunking**: Overlapping splitters, sentence/embed-aware
+- **Retrieval**: Dense (DPR), sparse (BM25), hybrid fusion
+- **Rerank**: Cohere, BGE-reranker, cross-encoders
+- **Pipelines**: Extractive QA, generative, indexing, evaluation
 
 ## Use Cases
 
-- Enterprise RAG applications
-- Regulated industry deployments
-- Production semantic search
-- AI agent systems
-- Question answering platforms
+- Enterprise semantic search
+- Document QA chatbots
+- Knowledge-grounded agents
+- Multi-lingual RAG apps
+
+## Haystack vs LlamaIndex
+
+| Feature | Haystack | LlamaIndex |
+|---------|----------|------------|
+| Design | Pipeline nodes | Indexes/Engines |
+| Strengths | Modularity, benchmarks | Data connectors, simplicity |
+| Maturity | Battle-tested enterprise | Fast-evolving ecosystem |
+| Best For | Complex pipelines | Quick RAG setups |
 
 ## Pricing
 
-Free and open-source framework, commercial support available through deepset
+Free open-source (Apache 2.0). Enterprise support via deepset.

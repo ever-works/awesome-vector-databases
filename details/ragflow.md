@@ -1,56 +1,29 @@
-## Overview
+## RAG Integration
 
-RAGFlow is an open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG capabilities with Agent functionality. It offers a streamlined RAG workflow for deep document understanding and citation-backed responses.
+RAGFlow streamlines RAG for LLM applications: upload/parse complex docs, chunk/embed into knowledge base, query with hybrid retrieval + reranking, generate traceable responses with source citations.
 
-## Key Features
+## Features
 
-- **Deep Document Understanding**: Advanced parsing of complex document formats
-- **Multi-Format Support**: Processes PDFs, Word docs, CSVs, Excel, PowerPoint, and more
-- **Table & Image Extraction**: Intelligently extracts structured data and visual elements
-- **Citation-Backed Responses**: Every answer includes references to source documents
-- **Advanced Chunking**: Employs sophisticated chunking strategies for optimal retrieval
-- **Knowledge Base Management**: Organizes parsed data for efficient search and retrieval
-- **Fused Re-ranking**: Combines multiple recall strategies with re-ranking for accuracy
-- **Agent Capabilities**: Integrates agentic workflows with RAG pipelines
+- **Chunking**: Structure-aware (tables/images), multi-granularity
+- **Retrieval**: Multi-vector recall, full-text + semantic
+- **Rerank**: Fused scoring across strategies
+- **Generation**: Multi-LLM support, agent fusion
 
-## How It Works
+## Use Cases
 
-### 1. Document Processing
+- Internal knowledge chat
+- Research assistants
+- Legal/financial doc analysis
+- Customer support bots
 
-- Parse uploaded files using structure recognition models
-- Extract tables, images, and metadata
-- Break documents into optimally-sized chunks
+## LlamaIndex vs Haystack
 
-### 2. Knowledge Base Creation
-
-- Convert chunks into vector embeddings
-- Store in knowledge base with advanced indexing
-- Maintain document structure and citations
-
-### 3. Query Processing
-
-- Receive user query and convert to embeddings
-- Search knowledge base using hybrid retrieval
-- Apply fused re-ranking to prioritize results
-- Generate response with LLM and citations
-
-## Applications
-
-- **Customer Support**: Citation-backed chatbots with accurate responses
-- **Research & Education**: Academic research assistants with source attribution
-- **Financial Analysis**: Document-grounded financial insights
-- **Healthcare**: Medical decision support with evidence-based answers
-- **Legal Tech**: Contract analysis with precise citations
-- **Enterprise Search**: Internal knowledge bases with traceable answers
-
-## Integration
-
-RAGFlow integrates with:
-- Major LLM providers (OpenAI, Anthropic, etc.)
-- Popular vector databases
-- Document management systems
-- Custom embedding models
+| Feature | LlamaIndex | Haystack | RAGFlow |
+|---------|------------|----------|---------|
+| Parsing | Good | Standard | Advanced (tables/images) |
+| UI | Basic | CLI/API | Visual workflow |
+| Deployment | Cloud | Self-host | Self-host focus |
 
 ## Pricing
 
-Free and open-source with self-hosting options.
+Free open-source (Apache 2.0).

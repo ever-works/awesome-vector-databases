@@ -21,7 +21,7 @@ Prem AI's amnesiac architecture ensures:
 
 ## Benefits
 
-- **Privacy**: Complete data ephemeral ity
+- **Privacy**: Complete data ephemerality
 - **Compliance**: Meets GDPR, HIPAA requirements
 - **Security**: No data breach risk from logs
 - **Sovereignty**: Full data control

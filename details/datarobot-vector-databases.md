@@ -1,20 +1,3 @@
----
-name: DataRobot Vector Databases
-slug: datarobot-vector-databases
-url: https://docs.datarobot.com/en/docs/api/reference/sdk/CHANGES.html
-vendor: DataRobot
-category: managed-vector-databases
-featured: true
-images:
-  - https://www.datarobot.com/wp-content/uploads/2023/06/genai-hero.png
-  - https://www.datarobot.com/wp-content/uploads/2024/01/GenAI-BG.jpg
-logo: https://www.datarobot.com/wp-content/uploads/2024/01/datarobot-logo.svg
-labels:
-  - vector-databases
-  - rag
-  - managed-service
----
-
 ## Overview
 
 DataRobot Vector Databases provide FAISS-based internal vector stores and managed connections to external vector databases. They are integrated into the DataRobot AI platform to support retrieval-augmented generation (RAG) and other embedding-based AI workloads.

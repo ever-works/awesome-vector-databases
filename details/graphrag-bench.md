@@ -1,5 +1,20 @@
-# GraphRAG-Bench
+## Overview
 
-Rigorous evaluation framework that benchmarks GraphRAG against vanilla RAG across reasoning tasks, multi-hop queries, and domain challenges. Released May 2025, it provides standardized metrics for comparing graph-enhanced retrieval approaches with traditional vector-only retrieval.
+GraphRAG-Bench is a rigorous evaluation framework benchmarking GraphRAG against vanilla RAG across reasoning tasks, multi-hop queries, and domain challenges.
 
-[https://graphrag-bench.github.io/](https://graphrag-bench.github.io/)
+## Key Features
+
+- Standardized metrics for graph-enhanced retrieval
+- Multi-hop query evaluation
+- Domain-specific challenges
+- Comparison with traditional vector RAG
+
+## Use Cases
+
+- Hybrid retrieval system selection
+- GraphRAG vs vector DB performance
+- Production RAG optimization
+
+## Pricing
+
+Free and open-source.

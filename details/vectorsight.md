@@ -17,3 +17,7 @@ Traditional monitoring tools like Prometheus, Grafana, and Datadog aren't design
 ## Status
 
 The platform is coming soon. Interested users can sign up to be notified when it launches.
+
+## Pricing
+
+Coming soon.
