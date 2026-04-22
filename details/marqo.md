@@ -12,7 +12,7 @@ Marqo is an AI-native product discovery platform that goes beyond keyword search
 
 - **Image Search** — Power image-based product search with text-to-image or image-to-text capabilities using LLM-based image search integrated directly into the search model.
 - **Customized Search** — Customize search for specific domains and user behavior. Boost products based on margin, sponsorship status, or other factors to meet business KPIs.
-- **Recommendations** — Power product recommendations by finding similar products and showing customers products with the highest likelihood to convert based on their profile.
+- **Recommendations** — Power product recommendations by finding similar products and showing customers products with highest likelihood to convert based on their profile.
 - **Automated Merchandising** — Automate ranking, boosts, filters, and collections through AI, reducing manual merchandising work.
 - **Real-Time Adaptation** — Adapts in real time to shopper intent and behavior, shifting between results, carousels, guided discovery, and conversational search.
 - **Multi-Modal Search** — Supports text, image, and multimodal queries.
