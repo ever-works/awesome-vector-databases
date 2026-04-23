@@ -1,7 +1,12 @@
 ## Overview
-brinicle is a C++ vector index engine optimized for resource-constrained environments.
+
+Spotify's vector index for memory-constrained environments.
 
 ## Features
-- Efficient indexing for low-RAM setups
-- High performance on production workloads
-- Approximate nearest neighbor search
+
+- Efficient indexing
+- Approximate search
+
+## Pricing
+
+Free and open-source.

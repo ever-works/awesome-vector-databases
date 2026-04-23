@@ -1,8 +1,13 @@
 ## Overview
-VelesDB is an embedded database combining vector, graph, and columnar storage.
+
+Rust core embedded DB (~6MB) with vector, graph, columnar support.
 
 ## Features
-- Rust core with small footprint (~6MB)
-- HNSW indexing with 5 distance metrics
-- VelesQL query language (SQL + NEAR + MATCH)
-- Python and Rust SDKs
+
+- HNSW with 5 metrics
+- VelesQL (SQL + NEAR + MATCH)
+- Python/Rust SDKs
+
+## Pricing
+
+Free and open-source.

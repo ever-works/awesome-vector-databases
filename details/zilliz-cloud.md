@@ -1,14 +1,13 @@
-# Zilliz Cloud
+## Overview
 
-[Zilliz Cloud](https://zilliz.com/) is a fully-managed vector database service powered by Milvus, designed for fast, scalable, and high-performance vector search applications.
+Managed Milvus vector database on cloud for AI applications.
 
 ## Features
-- **Fully Managed Service**: No infrastructure management required.
-- **Powered by Milvus**: Built on open-source Milvus.
-- **High Performance**: Cardinal search engine up to 10x faster.
-- **Scalability**: Up to 500 compute units, 100B+ items.
-- **Security**: SOC2, ISO27001, RBAC.
+
+- Auto-scaling clusters
+- Multi-tenancy
+- Integration with popular embedding models
 
 ## Pricing
-- **Free Tier**: No credit card.
-- **Pay-As-You-Go**.
+
+Free tier, usage-based billing.

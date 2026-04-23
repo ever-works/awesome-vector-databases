@@ -1,11 +1,13 @@
-# Cloudflare Vectorize
+## Overview
 
-Managed, globally distributed vector database for Cloudflare Workers.
+Cloudflare Vectorize is a vector database running at the edge.
 
-## Features
-- Serverless scaling
-- Integrated with Workers AI
-- Supports cosine/euclidean metrics
+## Key Features
+
+- Edge-native for Workers apps
+- 50k namespaces, 5M vector cap per index
+- No hybrid search
 
 ## Pricing
-Usage-based.
+
+Usage-based, ~$47/mo.

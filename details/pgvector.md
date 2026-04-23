@@ -1,14 +1,18 @@
+## Overview
+
+pgvector is a PostgreSQL extension for vector search.
+
 ## Features
 
-- HNSW/IVF indexes for vector similarity search
-- Disk persistence
-- ACID transactions
-- Hybrid search via pg_trgm
+- Native vector similarity search
+- Integrates with PostgreSQL
+- Basic vector search methods
 
-## Use Cases
+## Limitations
 
-- RAG on relational data
+- Lacks advanced indexing
+- Not optimized for high-speed/concurrent queries or large-scale
 
 ## Pricing
 
-Free and open-source.
+Free as open-source extension.

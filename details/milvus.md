@@ -1,15 +1,17 @@
-# Milvus
+## Overview
 
-Milvus is a mature, open-source vector database maintained by Zilliz.
+Milvus is an open-source vector database for massive-scale vector data.
 
 ## Features
 
-- Open Source
-- Multiple Deployment Options: Lite, Standalone, Distributed
-- Scalability to billions of vectors
 - GPU acceleration
-- Metadata filtering, hybrid search
+- Distributed querying
+- Efficient indexing: IVF, HNSW, PQ
+- Scalability with efficient index storage and shard management
+- Native support for Python, Java, Go, etc.
+- Integration with Kafka
+- Real-time updates, hybrid search, rich metadata handling
 
 ## Pricing
 
-Free open-source.
+Cost-effective for on-premise use as open-source; large-scale deployments may require substantial resources.

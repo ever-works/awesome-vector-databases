@@ -1,11 +1,13 @@
 ## Overview
-Rivestack provides managed PostgreSQL with pgvector for handling vector embeddings in AI applications.
+
+PostgreSQL as a service with built-in vector search for AI.
 
 ## Features
-- Native pgvector support
-- HNSW indexing for efficient similarity search
-- Built-in SQL editor with embedding search
-- Free tier available
+
+- HNSW indexing
+- SQL editor with embedding search
+- Free tier
 
 ## Pricing
-Free tier available; paid plans for production workloads.
+
+Free tier available.

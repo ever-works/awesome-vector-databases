@@ -1,14 +1,13 @@
-## Features
+## Overview
 
-- Apache Arrow integration
-- Zero-copy access
-- SQL queries
-- Multimodal support
+LanceDB is an open-source, serverless vector database that stores data in a persistent disk format. It is designed to run on edge devices or within serverless functions without requiring an always-on server.
 
-## Use Cases
+## Best For
 
-- AI lakehouses and RAG
+- Mobile apps
+- Edge computing
+- Cost-efficient data lakes
 
-## Pricing
+## Key Edge
 
-Free open-source.
+- Blazing fast zero-copy reads directly from cloud storage or local disk.

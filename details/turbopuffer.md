@@ -1,10 +1,13 @@
 ## Overview
 
-Serverless vector DB on object storage for cost efficiency.
+Turbopuffer is a managed serverless vector database designed for multi-tenant SaaS products.
 
-## Performance
-- Cold p90: 444ms
-- Warm p50: 8ms
+## Key Features
+
+- No enforced namespace limits
+- Cheapest managed option
+- Usage-based pricing
 
 ## Pricing
-10x cheaper than traditional DBs.
+
+Usage-based, $64/mo minimum. No free tier.

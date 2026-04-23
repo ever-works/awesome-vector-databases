@@ -1,33 +1,23 @@
 ## Overview
 
-TiDB, a MySQL-compatible database, has introduced built-in vector search capabilities, enabling seamless storage and search for vectors directly using SQL. TiDB extends MySQL syntax to support Vector Search and introduces new Vector data types and several vector functions.
+TiDB Vector Search is an extension of TiDB, an open-source distributed SQL database, adding support for vector embeddings and similarity search within the same platform.
 
 ## Key Features
 
-### MySQL Compatibility
-TiDB Serverless brings built-in vector search to the MySQL landscape. Developers can leverage the familiar SQL environment to effortlessly join, index, and query both operational and vector data.
+- Store vectors alongside relational data to simplify RAG stacks
+- SQL-based metadata filtering and joins
+- HNSW vector indexing combined with SQL indexes
+- Hybrid search (keyword + vector)
+- Distributed scale-out for high workloads
+- High availability, backups, and observability
+- Integrations: LangChain, LlamaIndex
 
-### Vector Data Types
-- **VECTOR**: A sequence of single-precision floating-point numbers with any dimension
+## Deployment
 
-### Vector Indexes
-TiDB implements vector indexes using the Hierarchical Navigable Small World (HNSW) method.
-
-## Benefits
-
-### Unified Data Architecture
-Eliminates need for separate databases; ACID transactions on hybrid data.
-
-## Use Cases
-
-- Semantic search in MySQL apps
-- RAG applications
-- Existing SQL infra upgrades
-
-## Comparisons
-
-No data sync issues vs dedicated VDBs.
+- Managed (TiDB Cloud)
+- Self-hosted
 
 ## Pricing
 
-Varies by deployment; consult PingCAP.
+- Cloud: usage-based
+- Self-hosted: infrastructure costs

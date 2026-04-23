@@ -1,7 +1,15 @@
-# ChromaDB
+## Overview
 
-**Website:** [https://www.trychroma.com/](https://www.trychroma.com/)
+Chroma is a vector DB for querying high-dimensional vector embeddings.
 
-**Main entry:** See chromadb.json for full details.
+## Features
 
-ChromaDB (Chroma) is the primary open-source embedding database for AI-native LLM applications.
+- Intuitive API
+- High accuracy and recall rates
+- Embedding-based search
+- Advanced ANN methods
+- Compact storage
+
+## Pricing
+
+Open-source with minimal deployment costs unless scaled heavily.
