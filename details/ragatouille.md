@@ -1,23 +1,27 @@
-## RAG Integration
+## Overview
 
-RAGatouille slots into RAG workflows as retriever/reranker: index docs with ColBERT tokenizer, retrieve top-k via late-interaction scoring, or rerank BM25/embedding results for better precision.
+RAGatouille provides ColBERT-style retrieval for superior RAG performance in LLM pipelines, emphasizing late-interaction scoring over embeddings.
 
-## Features
+## Key RAG Features
 
-- **Chunking**: Compatible with any preprocessor
-- **Retrieval**: ColBERTv2 (zero-shot strong), multi-token matching
-- **Rerank**: Token-level alignment scoring
-- **Training**: Fine-tune on domain data
+- **Chunking**: Any preprocessor (LangChain loaders compatible)
+- **Retrieval**: Multi-vector token embeddings, max-sim scoring
+- **Vector Store Integrations**: FAISS (via HuggingFace), custom indexes
+- **Reranking**: Native token-level reranker
 
 ## Use Cases
 
-- High-accuracy RAG apps
-- Reranking layer in pipelines
-- Zero-shot domain adaptation
+- Precision-critical QA systems
+- Domain-adapted retrieval
+- Hybrid retriever augmentation
 
-## LlamaIndex vs Haystack
+## Comparisons
 
-RAGatouille complements both as advanced retriever; LlamaIndex integrates easily, Haystack via custom retriever node.
+| Aspect | LangChain | LlamaIndex | RAGatouille |
+|--------|-----------|------------|-------------|
+| Focus | Full orchestration | Indexing | Retrieval precision |
+| Retrieval | Bi-encoder | Embed-based | Late-interaction |
+| Ease | Modular | Simple | Specialized |
 
 ## Pricing
 

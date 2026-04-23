@@ -1,46 +1,32 @@
-# Milvus Distributed
+## Overview
 
-**Category:** Vector Database Engines  
-**Brand:** Milvus  
-**Website:** https://milvus.io/  
-**Slug:** `milvus-distributed`
+Milvus Distributed is the production-ready cluster mode of the open-source Milvus vector database, built for massive scale GenAI and similarity search workloads.
 
-![Milvus architecture](https://milvus.io/img/milvus-architecture.png)
+## Scalability
 
-## Description
+- Sharding across query, data, and index nodes for horizontal scaling
+- High QPS handling (thousands to tens of thousands queries/sec)
+- Kubernetes Helm deployment with auto-scaling
 
-Milvus Distributed is the horizontally scalable, distributed deployment mode of the Milvus open‑source vector database. It is designed for enterprise and large‑scale GenAI workloads, providing high reliability and the ability to index and search across billions of vectors.
+## Key Features
 
-## Features
+- High Availability (HA) with leaderless replication and automatic failover
+- Real-time data ingestion and dynamic updates
+- Hybrid search combining vector similarity with scalar filtering
+- Support for HNSW, IVF, PQ, SCANN indexes
+- Comprehensive ops tools: CLI, Attu UI, backup/restore, sizing calculator
 
-- **Distributed architecture**
-  - Runs as a distributed vector database cluster rather than a single instance.
-  - Designed to support enterprise workloads and large‑scale production environments.
+## Use Cases
 
-- **Horizontal scalability**
-  - Can scale out by adding more nodes to handle growing workloads.
-  - Supports scaling to billions of vectors with minimal performance degradation.
+- Enterprise RAG pipelines at scale
+- Multimodal search (text, image, audio)
+- Drug discovery and genomics similarity
+- Real-time recommendation systems
 
-- **High reliability**
-  - Built for fault tolerance in distributed deployments.
-  - Suitable for mission‑critical and always‑on applications.
+## Comparisons
 
-- **Comprehensive deployment toolkit**
-  - Kubernetes/Helm‑based deployment (per \"Get Started\" prereq: Helm).
-  - Integrates with Milvus ecosystem tools such as:
-    - Milvus CLI
-    - Attu (web-based management UI)
-    - Sizing tool
-    - Milvus Backup
-
-- **Vector database capabilities (shared with Milvus core)**
-  - High‑performance vector similarity search for GenAI use cases.
-  - Supports use cases like RAG, image search, multimodal search, hybrid search, and graph RAG.
-
-- **Enterprise‑grade operations**
-  - Designed as the most scalable Milvus deployment tier compared with Lite and Standalone.
-  - Appropriate for large production datasets and multi‑user environments.
+Vs Qdrant distributed: Milvus provides broader index algorithms, mature Kubernetes tooling, and larger ecosystem; Qdrant emphasizes Rust performance and simpler single-binary clustering for high-throughput distrib setups.
 
 ## Pricing
 
-No explicit pricing information is provided for Milvus Distributed on the referenced content. It is offered as an open‑source deployment model of Milvus that you self‑host and operate on your own infrastructure.
+Free open-source (Apache 2.0). Managed via Zilliz Cloud with pay-as-you-go pricing.

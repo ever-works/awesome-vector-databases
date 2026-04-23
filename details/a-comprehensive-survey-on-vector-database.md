@@ -1,32 +1,25 @@
 ## Overview
 
-Comprehensive review of vector database technologies focusing on core ANN search algorithms.
+ArXiv 2023 comprehensive review of vector DB technologies and ANN algorithms.
 
 ## Features
 
-- ANNS categorization: hash/tree/graph/quantization-based
-- Vector DB architecture and storage models
-- Retrieval techniques and LLM integration
-- Challenges in high-dimensional search
-
-## Theory/Practice Gaps
-
-- Optimal theoretical indexes vs real-world filtering support
-- Static batch indexing vs online/dynamic updates
-- Exact NN theory vs approximate practical deployments
+- ANN categorization: hashing, trees, graphs, quantization
+- Architecture, storage, retrieval techniques
+- LLM integration benchmarks
 
 ## Use Cases
 
-- Academic reviews of ANN literature
-- Selecting index types for research prototypes
-- Understanding LLM-vector DB synergies
+- Academic ANN literature reviews
+- Index selection for prototypes
+- LLM-vector DB research
 
 ## Comparisons
 
-| Aspect | This Survey | VLDB VDBMS | NeurIPS BigANN |
-|--------|-------------|-------------|----------------|
-| Scope | Algorithms + systems | Full systems | Algorithms only |
-| ANN Coverage | Broad categories | Indexing subset | Billion-scale perf |
+| Aspect | This Survey (2023) | Prior VLDB | 2026 Benchmarks |
+|--------|--------------------|------------|-----------------|
+| Scope  | Algorithms + systems | Full systems | Recent trends |
+| ANN    | Broad categories   | Indexing   | Updated perf |
 
 ## Publication
 

@@ -95,13 +95,6 @@ results = evaluation.run(model)
 - **Leaderboard**: https://huggingface.co/spaces/mteb/leaderboard
 - **Documentation**: https://embeddings-benchmark.github.io/mteb/
 
-## Integration
-
-- Sentence Transformers
-- Hugging Face
-- Evaluation frameworks
-- Research papers
-
 ## Pricing
 
 Free and open-source benchmark framework.

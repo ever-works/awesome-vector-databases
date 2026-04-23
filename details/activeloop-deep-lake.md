@@ -2,6 +2,10 @@
 
 Deep Lake is Activeloop's open-source database designed for complex, unstructured data. It combines the benefits of a traditional data lake with modern vector database capabilities and tensor storage.
 
+## Hybrid Capabilities
+
+- Embeddings search + metadata/tensor filtering.
+
 ## Features
 
 - **Multi-Modal Tensor Storage**: Images, audio, video, annotations, tables stored as tensors
@@ -17,18 +21,19 @@ Deep Lake is Activeloop's open-source database designed for complex, unstructure
 
 Serverless managed service that eliminates self-hosting complexity and substantially lowers costs. Specify `runtime = {"tensor_db": True}` when creating Vector Store.
 
-## Storage Architecture
-
-Deep Lake operates on columnar storage format, converting and storing data as chunked compressed arrays, enabling rapid streaming to ML models.
-
 ## Use Cases
 
+- Multimodal RAG data pipelines.
 - Deep learning with multimodal data
 - Computer vision applications
 - Audio/video processing
 - Scientific data management
 - Large-scale ML training pipelines
 - Versioned dataset management
+
+## Comparisons vs Pure Vector DBs (e.g., Qdrant)
+
+Data lake for multimodal vs vector index.
 
 ## Integration
 

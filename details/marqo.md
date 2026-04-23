@@ -2,6 +2,11 @@
 
 Marqo is a vector search engine and database designed for multimodal data, supporting ingestion and querying of text, images, and videos via a unified API.
 
+## Hybrid Capabilities
+
+- Cross-modal vector search + keyword/metadata filters.
+- Auto-vectorization with reranking support.
+
 ## Features
 
 - Multimodal storage for text, image, and video vectors
@@ -12,11 +17,11 @@ Marqo is a vector search engine and database designed for multimodal data, suppo
 
 ## Use Cases
 
-- Visual RAG: Retrieve relevant images/videos to augment LLM prompts
+- Multimodal RAG: Retrieve images/videos for LLM grounding.
 - Multimedia retrieval: Search large collections of mixed media content
 - E-commerce product discovery with image and text queries
 
-## Comparison vs Text-Only Qdrant
+## Comparison vs Pure Vector DBs (e.g., Qdrant)
 
 | Feature | Marqo | Qdrant |
 |---------|--------|--------|

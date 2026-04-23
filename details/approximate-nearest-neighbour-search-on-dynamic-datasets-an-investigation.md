@@ -1,5 +1,23 @@
-# Approximate Nearest Neighbour Search on Dynamic Datasets: An Investigation
+## Overview
 
-arXiv paper investigating approximate nearest neighbor search performance on dynamic datasets. Analyzes adaptability and efficiency of vector indexing methods under data updates, relevant for real-world vector database applications.
+Investigation of ANN on dynamic datasets.
 
-[https://arxiv.org/abs/2404.19284](https://arxiv.org/abs/2404.19284)
+## Features
+
+- Benchmarks on data updates
+- Indexing method adaptability
+
+## Use Cases
+
+- Research on dynamic vector search
+- Academic evaluation of ANN
+
+## Comparisons
+
+| Aspect | This Paper | Prior Static | 2026 Trends |
+|--------|------------|--------------|-------------|
+| Data   | Dynamic   | Static      | Real-time updates |
+
+## Publication
+
+arXiv:2404.19284

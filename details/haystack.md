@@ -1,30 +1,28 @@
-## RAG Integration
+## Overview
 
-Haystack integrates RAG via customizable pipelines: index documents with splitters/embedders, retrieve via hybrid retrievers, rerank candidates, and generate with LLMs, all orchestrated in modular flows.
+Haystack enables scalable RAG for LLM applications through composable pipelines handling ingestion, retrieval, and generation.
 
-## Features
+## Key RAG Features
 
-- **Chunking**: Overlapping splitters, sentence/embed-aware
-- **Retrieval**: Dense (DPR), sparse (BM25), hybrid fusion
-- **Rerank**: Cohere, BGE-reranker, cross-encoders
-- **Pipelines**: Extractive QA, generative, indexing, evaluation
+- **Chunking**: Semantic, fixed-size, recursive splitters with overlap
+- **Retrieval**: Hybrid (dense/sparse), MMR diversity, multi-query
+- **Vector Store Integrations**: Pinecone, Weaviate, Elasticsearch, FAISS, Milvus, Qdrant
+- **Reranking & Post-Processing**: Cross-encoders, reciprocal rank fusion
 
 ## Use Cases
 
-- Enterprise semantic search
-- Document QA chatbots
-- Knowledge-grounded agents
-- Multi-lingual RAG apps
+- Knowledge retrieval for chatbots
+- Enterprise search over docs
+- Multi-modal RAG agents
 
-## Haystack vs LlamaIndex
+## Comparisons
 
-| Feature | Haystack | LlamaIndex |
-|---------|----------|------------|
-| Design | Pipeline nodes | Indexes/Engines |
-| Strengths | Modularity, benchmarks | Data connectors, simplicity |
-| Maturity | Battle-tested enterprise | Fast-evolving ecosystem |
-| Best For | Complex pipelines | Quick RAG setups |
+| Aspect | LangChain | LlamaIndex | Haystack |
+|--------|-----------|------------|----------|
+| Modularity | Chains/Agents | Data-focused indexes | Pipeline nodes |
+| Vector Stores | 100+ loaders | Strong indexing | Optimized retrievers |
+| Maturity | Broad ecosystem | Rapid iteration | Production pipelines |
 
 ## Pricing
 
-Free open-source (Apache 2.0). Enterprise support via deepset.
+Free open-source (Apache 2.0). Enterprise via deepset Cloud.

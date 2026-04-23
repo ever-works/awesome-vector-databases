@@ -1,27 +1,28 @@
 # ScaNN
 
-**ScaNN** (Scalable Nearest Neighbors) is an open-source library developed by Google Research for efficient vector similarity search, particularly designed for large-scale nearest neighbor search applications in AI and machine learning. It is optimized for high-dimensional vector data, such as embeddings generated from text, images, or other modalities.
+ScaNN (Scalable Nearest Neighbors) is Google Research's library for efficient high-dimensional vector similarity search.
 
-[Project Source / More Info](https://research.google/blog/announcing-scann-efficient-vector-similarity-search/)
+## Disk Persistence vs In-Memory
 
-## Features
-- **Efficient Approximate Nearest Neighbor Search:** Enables fast similarity search in large datasets of high-dimensional vectors, suitable for millions or billions of items.
-- **Anisotropic Vector Quantization:** Implements a novel quantization technique that penalizes error in the direction parallel to the original vector, improving accuracy for maximum inner-product search (MIPS).
-- **Optimized for MIPS:** Specifically designed to accelerate maximum inner-product search, a common operation in embedding-based retrieval tasks.
-- **High Performance:** Outperforms other vector similarity search libraries on standard benchmarks (e.g., ann-benchmarks.com), achieving up to twice the query throughput for a given accuracy.
-- **Open Source:** Available for direct installation via Pip, with source code and documentation on GitHub.
-- **Flexible Interfaces:** Supports both TensorFlow and Numpy inputs for easy integration into various machine learning workflows.
-- **Scalable:** Handles very large datasets, making it suitable for production-scale AI systems.
+Optimized quantization reduces memory footprint, supporting disk-persistent deployments for datasets beyond RAM. Enables out-of-core search in large-scale setups unlike memory-intensive HNSW without compression.
 
-## Category
-SDKs & Libraries
+## Key Features
 
-## Tags
-open-source, ann, vector-search, ai
+- Asymmetric and anisotropic vector quantization
+- High-throughput MIPS
+- Up to 2x faster than benchmarks at same accuracy
+- TensorFlow/Numpy support
+
+## Use Cases
+
+- Billion-scale embedding retrieval
+- Production recommendation systems
+- Compressed large vector collections
+
+## Comparisons
+
+**DiskANN vs HNSW**: ScaNN focuses on quantization for speed/accuracy trade-off, complementing graph indexes like DiskANN (graph+quantization) and outperforming uncompressed HNSW in compressed disk scenarios.
 
 ## Pricing
-ScaNN is open-source software and is available for free.
 
-## Links
-- [Official Blog Announcement](https://research.google/blog/announcing-scann-efficient-vector-similarity-search/)
-- [GitHub Repository](https://github.com/google-research/google-research/tree/master/scann)
+Open-source, free.

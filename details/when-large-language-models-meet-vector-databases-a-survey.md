@@ -1,29 +1,23 @@
 ## Overview
 
-Survey on LLM + vector DB synergies, focusing on RAG architectures.
+LLM-vector DB survey for RAG.
 
 ## Features
 
-- Hallucination mitigation via retrieval
-- Hybrid search for LLMs
-- Benchmark reviews in RAG contexts
-
-## Theory/Practice Gaps
-
-- Theoretical retrieval optimality vs LLM context limits
-- Academic RAG vs production latency constraints
+- ANN benchmarks in RAG
+- Hybrid retrieval reviews
 
 ## Use Cases
 
-- Academic selection for LLM retrieval papers
-- RAG system design guidance
+- RAG research selection
+- LLM retrieval design
 
 ## Comparisons
 
-| Aspect | This Survey | VLDB | NeurIPS |
-|--------|-------------|------|---------|
-| Focus | LLM+RAG | VDBMS | ANN algos |
+| Aspect | This 2024 | Prior VLDB | 2026 Benchmarks |
+|--------|-----------|------------|-----------------|
+| Focus  | LLM+RAG  | Systems   | Enterprise trends|
 
 ## Publication
 
-ArXiv 2402.01763 (2024)
+ArXiv 2402.01763

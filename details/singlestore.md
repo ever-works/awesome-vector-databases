@@ -2,6 +2,12 @@
 
 SingleStore is a real-time distributed SQL database with built-in vector search capabilities. It unifies transactional, analytical, and vector workloads within a single engine, designed for hybrid AI and data-intensive applications.
 
+## Hybrid Capabilities
+
+- Vector similarity search integrated with full SQL (keyword, joins, aggregations).
+- Hybrid queries fusing vector + relational/graph-like operations.
+- Metadata filtering and reranking via SQL post-processing.
+
 ## Key Features
 
 - **Vector Search**: Native vector similarity search alongside SQL queries
@@ -20,11 +26,20 @@ SingleStore is a real-time distributed SQL database with built-in vector search 
 
 ## Use Cases
 
+- Multimodal RAG: Combine embeddings with structured data for LLM context.
 - Hybrid AI applications integrating operational and vector data
 - Real-time analytics with ML inference
 - Semantic search over operational databases
 - Event-driven AI pipelines
 - Unified data platform for modern applications
+
+## Comparisons vs Pure Vector DBs (e.g., Qdrant)
+
+| Feature | SingleStore | Pure Vector DB |
+|---------|-------------|----------------|
+| Hybrid Queries | Native SQL+vector | Vector-focused |
+| Transactions | ACID | Limited |
+| Analytics | Columnar | Basic |
 
 ## Pricing
 

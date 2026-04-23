@@ -1,28 +1,27 @@
-## RAG Integration
+## Overview
 
-RAGFlow streamlines RAG for LLM applications: upload/parse complex docs, chunk/embed into knowledge base, query with hybrid retrieval + reranking, generate traceable responses with source citations.
+RAGFlow simplifies RAG deployment for LLM apps with end-to-end pipelines from parsing to grounded generation.
 
-## Features
+## Key RAG Features
 
-- **Chunking**: Structure-aware (tables/images), multi-granularity
-- **Retrieval**: Multi-vector recall, full-text + semantic
-- **Rerank**: Fused scoring across strategies
-- **Generation**: Multi-LLM support, agent fusion
+- **Chunking**: Layout-aware (tables, images), adaptive granularity
+- **Retrieval**: Semantic + keyword hybrid, multi-vector
+- **Vector Store Integrations**: Elasticsearch, Infinity (native)
+- **Reranking**: Multi-strategy fusion, citations
 
 ## Use Cases
 
-- Internal knowledge chat
-- Research assistants
-- Legal/financial doc analysis
-- Customer support bots
+- Complex doc analysis (PDFs, scans)
+- RAG chat interfaces
+- Enterprise knowledge bases
 
-## LlamaIndex vs Haystack
+## Comparisons
 
-| Feature | LlamaIndex | Haystack | RAGFlow |
-|---------|------------|----------|---------|
-| Parsing | Good | Standard | Advanced (tables/images) |
-| UI | Basic | CLI/API | Visual workflow |
-| Deployment | Cloud | Self-host | Self-host focus |
+| Aspect | LangChain | LlamaIndex | RAGFlow |
+|--------|-----------|------------|---------|
+| Parsing | Basic | Good | Advanced visual docs |
+| UI/Workflow | Code-based | Index mgmt | Visual builder |
+| Deployment | Flexible | Local/cloud | Self-hosted focus |
 
 ## Pricing
 

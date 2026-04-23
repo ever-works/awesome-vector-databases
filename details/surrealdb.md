@@ -2,6 +2,12 @@
 
 SurrealDB is a multi-model database that supports various data types and query languages, including capabilities for handling vector data.
 
+## Hybrid Capabilities
+
+- Vector similarity search + full-text + graph traversals.
+- SQL-like queries fusing modalities.
+- Reranking via custom functions.
+
 ## Products
 
 *   **Surreal Cloud**: Use SurrealDB in the cloud without managing infrastructure.
@@ -22,11 +28,16 @@ SurrealDB is a multi-model database that supports various data types and query l
 *   **SDKs**: Tools to build and connect applications to SurrealDB.
 *   **Command-line tool**: Tooling for managing your SurrealDB database.
 
-## Solutions
+## Use Cases
 
+- Multimodal RAG with vectors, graphs, documents.
 *   **Artificial Intelligence**: Simplified and scalable machine learning model inference.
 *   **Backend-as-a-service (BaaS)**: Build and deploy modern applications with a scalable backend.
 *   **Database consolidation**: Consolidate multiple databases into a single, scalable solution.
+
+## Comparisons vs Pure Vector DBs
+
+Versatile multi-model vs vector-only focus.
 
 ## Licensing
 

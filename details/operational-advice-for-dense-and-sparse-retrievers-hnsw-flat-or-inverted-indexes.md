@@ -1,5 +1,23 @@
-# Operational Advice for Dense and Sparse Retrievers: HNSW, Flat, or Inverted Indexes?
+## Overview
 
-arXiv preprint offering practical guidance on selecting between HNSW, flat, and inverted indexes for dense and sparse retrieval in vector search systems. Aids in optimizing performance for AI retrieval tasks.
+Practical advice for retriever indexes.
 
-[https://arxiv.org/abs/2409.06464](https://arxiv.org/abs/2409.06464)
+## Features
+
+- HNSW vs flat vs inverted benchmarks
+- Dense and sparse performance
+
+## Use Cases
+
+- Optimizing vector retrieval research
+- Academic index selection
+
+## Comparisons
+
+| Index | Dense Perf | Sparse Perf | 2026 Hybrids |
+|-------|------------|-------------|--------------|
+| HNSW  | High      | Medium     | Combined    |
+
+## Publication
+
+arXiv:2409.06464

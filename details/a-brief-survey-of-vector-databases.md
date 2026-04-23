@@ -1,29 +1,23 @@
 ## Overview
 
-Concise survey providing landscape overview of vector databases.
+BigDIA 2023 brief survey on vector database landscape.
 
 ## Features
 
-- Technologies and architectures review
-- ANN search fundamentals
-- Applications across domains
-
-## Theory/Practice Gaps
-
-- Academic prototypes vs enterprise deployments
-- Theoretical scalability vs real hardware limits
+- Review of ANN algorithms and benchmarks
+- Technologies, architectures, applications
 
 ## Use Cases
 
-- Quick academic orientation to vector DB field
-- Literature selection for beginners
+- Academic orientation to vector DB field
+- Literature selection for research
 
 ## Comparisons
 
-| Aspect | This Survey | VLDB | NeurIPS BigANN |
-|--------|--------------|------|---------------|
-| Depth | Introductory | Systems | Algorithms |
-| Focus | Landscape | Architectures | Performance |
+| Aspect | This Survey (2023) | Prior VLDB Surveys | 2026 Benchmarks |
+|--------|--------------------|--------------------|-----------------|
+| Depth  | Introductory      | Systems-focused   | Performance trends |
+| Focus  | Landscape         | Architectures     | Real-world scalability |
 
 ## Publication
 

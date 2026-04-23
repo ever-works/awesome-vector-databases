@@ -1,28 +1,22 @@
 ## Overview
 
-Foundational survey on VDBMS concepts and challenges.
+Foundational VDBMS survey.
 
 ## Features
 
-- Core concepts and use cases
-- ANN techniques review
-- Open challenges discussion
-
-## Theory/Practice Gaps
-
-- Fundamental limits vs engineering solutions
-- Use case theory vs real deployments
+- ANN techniques and benchmarks
+- Challenges in high-dim search
 
 ## Use Cases
 
-- Academic foundational reading
-- Challenge identification for research
+- Academic foundational research
+- Identifying gaps
 
 ## Comparisons
 
-| Aspect | This Paper | VLDB | NeurIPS |
-|--------|------------|------|---------|
-| Scope | Concepts | Systems | Benchmarks |
+| Aspect | This 2024 | Prior VLDB | 2026 Benchmarks |
+|--------|-----------|------------|-----------------|
+| Scope  | Concepts | Architectures | Production     |
 
 ## Publication
 
