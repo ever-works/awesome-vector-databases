@@ -7,14 +7,14 @@ Demonstrates efficient vector database querying using GPU acceleration on a larg
 - **Embedding Generation**: Use `embedding.py` to generate vector embeddings for Wikipedia articles.
 - **Clustering**: Apply K-means clustering with `cluster.py` to group embeddings into 128 clusters.
 - **Data Conversion**: Convert `.npy` files to `.bin` format using `convert_npy_bin.py` for C++ compatibility.
-- **Query Processing**: Use pregenerated embeddings in `queries_data` folder or generate new ones with `test.py --query "Your query"`.
+- **Query Processing**: Use pregenerated embeddings in `queries_data` folder or generate new ones with `test.py --query \"Your query\"`.
 - **Approximate Nearest Neighbor Search**: Compile and run `IVF.cpp` for GPU-accelerated search.
 
 ## Configurable Parameters
 
 Passed as arguments to the executable:
 - `n_probe`: 1 to 128 (top clusters for fine search)
-- `mode`: "Atomic" or "NonAtomic" (CUDA kernel type)
+- `mode`: \"Atomic\" or \"NonAtomic\" (CUDA kernel type)
 - `sequential_fine_search`: true/false (separate kernels per cluster or combined)
 - `use_cuda_coarse`: true/false (GPU/CPU for coarse search)
 - `use_cuda_fine`: true/false (GPU/CPU for fine search)
@@ -22,11 +22,11 @@ Passed as arguments to the executable:
 
 ## Pre-uploaded Queries
 
-- query1.bin: "What is learning rate in gradient descent?"
-- query2.bin: "What is Microbial biogeography?"
-- query3.bin: "Give me details about The Arch of Cabanes."
-- query4.bin: "Give me details about the history of the Taj Mahal."
-- query5.bin: "Tell me something about the labelling used on aid packages created and sent under the Marshall Plan."
+- query1.bin: \"What is learning rate in gradient descent?\"
+- query2.bin: \"What is Microbial biogeography?\"
+- query3.bin: \"Give me details about The Arch of Cabanes.\"
+- query4.bin: \"Give me details about the history of the Taj Mahal.\"
+- query5.bin: \"Tell me something about the labelling used on aid packages created and sent under the Marshall Plan.\"
 
 ## Compilation and Execution
 
