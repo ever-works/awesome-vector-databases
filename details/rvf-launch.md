@@ -1,13 +1,16 @@
 ## Overview
-
-Launches QEMU-based microVMs for running RVF containers.
+rvf-launch supports edge vector workloads via microVMs.
 
 ## Features
+- QEMU microVMs
+- Secure isolation
 
-- QEMU integration
-- MicroVM management
-- Secure isolation for AI workloads
+## Use Cases
+- IoT secure AI
+- Edge CV containers
+
+## Comparisons
+- Lightweight edge virtualization
 
 ## Pricing
-
-Open source under MIT license.
+Free open-source.

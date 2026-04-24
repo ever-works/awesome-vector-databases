@@ -1,20 +1,19 @@
 ## Overview
 
-Redis Vector Search provides vector similarity capabilities through the Redis Stack, supporting fast ANN search in an in-memory environment.
+Redis Vector Search enables fast ANN similarity search via Redis Stack.
 
 ## Key Features
 
-- HNSW indexing
-- Filtering (basic to strong, pattern-dependent)
-- Hybrid search (limited)
-- Integrations: LangChain
-- Low-latency retrieval near applications
-- Supports high QPS workloads
+- HNSW/Flat indexing
+- Hybrid search
+- Metadata filtering
+- LangChain integration
+- High QPS
 
 ## Deployment
 
-- Managed and self-hosted
+Managed/self-hosted
 
 ## Pricing
 
-- Cloud + self-hosted infrastructure costs
+Infrastructure-based.

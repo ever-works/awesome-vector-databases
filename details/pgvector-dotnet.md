@@ -1,31 +1,25 @@
-# pgvector-dotnet
+## Overview
 
-**Category:** SDKs & Libraries  
-**Brand:** pgvector  
-**Repository:** https://github.com/pgvector/pgvector-dotnet  
-**License:** MIT
+pgvector-dotnet is the official .NET client library for pgvector PostgreSQL vectors.
 
-.NET (C#, F#, Visual Basic) library that exposes pgvector-based vector storage and similarity queries on PostgreSQL to .NET applications.
+## SDK Features
 
-## Features
+- Async operations
+- HNSW/IVF index support
+- Multiple distance metrics
+- Integration: Npgsql, Dapper, Entity Framework
+- Vector storage and similarity search
 
-- .NET library for integrating the PostgreSQL `pgvector` extension with .NET applications
-- Language support for C#, F#, and Visual Basic
-- Enables vector storage in PostgreSQL using the `pgvector` extension
-- Supports similarity search / similarity queries over vector data
-- Integrates with popular .NET data access technologies:
-  - Npgsql (PostgreSQL .NET driver)
-  - Dapper (micro-ORM)
-  - Entity Framework (ORM)
-- Example projects included in the repository for reference
-- Test suite included for validation and reliability
+## Use Cases
 
-## Technical Details
+- .NET app integration for semantic search
+- RAG pipelines
+- Enterprise AI workflows
 
-- Distributed as a .NET solution (`Pgvector.sln`)
-- Source organized under `src`, with examples under `examples` and tests under `tests`
-- Open-source under the MIT license
+## Comparisons
+
+- Official .NET SDK vs. community clients or raw Postgres SQL
 
 ## Pricing
 
-- Free and open-source (MIT license).
+Free open-source (MIT).

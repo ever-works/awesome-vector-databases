@@ -1,5 +1,19 @@
-# pgEdge
+## Overview
+pgEdge enables distributed low-latency vector search at the edge.
 
-Distributed extension of PostgreSQL designed for multi-region and edge deployments, enabling data to be processed closer to users while maintaining consistency across geographically distributed nodes.
+## Features
+- Multi-region PostgreSQL
+- Edge data processing
+- Consistency guarantees
 
-[https://www.pgedge.com/](https://www.pgedge.com/)
+## Use Cases
+- IoT distributed AI
+- Real-time edge analytics
+- CV inference networks
+
+## Comparisons
+- Edge-distributed vs cloud Qdrant
+- Postgres-based edge vector ops
+
+## Pricing
+Contact pgEdge.

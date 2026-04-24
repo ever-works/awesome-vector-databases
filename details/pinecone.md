@@ -1,15 +1,26 @@
 ## Overview
 
-Pinecone is a managed vector database for high-performance search.
+Pinecone: serverless vector DB for AI-scale search.
 
 ## Features
 
-- Exceptional query speed and low-latency
-- High accuracy with configurable trade-offs
-- Vector compression and scaling
-- Strong metadata support
-- Managed service with robust APIs and SDKs
+- Pay-per-query/serverless billing
+- Auto-scaling indexes
+- Hybrid search (sparse-dense)
+- Python/JS/Go SDKs (REST/gRPC)
+- Metadata filtering
+- Multi-region replication
+
+## Use Cases
+
+- Production RAG
+- Semantic search
+- Recommendations
+
+## Comparisons
+
+- Managed no-ops vs. self-hosted OSS DBs
 
 ## Pricing
 
-Predictable costs for managed service.
+Predictable usage-based; starter tiers available.

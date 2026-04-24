@@ -1,13 +1,25 @@
 ## Overview
 
-LanceDB is an open-source, serverless vector database that stores data in a persistent disk format. It is designed to run on edge devices or within serverless functions without requiring an always-on server.
+LanceDB is a serverless, embedded vector DB using columnar Lance format for efficient storage and zero-copy queries.
 
-## Best For
+## Features
 
-- Mobile apps
-- Edge computing
-- Cost-efficient data lakes
+- Zero dependencies
+- Persistent disk storage standard
+- SQL-based hybrid search (vector + full-text)
+- IVF-PQ indexing, data versioning
+- Python and Rust bindings
 
-## Key Edge
+## Use Cases
 
-- Blazing fast zero-copy reads directly from cloud storage or local disk.
+- Edge computing and mobile apps
+- Computer vision pipelines, offline RAG
+
+## Comparisons
+
+- Faster startup than Qdrant client
+- Better disk efficiency and SQL vs Chroma/Faiss
+
+## Pricing
+
+Open-source (Apache 2.0).

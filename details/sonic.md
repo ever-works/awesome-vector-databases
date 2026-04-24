@@ -1,17 +1,20 @@
 ## Overview
-
-Sonic is a lightweight, in-memory search backend written in Rust, providing fast full-text and vector search as a schema-less alternative.
+Sonic enables low-latency edge vector/hybrid search.
 
 ## Features
+- HNSW vector + full-text
+- In-memory sub-ms ops
+- HTTP/JSON API
+- Multi-threaded
 
-- In-memory storage for sub-millisecond ingest and search
-- JSON document storage
-- Full-text search
-- Vector search powered by HNSW indexing
-- Hybrid full-text + vector queries
-- HTTP/JSON API for easy integration
-- Multi-threaded for high concurrency
+## Use Cases
+- IoT real-time AI
+- Edge semantic search
+- CV inference
+
+## Comparisons
+- Lightweight on-device vs cloud Qdrant
+- Faster ingest than heavier DBs
 
 ## Pricing
-
-Free and open-source (Mozilla Public License 2.0).
+Free open-source (MPL 2.0).

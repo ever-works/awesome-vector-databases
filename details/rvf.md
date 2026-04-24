@@ -1,20 +1,20 @@
 ## Overview
 
-RVF is an executable knowledge unit, not just a database format. A single .rvf file runs anywhere from browser to bare metal.
+RVF serves as a secure, executable knowledge unit for quantum-resistant vector operations and agent memory in distributed AI systems. Single .rvf files deploy from browser to bare metal with built-in security.
 
 ## Features
 
 | What It Does | How |
 |-|-|
-| Self-boot as a microservice | Real Linux kernel in the file, boots in 125 ms on QEMU/KVM |
-| Hardware-speed lookups | eBPF programs (XDP, TC, socket filter) bypass userspace |
-| Run in any browser | 5.5 KB WASM runtime, zero backend |
-| Git-like branching | COW at cluster granularity — 1M vectors, 100 edits = ~2.5 MB child |
-| Tamper-evident audit | Hash-linked witness chain for every insert, query, deletion |
-| Post-quantum signatures | ML-DSA-65 and Ed25519 signing on every segment |
-| DNA-style lineage | Parent/child derivation chains with cryptographic verification |
+| Self-boot as microservice | Real Linux kernel, 125ms boot |
+| Hardware-speed lookups | eBPF bypasses userspace |
+| Browser execution | 5.5KB WASM runtime |
+| Git-like branching | COW for vectors |
+| Tamper-evident | Hash-linked witness chains |
+| Post-quantum signatures | ML-DSA-65 on segments |
+| Federated manifests | Secure multi-party learning support |
 
-28 segment types including VEC, INDEX, KERNEL, EBPF, WASM, COW_MAP, WITNESS, CRYPTO, FEDERATED_MANIFEST.
+28 segment types for secure agentic workflows.
 
 ## Installation
 

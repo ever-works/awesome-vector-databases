@@ -1,22 +1,25 @@
-# pgvector-node
+## Overview
 
-**Website:** https://github.com/pgvector/pgvector-node  
-**Category:** SDKs & Libraries  
-**Tags:** sdk, pgvector, vector-store  
-**License:** MIT  
+pgvector-node provides JS/TS bindings for pgvector in Postgres, compatible with Node.js, Deno, Bun.
 
-## Description
-pgvector-node is a JavaScript/TypeScript client for working with the `pgvector` extension on PostgreSQL from server-side runtimes including Node.js, Deno, and Bun. It enables applications to store and query vector embeddings directly in Postgres.
+## SDK Features
 
-## Features
-- Supports Node.js, Deno, and Bun runtimes
-- TypeScript support with type definitions
-- Client utilities for working with the `pgvector` Postgres extension
-- Enables running vector similarity queries against PostgreSQL
-- Example projects included under `examples/`
-- Prisma integration resources under `prisma/`
-- Test suite provided under `tests/` for validating behavior
-- Published as an npm package (configuration via `package.json`)
+- Async vector operations
+- TypeScript definitions
+- Prisma integration
+- Similarity search (L2, cosine, etc.)
+- Embeddings storage/query
+
+## Use Cases
+
+- Serverless JS RAG apps
+- Semantic search backends
+- App embedding integration
+
+## Comparisons
+
+- Official JS SDK vs. Python/.NET/Crystal or raw SQL
 
 ## Pricing
-- Open-source under the MIT license (no usage fee)
+
+Free open-source (MIT).

@@ -1,1 +1,26 @@
-## Overview\n\nLanceDB Cloud is a fully managed, serverless vector search service that enables developers to build, deploy, and scale AI-powered applications without infrastructure management overhead.\n\n## Key Features\n\n- **Serverless Architecture**: Zero infrastructure to manage\n- **Automatic Operations**: Automatic indexing, compaction, and data cleanup\n- **Intuitive UI**: Web interface to explore and manage data\n- **Multi-Language SDKs**: Python, TypeScript, and Rust support\n- **Enterprise-Grade**: Reliability, security, and performance at scale\n- **Seamless Migration**: Same SDK as LanceDB OSS with connection string change\n\n## Advantages Over Self-Hosting\n\n### Operational Benefits\n\n- No server maintenance or scaling concerns\n- Automatic performance optimization\n- Built-in monitoring and alerting\n- Managed backups and disaster recovery\n- Security updates handled automatically\n\n### Developer Experience\n\n- Same API as open-source LanceDB\n- Simple migration path from local to cloud\n- Consistent development experience\n- No vendor lock-in (can move back to OSS)\n\n## Migration Path\n\nTransition from LanceDB OSS to Cloud is straightforward:\n\n1. Change connection string to point to remote database\n2. No code changes required beyond connection\n3. Same SDK, same API, same functionality\n4. Can switch back to local development anytime\n\n## Technical Capabilities\n\nInherits all features from LanceDB OSS:\n- **Multimodal Support**: Text, images, video, documents\n- **Fast Search**: Sub-millisecond query latency\n- **Hybrid Search**: Vector + full-text search\n- **Scalability**: Handles billions of vectors\n- **Production-Ready**: Built on Apache Lance format\n\n## AWS Integration\n\nLanceDB Cloud can be deployed on AWS with:\n- S3-based storage for cost efficiency\n- Elastic scaling for 1B+ vectors\n- Integration with AWS services\n- High availability across regions\n\n## Pricing\n\n### Starter Plan\n\n- Starts at **$16.03/month**\n- **$100 free credits** (one-time) for first month\n- Pricing components:\n  - Write operations\n  - Query operations\n  - Storage usage\n\n### Usage-Based Billing\n\n- Pay only for what you use\n- No upfront costs\n- Transparent pricing model\n- Scale up or down automatically\n\n## Use Cases\n\n- RAG (Retrieval-Augmented Generation) applications\n- Semantic search at scale\n- Recommendation engines\n- Similarity matching\n- Image and video search\n- Document retrieval\n- AI agent memory systems\n\n## OSS vs Cloud Decision\n\n### Choose LanceDB OSS when:\n\n- Building and prototyping locally\n- Full control over infrastructure required\n- Cost optimization through self-hosting\n- Integration with existing backend applications\n\n### Choose LanceDB Cloud when:\n\n- Production deployments at scale\n- Want to avoid infrastructure management\n- Need automatic scaling and operations\n- Prefer managed services\n- Require enterprise support\n\n## Support\n\n- Technical documentation\n- Community support (Discord, GitHub)\n- Enterprise support plans available\n- Migration assistance\n\n## Free Tier\n\nLanceDB OSS remains forever free for:\n- Local development\n- Self-hosted deployments\n- Building and integration
+## Overview
+
+LanceDB Cloud: serverless vector DB with pay-per-query and auto-scale.
+
+## Features
+
+- Pay-per-query billing
+- Auto-scaling infrastructure
+- Hybrid vector + full-text search
+- Multimodal (text/image/video)
+- Python/TS/Rust SDKs (gRPC/REST)
+- Auto-indexing, compaction
+
+## Use Cases
+
+- Enterprise RAG pipelines
+- Semantic search at scale
+- AI agent memory
+
+## Comparisons
+
+- Managed ease vs. OSS LanceDB self-host
+
+## Pricing
+
+Usage-based: writes/queries/storage; $100 free credits; starts ~$16/mo.

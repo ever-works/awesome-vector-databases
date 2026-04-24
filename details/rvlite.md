@@ -1,13 +1,17 @@
 ## Overview
+rvLite provides ultra-light edge vector search.
 
-rvLite is a compact edge database for vector operations in resource-constrained environments.
+## Features
+- 2MB footprint
+- Full vector ops
+- No dependencies
 
-## Installation
+## Use Cases
+- IoT real-time
+- Mobile inference
 
-```sh
-npm install rvlite
-```
+## Comparisons
+- Tiny vs Qdrant edge
 
 ## Pricing
-
-Free and open-source.
+Free open-source.

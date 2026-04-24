@@ -1,21 +1,25 @@
 ## Overview
 
-DiskANN for Postgres; 28x lower p95 latency vs Pinecone.
+pgvectorscale supercharges pgvector with DiskANN for massive-scale vector search in Postgres.
 
 ## Features
 
-- StreamingDiskANN
-- Binary quantization
-- Filtered search
+- **StreamingDiskANN**: Disk-based, high-recall index
+- **Hybrid Search**: SQL filters + vector ANN
+- **Optimizations**: Binary quant, filtered search
+- **Performance**: 16x throughput, 75% cost savings vs Pinecone
 
 ## Use Cases
 
-- Scale RAG on Postgres
+- **Enterprise RAG**: Billion-vector retrieval
+- **Analytics**: Large-scale embedding ops
+- **Production Search**: Low-latency, high QPS
 
 ## Comparisons
 
-16x throughput, 75% lower cost vs Pinecone.
+**vs Dedicated DBs (Weaviate/Pinecone)**: Unified Postgres stack, no ETL/sync, ACID txns, mature ecosystem.
+**vs pgvector**: Dramatically better scale/latency.
 
 ## Pricing
 
-Free OSS.
+Free open-source (Timescale License).

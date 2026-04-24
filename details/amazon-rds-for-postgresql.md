@@ -10,6 +10,25 @@ Amazon RDS for PostgreSQL is a managed relational database service from AWS that
 *   **Isolation and security:** Offers network isolation using Amazon Virtual Private Cloud (VPC), encryption at rest with AWS Key Management Service (KMS), and encryption of data in transit using SSL.
 *   **Version Support:** Supports PostgreSQL versions 11, 12, 13, 14, 15, 16, and 17.
 *   **Trusted Language Extensions (TLE):** Allows building and safely running high-performance extensions on RDS using popular trusted languages without AWS certification.
+*   **pgvector Support:** Native extension for vector storage and similarity search (cosine, L2, inner product).
+*   **Row Level Security (RLS):** Built-in Postgres feature for multi-tenant isolation.
+
+### Use Cases
+- Multi-tenant AI applications with vector search and relational data
+- RAG systems requiring SQL joins on embeddings
+- Enterprise apps needing ACID compliance with semantic search
+
+## Comparisons
+
+**Managed Postgres + pgvector vs Dedicated Vector DBs:**
+
+| Feature | RDS Postgres + pgvector | Dedicated Vector DBs (e.g., Pinecone) |
+|---------|------------------------|--------------------------------------|
+| SQL Power | Full relational SQL, joins, analytics | Limited SQL or none |
+| Transactions | ACID | Often eventual consistency |
+| Ecosystem | Postgres extensions/tools | Specialized SDKs |
+| Scaling | Read replicas, Multi-AZ | Auto-scaling shards |
+| Serverless | Aurora Serverless option | Native serverless |
 
 ### Pricing
-Pricing information is not available in the provided content.
+Managed service pricing based on instance size, storage, I/O. pgvector free. Serverless v2 variant offers pay-per-use. See AWS pricing calculator.

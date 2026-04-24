@@ -1,33 +1,19 @@
 ## Overview
-
-nano-vectordb-rs is a Rust port of the popular nano-vectordb, designed as a lightweight vector database.
+nano-vectordb-rs offers low-latency vector search for edge Rust apps.
 
 ## Features
-
-- Fast cosine similarity searches using Rayon parallelism
-- Simple API surface
-- Embedded persistence with compact serialization
-- No abstractions, easy to hack
+- Rayon-parallel cosine search
+- Compact embedded persistence
+- Minimal API
 
 ## Use Cases
+- IoT embedding storage
+- Real-time AI prototypes
+- Edge CV similarity
 
-- Rust ML pipelines needing lightweight vector storage
-- Prototyping semantic search systems
-- Educational use
+## Comparisons
+- Simpler/lighter than Qdrant edge
+- Pure Rust, hackable
 
-## Benchmarks
-
-On MacBook M4 with 1024-dim embeddings:
-- Inserting 100,000 vectors: ~175 ms
-- Querying from 100,000 vectors: ~13 ms
-
-## Installation
-
-```
-cargo install nano-vectordb-rs
-```
-
-## Examples
-
-Basic usage example available via `cargo run --example basic_usage`.
-Advanced example with Hugging Face embeddings: `cargo run --example advanced_usage`.
+## Pricing
+Free open-source.

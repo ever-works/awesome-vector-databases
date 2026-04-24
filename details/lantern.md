@@ -1,28 +1,29 @@
 # Lantern
 
-Lantern is a PostgreSQL extension and toolkit for efficient vector search with disk persistence, scaling to billions of vectors.
+Lantern is a PostgreSQL extension for multimodal vector search supporting text, image, and video vectors.
 
-## Disk Persistence vs In-Memory
+## Multimodal Vector Support
 
-Leverages PostgreSQL's disk storage for indexes, supporting out-of-core operations on large datasets exceeding RAM. Unlike standalone in-memory vector DBs, integrates with existing relational storage for persistent vectors.
+Handles embeddings from models like CLIP for text-to-image/video similarity, enabling cross-modal queries.
 
 ## Key Features
 
-- Tiered HNSW indexing
-- SIMD-optimized queries for sub-ms latency
-- Hybrid vector + BM25 text search
-- Serverless offloaded indexing
-- Embedding/LLM integration via SQL
+- Multi-modal indexing with tiered HNSW
+- Fusion search: hybrid vector + BM25 text
+- GPU/SIMD acceleration for sub-ms latency
+- Disk persistence for billion-scale datasets
+- Serverless indexing offload
+- SQL-based embedding/LLM integration
 
 ## Use Cases
 
-- Large-scale embeddings in databases
-- Real-time AI applications
-- Hybrid search on persistent data
+- Computer vision + text search (e.g., 'red car in city')
+- Multimedia recommendations
+- Real-time AI apps with persistent data
 
 ## Comparisons
 
-**DiskANN vs HNSW integration**: Builds on HNSW but adds disk persistence and tiering for larger scales; DiskANN more focused on pure graph out-of-core, Lantern on DB integration.
+**Vs text-only pgvector**: Extends pgvector-like functionality with native multimodal indexing, fusion, and GPU/disk optimizations for diverse media beyond text embeddings.
 
 ## Pricing
 
