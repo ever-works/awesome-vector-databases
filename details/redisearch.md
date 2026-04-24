@@ -11,18 +11,18 @@
 - **Document ranking** using tf-idf, with optional user-provided weights
 - **Field weighting** for search relevance
 - **Complex boolean queries** with AND, OR, and NOT operators
-- **Prefix matching, fuzzy matching, and exact-phrase queries**
-- **Double-metaphone phonetic matching**
+- **Prefix matching, fuzzy matching, and exact-phrase queries
+- **Double-metaphone phonetic matching
 - **Auto-complete suggestions** with fuzzy prefix suggestions
 - **Stemming-based query expansion** in multiple languages (using Snowball)
 - **Chinese-language tokenization and querying** (using Friso)
-- **Numeric filters and ranges**
+- **Numeric filters and ranges
 - **Geospatial searches** using Redis geospatial indexing
 - **Powerful aggregations engine** for data analysis
-- **Support for all UTF-8 encoded text**
+- **Support for all UTF-8 encoded text
 - **Flexible document retrieval**: full documents, selected fields, or just document IDs
 - **Sorting of results** (e.g., by creation date)
-- **Geoshape indexing**
+- **Geoshape indexing
 - **Vector similarity search:**
   - KNN (k-nearest neighbors)
   - Filtered KNN

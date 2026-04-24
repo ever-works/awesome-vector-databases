@@ -19,7 +19,7 @@ OpenSearch Vector Search is the vector similarity and AI search capability withi
 - Store and search **vector embeddings** together with existing OpenSearch documents.
 - Support for **vector indices** using k-NN / ANN style search.
 - **Raw vector similarity search** over embedding fields.
-- Integration with OpenSearch’s existing indexing, mappings, and query DSL.
+- Integration with OpenSearch's existing indexing, mappings, and query DSL.
 
 ### AI & Semantic Search
 - **Semantic search** using dense vector embeddings.
@@ -34,7 +34,7 @@ OpenSearch Vector Search is the vector similarity and AI search capability withi
 
 ### Embedding & Model Integration
 - Use **user-provided embeddings** (generated externally and indexed into OpenSearch).
-- Optionally use **embeddings generated automatically** by OpenSearch’s ML Commons plugin.
+- Optionally use **embeddings generated automatically** by OpenSearch's ML Commons plugin.
 - **Model registration & deployment**:
   - Register ML models (e.g., Hugging Face sentence-transformers models) via the ML Commons APIs.
   - Asynchronous model registration with task IDs and status tracking via the **Get ML Task API** (`/_plugins/_ml/tasks/`).
