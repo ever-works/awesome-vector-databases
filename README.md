@@ -81,7 +81,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [serverless-managed-vector-dbs (1)](#serverless-managed-vector-dbs)
 - [Tools (7)](#tools)
 - [Vector Clients & SDKs (4)](#vector-clients--sdks)
-- [Vector Databases (38)](#vector-databases)
+- [Vector Databases (39)](#vector-databases)
 - [Vector Indexing Libraries (2)](#vector-indexing-libraries)
 
 
@@ -1391,6 +1391,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [Cottontail DB](https://cottontaildb.com/) - Cottontail DB is a column store aimed at multimedia retrieval, allowing classical boolean as well as vector-space retrieval (nearest neighbour search) using a unified data and query model. ([Read more](/details/cottontail-db.md)) `Open Source` `Column Store` `Multimedia`
 - [DataStax Astra](https://www.datastax.com/products/astra-db) - Managed database built on Cassandra with vector search capabilities, excelling in real-time updates and immediate consistency. Ideal for operational workloads requiring high throughput. ([Read more](/details/datastax-astra.md)) `Managed` `Real Time` `Cassandra`
 - [Deep Lake](https://www.deeplake.ai/) - Open-source database specializing in unstructured and multimodal data for AI/ML applications. Handles images, videos, and other data with decent vector operations, high recall for multimodal integration, and tight compatibility with PyTorch and TensorFlow. ([Read more](/details/deep-lake.md)) `Open Source` `Multimodal` `AI-workflows`
+- [Endee](https://endee.io/) - High-performance vector database designed to handle up to 1B vectors on a single node with optimized indexing and execution. Also available as a managed cloud service. ([Read more](/details/endee.md)) `High Performance` `Cloud Native`
 - [Epsilla](https://www.epsilla.ai/) - Open-source vector database designed for high performance similarity search and AI/ML workloads. ([Read more](/details/epsilla.md)) `Open Source` `High Performance`
 - [Google Vector Search](https://cloud.google.com/vertex-ai/docs/vector-search/overview) - Managed vector search service as part of Google Vertex AI, enabling efficient similarity search over high-dimensional vectors for AI applications. ([Read more](/details/google-vector-search.md)) `Managed` `Cloud` `Google`
 - [Infinity](https://github.com/infinity/infinity) - High-performance vector database with SQL support. ([Read more](/details/infinity.md)) `Open Source` `Sql`
