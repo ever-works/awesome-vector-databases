@@ -1,19 +1,26 @@
 ## Overview
-Qdrant Edge delivers on-device low-latency vector search.
+
+Embedded vector search for edge devices.
 
 ## Features
-- Resource-optimized ANN
-- Offline capabilities
-- Real-time search
+
+- Filtered ANN (HNSW)
+- Payload filtering
+- Multi-modal support
+- Disk-persistent
+- Offline edge deployment
+- High QPS low-latency
 
 ## Use Cases
-- Robotics IoT AI
-- Kiosks real-time search
-- Mobile CV inference
+
+- Real-time recommendations
+- Semantic search on-device
 
 ## Comparisons
-- Lightweight edge vs cloud Qdrant
-- No network latency
+
+- Lighter, Rust perf vs Weaviate
+- Open-source alt vs Pinecone
 
 ## Pricing
-Part of Qdrant offerings.
+
+Open-source, free.

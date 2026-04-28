@@ -1,26 +1,28 @@
 ## Overview
 
-LanceDB Cloud: serverless vector DB with pay-per-query and auto-scale.
+LanceDB Cloud provides fully managed serverless access to LanceDB's columnar multimodal capabilities.
 
 ## Features
 
-- Pay-per-query billing
-- Auto-scaling infrastructure
-- Hybrid vector + full-text search
-- Multimodal (text/image/video)
-- Python/TS/Rust SDKs (gRPC/REST)
-- Auto-indexing, compaction
+- Zero-copy reads and Arrow integration
+- SQL queries with hybrid search
+- Pay-per-query pricing and auto-scaling
+- Multimodal support (text/image/video)
+- Python/TS/Rust SDKs, auto-indexing
 
 ## Use Cases
 
-- Enterprise RAG pipelines
-- Semantic search at scale
-- AI agent memory
+- Computer vision search at scale
+- Large-scale analytics
+- Production RAG without ops
 
 ## Comparisons
 
-- Managed ease vs. OSS LanceDB self-host
+| Competitor | LanceDB Cloud Advantages |
+|------------|--------------------------|
+| Chroma    | Columnar, multimodal, managed |
+| Faiss     | Full DB + serverless     |
 
 ## Pricing
 
-Usage-based: writes/queries/storage; $100 free credits; starts ~$16/mo.
+Usage-based (writes/queries/storage); $100 free credits; ~$16/mo starting.

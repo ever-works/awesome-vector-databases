@@ -1,20 +1,27 @@
 ## Overview
 
-Qdrant Cloud provides fully managed vector database with 1GB free forever cluster (no credit card required) and multi-cloud deployment.
+Managed cloud vector database with free 1GB tier.
 
-## Free Tier
+## Features
 
-- **1GB RAM cluster** free forever
-- **No credit card required**
-- **Multi-cloud**: AWS, GCP, Azure
-- Production-ready
+- Filtered ANN (HNSW)
+- Payload filtering
+- Multi-modal support
+- Disk-persistent
+- Serverless auto-scaling
+- High QPS
 
-## Paid Tiers
+## Use Cases
 
-- **Managed Cloud**: Starting at $0, scales with usage
-- **Hybrid Cloud**: $0.014/hour starting
-- **Premium**: Custom enterprise pricing
+- Real-time recommendations
+- Semantic search
+
+## Comparisons
+
+- Lighter, Rust perf vs Weaviate
+- Open-source alt vs Pinecone
 
 ## Pricing
 
-Commercial service with generous free tier and flexible scaling options.
+- Free: 1GB forever
+- Paid: Pay-per-use from $0.014/hour

@@ -1,15 +1,19 @@
 ## Overview
 
-Chroma is a vector DB for querying high-dimensional vector embeddings.
+Chroma is a Python-native, open-source embedding database designed for LLM applications, focusing on simplicity for local prototyping.
 
 ## Features
 
-- Intuitive API
-- High accuracy and recall rates
-- Embedding-based search
-- Advanced ANN methods
-- Compact storage
+- HNSW indexing for efficient similarity search
+- Metadata filtering
+- Persistent storage options (in-memory or disk)
+- Simple Python API with client-server support
+
+## Use Cases
+
+- Local RAG (Retrieval-Augmented Generation) development
+- Agent memory and state management
 
 ## Pricing
 
-Open-source with minimal deployment costs unless scaled heavily.
+Free and open-source under Apache 2.0 license.

@@ -1,16 +1,20 @@
 ## Overview
 
-Weaviate Cloud (WCD) is the fully managed cloud platform for Weaviate vector database, handling scaling, backups, security, and updates.
+Fully managed platform for Weaviate vector database, handling infrastructure, scaling, backups, and security.
 
 ## Features
 
-- Auto-scaling clusters
-- Multi-tenancy support
-- Disaster recovery
-- Module integrations (e.g., transformers, Q&A)
-- Security & compliance
-- Global regions
+- Serverless and dedicated clusters with auto-scaling
+- Same core features as open-source: GraphQL, hybrid search, ML modules, multi-tenancy
+- Automated backups, disaster recovery
+- Multi-region deployment
+- Integrated monitoring and security
+
+## Use Cases
+
+- Production semantic search and RAG
+- Enterprise knowledge graphs
 
 ## Pricing
 
-Pay-as-you-go with free tier available.
+Pay-as-you-go pricing with free sandbox tier.

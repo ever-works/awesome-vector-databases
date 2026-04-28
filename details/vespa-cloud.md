@@ -1,37 +1,29 @@
 ## Overview
 
-Vespa Cloud is a fully managed service providing enterprise-scale search and AI capabilities. It addresses performance and scale challenges at the architectural level with native hybrid search and advanced ranking.
+Vespa Cloud is the fully managed platform powered by the Vespa engine for scalable AI search and serving.
 
 ## Features
 
-- **Unified Engine**: Single platform for all search and AI needs
-- **Tensor Support**: Advanced tensor operations for ML models
-- **Multi-Phase Ranking**: Sophisticated ranking pipelines
-- **Hybrid Retrieval**: Blends semantic, textual, and structured signals
-- **Seamless Scaling**: Automatic resource scaling
-- **Real-Time Updates**: Live document updates
-- **Advanced Queries**: Complex query capabilities beyond simple similarity
-
-## Performance
-
-In benchmarks with 50M vectors, Vespa achieved P50 latency of 16ms vs 140ms for Milvus at identical infrastructure cost. Consistently ranked top in vector database evaluations.
-
-## Why Vespa?
-
-Marqo, a vector search company, chose Vespa as their underlying database after benchmarking against Milvus, OpenSearch, Weaviate, Redis, and Qdrant.
+- SQL-like queries (Vespa Query Language)
+- Tensor compute for advanced ML operations
+- Multi-phase ranking pipelines
+- Hybrid search (vector, text, structured)
+- Real-time updates and low-latency serving
+- Automatic scaling and management
 
 ## Use Cases
 
-- Enterprise search applications
-- Hybrid search systems
-- Large-scale recommendation engines
-- Production AI applications requiring advanced ranking
-- Multi-modal search
+- Production search applications
+- Personalized recommendation feeds
+- Enterprise RAG systems
 
-## Integration
+## Comparisons
 
-Provides APIs and SDKs for multiple languages. Supports ColBERT and other advanced retrieval models.
+| Tool | Vespa Difference |
+|------|------------------|
+| Elasticsearch | Native vector/tensor support |
+| Milvus | Full serving platform with integrated ranking/ML |
 
 ## Pricing
 
-Managed cloud service with usage-based pricing. Free tier available for development.
+Usage-based pricing. Free trial and development tier available.

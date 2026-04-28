@@ -1,15 +1,22 @@
-## Overview
-
-Qdrant is an open-source vector database for AI/ML applications.
-
 ## Features
 
-- High recall with advanced ANN
-- Customizable distance metrics
-- Compact storage and hybrid search
-- Dynamic updates, metadata search
-- Flexible with Python, JavaScript API
+- Filtered ANN (HNSW)
+- Payload filtering
+- Multi-modal support
+- Disk-persistent storage
+- Cloud/edge/self-hosted
+- High QPS
+
+## Use Cases
+
+- Real-time recommendations
+- Semantic search
+
+## Comparisons
+
+- Lighter, Rust perf vs Weaviate
+- Open-source alt vs Pinecone
 
 ## Pricing
 
-Cost-effective for self-hosting as open-source.
+Free open-source (Apache 2.0).

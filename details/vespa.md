@@ -1,14 +1,28 @@
 ## Overview
 
-Vespa is a platform for hybrid search including vectors.
+Vespa is an open-source big data serving engine designed for real-time computation over large datasets featuring vector search and ML inference.
 
 ## Features
 
-- High accuracy for hybrid use cases
-- Optimized indexing for structured/unstructured data
-- Custom ranking algorithms
-- Support for mixed workloads
+- SQL-like queries (Vespa Query Language)
+- Tensor compute for advanced ML operations
+- Multi-phase ranking pipelines
+- Hybrid search (vector, text, structured)
+- Real-time updates and low-latency serving
+
+## Use Cases
+
+- Production search applications
+- Personalized recommendation feeds
+- RAG and large-scale AI systems
+
+## Comparisons
+
+| Tool | Vespa Difference |
+|------|------------------|
+| Elasticsearch | Native vector/tensor support |
+| Milvus | Full serving platform with integrated ranking/ML |
 
 ## Pricing
 
-Cost-effective for self-hosting as open-source; resource-intensive for large clusters.
+Free and open-source (Apache 2.0 license).

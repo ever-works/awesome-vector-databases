@@ -1,15 +1,22 @@
 ## Overview
 
-Weaviate is a vector database with hybrid search capabilities.
+Open-source AI-native vector database designed for scalable semantic search and knowledge graphs, with GraphQL API and modular extensions.
 
 ## Features
 
-- Hybrid search and distributed architecture
-- High recall rates and various distance metrics
-- Vector compression and modularity
-- Metadata support, real-time updates
-- API-first design for ML model integration
+- GraphQL API for querying
+- Hybrid search: vector similarity + keyword (BM25)
+- Modules ecosystem for ML integrations (e.g., text2vec, auto-classification)
+- Multi-tenancy support
+- Deployment flexibility: self-hosted, cloud (Weaviate Cloud), embedded/serverless
+- HNSW indexing, structured filtering
+
+## Use Cases
+
+- Semantic search applications
+- Knowledge graphs and RAG pipelines
+- Multimodal data retrieval
 
 ## Pricing
 
-Cost-effective as open-source.
+Free and open-source (BSD-3-Clause license). Enterprise support via Weaviate Cloud.

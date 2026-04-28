@@ -1,10 +1,25 @@
+## Overview
+
+FAISS (Facebook AI Similarity Search) is an open-source library for efficient similarity search and clustering of dense vectors at billion-scale.
+
 ## Features
 
-- GPU and CPU support
-- Indexing methods: LSH, PQ, HNSW, and more
-- Clustering algorithms: k-means, PCA
-- Python and C++ interfaces
+- Multiple index types: Flat, IVF, PQ, HNSW, and more
+- GPU/CPU support with CUDA acceleration
+- Quantization (PQ, SQ) for memory efficiency
+- C++ core with Python bindings
+- Built-in clustering (k-means, etc.)
 
-## Installation and Usage
+## Use Cases
 
-Faiss can be installed using pip or conda, and its API is well-documented with examples available in the official repository.
+- Embedding search prototypes
+- Recommendation systems
+- Large-scale image/video retrieval
+
+## Comparisons
+
+Lower-level than complete vector DBs like Qdrant or Milvus; powers indexing in many production vector stores.
+
+## Pricing
+
+Free, open-source (MIT license).
