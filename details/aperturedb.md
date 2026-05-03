@@ -2,6 +2,11 @@
 
 ApertureDB is a graph-vector database purpose-built for multimodal data that unifies multimodal AI data into a single, scalable platform. It combines vector similarity search with graph-based relationships to enable comprehensive data management for AI applications.
 
+## Hybrid Capabilities
+
+- Vector search (FAISS) + graph relationships + keyword/metadata filters.
+- Unified queries across modalities with reranking potential.
+
 ## Key Features
 
 ### Multimodal Data Support
@@ -21,10 +26,18 @@ ApertureDB is a graph-vector database purpose-built for multimodal data that uni
 
 ## Use Cases
 
-- **Retrieval-Augmented Generation (RAG)**: Enhanced context retrieval for LLM applications
+- Multimodal RAG: Vector+graph retrieval for enriched LLM context.
 - **Semantic Search**: Multi-modal similarity search across different data types
 - **Visual Debugging**: Analyze and debug computer vision models
 - **Smart Retail**: Annotation management and nearest neighbor search for retail applications
+
+## Comparisons vs Pure Vector DBs (e.g., Qdrant)
+
+| Feature | ApertureDB | Pure Vector DB |
+|---------|------------|----------------|
+| Graph Support | Native | No |
+| Multimodal | Images/videos | Vectors only |
+| Unified Query | Vector+graph | Vector-focused |
 
 ## Benefits
 

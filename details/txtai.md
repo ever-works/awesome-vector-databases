@@ -1,18 +1,13 @@
 ## Overview
 
-txtai is an all-in-one open-source AI framework for semantic search, LLM orchestration and language model workflows. Released February 2026, provides comprehensive embeddings database.
+All-in-one open-source embeddings database for semantic search, LLM orchestration, and language model workflows.
 
-## Key Features
+## Features
 
-- **Embeddings Database**: Union of vector indexes (sparse/dense), graph networks, relational databases
-- **Semantic Search**: Natural language understanding beyond keywords
-- **LLM Orchestration**: Autonomous agents and RAG processes  
-- **70+ Examples**: Comprehensive learning resources
-
-## Technical Stack
-
-Python 3.10+, Hugging Face Transformers, Sentence Transformers, FastAPI
+- Semantic search and similarity
+- Workflows for RAG and agentic systems
+- REST API and Python/SQL APIs
 
 ## Pricing
 
-Free and open-source under Apache 2.0 license.
+Free and open-source.

@@ -1,38 +1,19 @@
-# Chroma
-
-**Website:** https://github.com/chroma-core/chroma  
-**Category:** Curated Resource Lists / Tools for RAG & LLM apps  
-**Type:** Open-source vector database
-
 ## Overview
-Chroma is an open-source, AI-native vector database designed as a memory and retrieval layer for LLM and RAG (Retrieval-Augmented Generation) applications. It supports semantic, full-text, and regex search over stored data.
+
+Chroma is a Python-native, open-source embedding database designed for LLM applications, focusing on simplicity for local prototyping.
 
 ## Features
-- **Vector database for AI applications**
-  - Stores and indexes vector embeddings for use with LLMs and RAG pipelines.
-  - Acts as a dedicated memory layer for AI agents and applications.
 
-- **Search capabilities**
-  - **Semantic search** over vector embeddings.
-  - **Full-text search** over stored documents or metadata.
-  - **Regex search** to match patterns in text fields.
+- HNSW indexing for efficient similarity search
+- Metadata filtering
+- Persistent storage options (in-memory or disk)
+- Simple Python API with client-server support
 
-- **Open-source**
-  - Source code available on GitHub under an open-source license.
-  - Actively developed in a public repository with multiple language components (e.g., Rust, Go directories present).
+## Use Cases
 
-- **Ecosystem and structure (from repo layout)**
-  - `clients` directory indicating client libraries or SDKs.
-  - `examples` and `sample_apps` for reference implementations and example usage.
-  - `docs` for documentation and guides.
-  - `deployments` and `k8s` for deployment configurations (e.g., containerized or Kubernetes setups).
-  - Multi-language support in implementation (`go`, `rust` directories) and associated tooling/config files.
-
-## Typical Use Cases
-- Building RAG systems that retrieve context for LLM prompts.
-- Implementing semantic search over document corpora.
-- Managing long-term memory for AI agents and chatbots.
+- Local RAG (Retrieval-Augmented Generation) development
+- Agent memory and state management
 
 ## Pricing
-- Chroma is offered as **open-source software** via its GitHub repository.  
-- No paid pricing plans are described in the provided content.
+
+Free and open-source under Apache 2.0 license.

@@ -2,6 +2,12 @@
 
 Elasticsearch provides robust k-nearest neighbor (kNN) search capabilities for finding semantically similar vectors using cosine or L2 norm metrics. Retrieve results based on semantic meaning rather than exact keyword matches.
 
+## Hybrid Capabilities
+
+- Combines vector search with full-text keyword search (BM25) and structured filters.
+- Supports graph-like queries via nested documents and aggregations.
+- Hybrid scoring fuses vector and lexical signals.
+
 ## kNN Search Methods
 
 ### Approximate kNN (Recommended)
@@ -15,6 +21,11 @@ Elasticsearch provides robust k-nearest neighbor (kNN) search capabilities for f
 - Best for small datasets (<10K documents)
 - Precise scoring
 - Higher computational cost
+
+## Reranking Features
+
+- Post-retrieval reranking with cross-encoders or ELSER sparse embeddings.
+- Adaptive fusion of hybrid scores for precision/recall balance.
 
 ## Recent Enhancements (2026)
 
@@ -38,28 +49,24 @@ Elasticsearch provides robust k-nearest neighbor (kNN) search capabilities for f
 - **Native Match Support**: knn with traditional queries
 - **Sparse Vector**: Support for sparse embeddings
 
-## Technical Capabilities
-
-### Indexing
-- HNSW (Hierarchical Navigable Small World)
-- Configurable graph parameters
-- Optimized for query performance
-- Dynamic index updates
-
-### Query Performance
-- Sub-50ms with filters
-- Scales to millions of documents
-- Concurrent query execution
-- Optimized resource usage
-
 ## Use Cases
 
+- Multimodal RAG: Retrieve text, images, logs for LLM augmentation.
 - Semantic search applications
 - Recommendation engines
 - Content discovery
 - Image similarity search
 - Question answering systems
 - Fraud detection
+
+## Comparisons vs Pure Vector DBs (e.g., Qdrant)
+
+| Feature | Elasticsearch | Pure Vector DB |
+|---------|---------------|----------------|
+| Hybrid Search | Native vector+keyword+rerank | Add-on keyword |
+| Analytics/ML | Built-in | Limited |
+| Ecosystem | Enterprise-grade | Developer-focused |
+| Footprint | Heavy | Lightweight |
 
 ## Setup Requirements
 
@@ -111,11 +118,3 @@ Usage-based pricing:
 - **Enterprise**: Custom pricing
 
 All tiers include vector search capabilities. 14-day free trial available.
-
-## Documentation
-
-Extensive resources:
-- Elasticsearch Labs tutorials
-- Vector search implementation guides
-- API documentation
-- Performance tuning guides

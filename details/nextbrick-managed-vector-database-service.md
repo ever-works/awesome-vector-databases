@@ -1,6 +1,5 @@
 # Nextbrick Managed Vector Database Service
 
-**Category:** Cloud Services  
 **Brand:** Nextbrick  
 **Website:** https://nextbrick.com/
 

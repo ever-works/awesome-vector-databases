@@ -2,12 +2,13 @@
 title: PilotANN
 slug: pilotann
 url: https://github.com/ytgui/PilotANN
-category: sdks-libraries
+category: GPU Accelerated Vector Databases
 featured: false
 brand: ""
 brand_logo_url: "/"
 tags:
   - gpu-acceleration
+  - cuda
   - ann
   - high-performance
 

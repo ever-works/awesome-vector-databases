@@ -1,25 +1,26 @@
-# A Comprehensive Survey on Vector Database
-
-**Category:** Research Papers & Surveys  
-**Tags:** vector-databases, survey, ANNS, architecture  
-**Source:** [arXiv:2310.11703](https://arxiv.org/abs/2310.11703)
-
 ## Overview
-This academic survey provides an in-depth review of vector databases, focusing on their architecture, storage, retrieval techniques, and the challenges they face. Vector databases are specialized systems for storing and retrieving high-dimensional data, a task not well-handled by traditional database management systems.
+
+ArXiv 2023 comprehensive review of vector DB technologies and ANN algorithms.
 
 ## Features
-- **Comprehensive Overview:** Covers the current landscape of vector database architectures.
-- **Algorithmic Approaches for ANNS:** Categorizes and reviews major approaches to the Approximate Nearest Neighbor Search (ANNS) problem, including:
-  - Hash-based methods
-  - Tree-based methods
-  - Graph-based methods
-  - Quantization-based methods
-- **Challenges:** Discusses existing challenges in vector database design and implementation.
-- **Integration with Large Language Models:** Explores how vector databases can be combined with large language models, opening up new application possibilities.
-- **Foundational Knowledge:** Offers valuable insights for understanding and building vector database systems.
 
-## Pricing
-n/a (This is a research paper freely available on arXiv)
+- ANN categorization: hashing, trees, graphs, quantization
+- Architecture, storage, retrieval techniques
+- LLM integration benchmarks
 
-## Access
-- [Read the paper on arXiv](https://arxiv.org/abs/2310.11703)
+## Use Cases
+
+- Academic ANN literature reviews
+- Index selection for prototypes
+- LLM-vector DB research
+
+## Comparisons
+
+| Aspect | This Survey (2023) | Prior VLDB | 2026 Benchmarks |
+|--------|--------------------|------------|-----------------|
+| Scope  | Algorithms + systems | Full systems | Recent trends |
+| ANN    | Broad categories   | Indexing   | Updated perf |
+
+## Publication
+
+ArXiv:2310.11703 (2023)

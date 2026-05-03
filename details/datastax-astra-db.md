@@ -1,38 +1,38 @@
 ## Overview
 
-Astra DB Serverless is DataStax's cloud-native database built on Apache Cassandra, enhanced with vector search capabilities for AI applications. In 2025, DataStax was acquired by IBM to complement the watsonx portfolio.
+DataStax Astra DB is a cloud database service built on Apache Cassandra with integrated vector search powered by JVector. It provides scalable, globally distributed AI data storage with built-in integrations for LLM workflows.
 
-## Features
+## Key Features
 
+- **JVector Integration**: High-accuracy approximate nearest neighbor (ANN) search with vector indexing
+- **Globally Distributed**: Leverages Cassandra's proven multi-region replication and distribution
+- **Vector Search**: Native vector similarity search integrated alongside operational data
 - **Real-Time Updates**: Vector updates immediately available to applications
-- **High Relevance**: 20% higher relevance in search results
-- **Fast Responses**: 74x faster responses compared to alternatives
-- **Built on Cassandra**: Leverages proven Cassandra scalability
-- **Multi-Cloud**: Available on AWS, Azure, and other cloud platforms
-- **Serverless**: Automatic scaling without manual intervention
-- **Knowledge Graphs**: Built-in support for graph data models
-- **Multi-Model**: Document, graph, and vector data in one platform
+- **Serverless**: Automatic scaling without manual capacity planning
+- **LLM Integrations**: Seamless connections with popular AI frameworks (LangChain, LlamaIndex, etc.)
+- **Multi-Cloud**: Available on AWS, Azure, and Google Cloud
+- **Enterprise Features**: Built-in security, high availability, and compliance
 
-## Performance
+## Architecture
 
-Astra DB is the only vector database that can make vector updates immediately available to applications and scale to the largest real-time data and streaming workloads.
+- Built on Apache Cassandra's distributed architecture
+- Tunable consistency and eventual consistency options
+- Automatic data distribution across regions
 
 ## Use Cases
 
-- Real-time AI applications
-- Streaming data with vector search
 - Enterprise RAG systems
-- Multi-modal AI applications
-- Applications requiring immediate consistency
+- Real-time AI applications
+- Multi-modal AI workloads
+- Streaming data with vector search
+- Global recommendation engines
 
 ## Integration
 
-Integrates with LangChain, LlamaIndex, and major AI frameworks. Compatible with Cassandra drivers and APIs.
-
-## IBM Acquisition
-
-IBM announced its intention to acquire DataStax in 2025 to enhance the watsonx AI platform.
+- LangChain, LlamaIndex, Haystack
+- Major AI model providers (OpenAI, Cohere, etc.)
+- Cassandra-compatible APIs and drivers
 
 ## Pricing
 
-Serverless pricing with pay-per-request model. Free tier available for development and testing.
+Serverless pay-per-request model with a free tier for development and testing. Enterprise plan with SLAs available.

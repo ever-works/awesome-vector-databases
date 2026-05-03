@@ -39,3 +39,7 @@ Recommend using Axel for faster downloads of large-scale datasets.
 - Deep learning-based retrieval systems
 - Modern vector database benchmarking
 - Distributed search system testing
+
+## Pricing
+
+Free dataset.

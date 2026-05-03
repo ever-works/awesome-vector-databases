@@ -1,5 +1,25 @@
-#QdrantCloud
+## Overview
 
-QdrantCloud is the managed cloud version of Qdrant, a vector database tailored for AI-powered similarity search and matching.
+Qdrant Cloud: serverless managed vector DB.
 
-[https://cloud.qdrant.io/](https://cloud.qdrant.io/)
+## Features
+
+- Pay-per-query pricing
+- Auto-scaling clusters
+- Advanced filtering
+- Multi-lang SDKs (gRPC/REST)
+- High-performance ANN
+
+## Use Cases
+
+- RAG pipelines
+- AI recommendations
+- Semantic search
+
+## Comparisons
+
+- Hosted vs. self-hosted Qdrant
+
+## Pricing
+
+Usage-based pay-per-query.

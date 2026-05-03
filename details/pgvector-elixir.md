@@ -19,7 +19,7 @@ Elixir wrapper for the pgvector PostgreSQL extension, providing vector types and
 - Elixir support for the [pgvector](https://github.com/pgvector/pgvector) PostgreSQL extension
 - Integration with:
   - [Ecto](https://github.com/elixir-ecto/ecto)
-  - [Postgrex](https://github.com/elixir-ecto/postgrex)
+  - [Postgrex](https://github.com/elixir-ecto/postrex)
 - Provides vector column support for PostgreSQL-backed Elixir applications
 - Enables similarity / vector search workflows via pgvector from Elixir code
 

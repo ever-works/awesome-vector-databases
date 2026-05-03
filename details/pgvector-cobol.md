@@ -43,7 +43,7 @@ pgvector-cobol provides COBOL examples and bindings for the pgvector PostgreSQL 
 
 - **Inserting vector data**
   - Shows how to assign vector values to COBOL variables and insert them into PostgreSQL:
-    - Move JSON-like array strings (e.g., `"[1,2,3]"`) into COBOL variables.
+    - Move JSON-like array strings (e.g., \"[1,2,3]\"") into COBOL variables.
     - Insert multiple embeddings into the `vector` column via embedded SQL.
 
 - **Vector similarity search**

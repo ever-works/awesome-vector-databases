@@ -17,3 +17,7 @@ BigVectorBench is designed to stress-test databases on heterogeneous data and hy
 ## Availability
 
 The source code and user manual are available on GitHub, with documentation for custom datasets and comprehensive testing scenarios for real-world applications.
+
+## Pricing
+
+Free and open-source.

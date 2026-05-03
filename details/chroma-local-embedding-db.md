@@ -1,48 +1,20 @@
 ## Overview
+Chroma Local provides in-process low-latency vector search for edge AI development.
 
-Chroma is an AI-native open-source embedding database designed for simplicity and developer experience, particularly popular for local development and prototyping.
-
-## Key Features
-
-**Developer-Friendly**:
-- Runs in-process or as a server
-- Simple Python/JavaScript API
-- No complex configuration
-- Quick setup
-
-**Batteries Included**:
-- Built-in embedding functions
-- Multiple distance metrics
-- Filtering and metadata
-- Persistence options
-
-**Deployment Options**:
-- In-memory (notebooks)
-- Persistent local storage
-- Client-server mode
-- Cloud hosted
+## Features
+- HNSW indexing for fast ANN
+- Built-in embeddings and persistence
+- Metadata filtering
+- Python/JS APIs, runs in-process
 
 ## Use Cases
+- IoT real-time AI
+- Local RAG prototyping
+- CV inference on desktops
 
-- Rapid prototyping
-- Local RAG development
-- Jupyter notebooks
-- Small to medium datasets
-- Education and learning
+## Comparisons
+- On-device low-latency vs cloud Qdrant
+- Simpler setup than distributed Milvus
 
-## Integration
-
-- LangChain (first-class support)
-- LlamaIndex
-- OpenAI
-- HuggingFace
-
-## Limitations
-
-- Best for < 1M vectors
-- Single-node only (local)
-- Not for production scale
-
-## Availability
-
-Open-source with managed cloud option
+## Pricing
+Open-source with cloud options.

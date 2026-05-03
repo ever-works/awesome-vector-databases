@@ -1,23 +1,42 @@
-# LangChain
+## Overview
 
-[LangChain](https://www.langchain.com/) is an open-source framework designed for building applications with large language models (LLMs). It enables integration with various data sources and APIs to support advanced AI workflows, including retrieval-augmented generation (RAG).
+LangChain enables developers to build context-aware LLM applications through composable chains, extensive integrations, and agentic capabilities.
+
+## Vector Integration
+
+Native support for Qdrant, Chroma, FAISS, Pinecone, Weaviate, and 50+ vector stores:
+
+```python
+from langchain_community.vectorstores import Qdrant
+from langchain_openai import OpenAIEmbeddings
+
+embeddings = OpenAIEmbeddings()
+qdrant = Qdrant.from_documents(documents, embeddings, path=":memory:")
+retriever = qdrant.as_retriever()
+```
 
 ## Features
-- **Composable Framework:** LangChain provides a modular approach for constructing context-aware, reasoning applications powered by LLMs.
-- **Open-Source:** The framework is open-source and has a large, active community.
-- **Integration with Vector Databases:** Supports integration with vector databases such as Pinecone, Weaviate, and Chroma for efficient retrieval-augmented generation.
-- **Multi-Language Support:** Offers SDKs and documentation for both Python and JavaScript/TypeScript.
-- **Vendor Optionality:** Designed to allow flexibility and future-proofing by making it easy to swap or add new vendors in the LLM workflow.
-- **Extensive Integrations:** Connects with a wide array of LLM providers, APIs, and data sources.
-- **Building, Running, and Managing LLM Apps:** Can be used alongside other LangChain products (LangGraph, LangSmith) for orchestration, deployment, observability, and evaluation.
-- **Developer Tools:** Includes resources such as documentation, changelogs, tutorials, and a community hub.
-- **Scalable:** Built to support applications at scale, from prototypes to production deployments.
+
+- **Tool Calling**: LCEL for structured function calling and parallel tool execution
+- **Memory**: ConversationBufferWindowMemory, EntityMemory, VectorStoreRetrieverMemory for persistent state
+- **Agents**: ReAct, Plan-and-Execute agents with toolkits
+
+## Use Cases
+
+- Stateful chatbots with conversation history
+- Autonomous agents for multi-step tasks
+- RAG-enhanced knowledge retrieval agents
+
+## Comparisons
+
+**LangChain vs LlamaIndex**:
+
+| Feature | LangChain | LlamaIndex |
+|---------|-----------|------------|
+| Primary Focus | Chains, agents, tools | RAG indexing, query engines |
+| Vector Support | 50+ stores | 40+ data connectors |
+| Best For | Complex orchestration | Data-heavy RAG pipelines |
 
 ## Pricing
-No specific pricing details for LangChain itself are provided on the website; LangChain is open-source. Pricing information is available for related products (LangSmith, LangGraph Platform) but not for the core LangChain framework.
 
-## Tags
-open-source, rag, ai, integration
-
-## Category
-SDKs & Libraries
+Open-source (MIT). LangSmith/LangGraph have paid tiers.
