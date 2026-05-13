@@ -837,6 +837,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 ## AI Agent Memory Stores
 
 - [Supermemory](https://supermemory.ai/) - State-of-the-art AI agent memory system using ASMR technique that achieved ~99% accuracy on LongMemEval benchmark with multi-agent orchestrated pipeline. ([Read more](/details/supermemory.md)) `agent-memory` `2026 Trends` `RAG Optimized`
+- [Dakera](https://github.com/dakera-ai/dakera-mcp) - Self-hosted agent memory server built on HNSW vector search with RocksDB persistence. MCP-native interface, decay-weighted recall, production-ready for AI agent workflows. `agent-memory` `self-hosted` `MCP` `HNSW`
 
 ## Benchmark & Eval Tools
 
