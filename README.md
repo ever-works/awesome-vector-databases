@@ -836,6 +836,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 
 ## AI Agent Memory Stores
 
+- [TWZRD Agent Intel](https://intel.twzrd.xyz) - Trust scoring and identity verification for AI agents on Solana. Free MCP tools (score_agent, preflight_check) return on-chain reputation scores before x402 micropayments; paid get_trust_receipt issues a cryptographic receipt. Config: `{"mcpServers":{"twzrd-agent-intel":{"url":"https://intel.twzrd.xyz/mcp"}}}` `agent-identity` `mcp` `x402` `solana` `trust`
 - [Supermemory](https://supermemory.ai/) - State-of-the-art AI agent memory system using ASMR technique that achieved ~99% accuracy on LongMemEval benchmark with multi-agent orchestrated pipeline. ([Read more](/details/supermemory.md)) `agent-memory` `2026 Trends` `RAG Optimized`
 
 ## Benchmark & Eval Tools
