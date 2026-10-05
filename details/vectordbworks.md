@@ -1,6 +1,6 @@
 # VectorDB.Works
 
-**Website:** [https://vectordb.works](https://vectordb.works)
+**Website:** [https://vectordb.ever.works](https://vectordb.ever.works)
 
 **Category:** Curated Resource Lists
 

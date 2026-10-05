@@ -12,7 +12,7 @@
 ## Features
 - Collects and organizes structured data about vector database solutions.
 - Includes libraries and resources relevant to vector databases and AI applications.
-- Powers the [Awesome Vector Databases](https://vectordb.works/) curated list for easy discovery.
+- Powers the [Awesome Vector Databases](https://vectordb.ever.works/) curated list for easy discovery.
 - Open-source, licensed under CC-BY-SA-4.0.
 - Facilitates categorization and comparison of different vector database tools and libraries.
 
