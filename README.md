@@ -54,6 +54,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [Developer Tools & Benchmarks (2)](#developer-tools--benchmarks)
 - [Developer Tools & Libraries (3)](#developer-tools--libraries)
 - [Embedded and Edge Vector Databases (4)](#embedded-and-edge-vector-databases)
+- [Embedded Vector Libraries (2)](#embedded-vector-libraries)
 - [Evaluation & Observability (2)](#evaluation--observability)
 - [Experimental & Learning Vector DBs (1)](#experimental--learning-vector-dbs)
 - [Federated Vector DBs (1)](#federated-vector-dbs)
@@ -71,6 +72,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [Multimodal Vector Databases (6)](#multimodal-vector-databases)
 - [Multimodal Vector DBs (2)](#multimodal-vector-dbs)
 - [Open Source Vector Databases (19)](#open-source-vector-databases)
+- [Postgres Vector Extensions (2)](#postgres-vector-extensions-1)
 - [Quantum-Safe Vector DBs (3)](#quantum-safe-vector-dbs)
 - [RAG Frameworks & Pipelines (2)](#rag-frameworks--pipelines)
 - [Relational Vector Extensions (10)](#relational-vector-extensions)
@@ -85,6 +87,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [security-governance (1)](#security-governance)
 - [serverless-managed-vector-dbs (1)](#serverless-managed-vector-dbs)
 - [Tools (6)](#tools)
+- [Vector Database (2)](#vector-database)
 - [Vector Indexing Libraries (2)](#vector-indexing-libraries)
 - [Wasm/Edge Runtime VDBs (1)](#wasmedge-runtime-vdbs)
 
@@ -332,7 +335,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [jina-embeddings-v3](https://jina.ai/models/jina-embeddings-v3/) - Frontier multilingual text embedding model with 570M parameters and 8192 token-length, featuring task-specific LoRA adapters and outperforming OpenAI and Cohere embeddings on MTEB benchmark. ([Read more](/details/jina-embeddings-v3.md)) `multilingual` `embedding` `Open Source`
 - [jina-embeddings-v5](https://huggingface.co/jinaai/jina-embeddings-v5-text-small) - Jina AI's latest embedding model achieving the highest multilingual performance among models under 1B parameters with 71.7 average MTEB score and 67.7 MMTEB score. ([Read more](/details/jina-embeddings-v5.md)) `Embeddings` `multilingual` `Open Source`
 - [Llama-Embed-Nemotron-8B](https://huggingface.co/nvidia/llama-embed-nemotron-8b) - Universal text embedding model from NVIDIA achieving state-of-the-art performance on MMTEB leaderboard, optimized for retrieval, reranking, semantic similarity, and classification with 4,096-dimensional embeddings. ([Read more](/details/llama-embed-nemotron-8b.md)) `Embeddings` `multilingual` `Nvidia`
-- [mGTE](https://www.alibabacloud.com/blog/gte-multilingual-series-a-key-model-for-retrieval-augmented-generation_601776) - Generalized long-context text representation and reranking models from Alibaba supporting 75 languages and context length up to 8192. Built on transformer++ encoder with RoPE and GLU for enhanced multilingual retrieval. ([Read more](/details/mgte.md)) `multilingual` `long-context` `alibaba`
+- [mGTE](https://www.alibabacloud.com/blog/gte-multilingual-series-a-[redacted secret]) - Generalized long-context text representation and reranking models from Alibaba supporting 75 languages and context length up to 8192. Built on transformer++ encoder with RoPE and GLU for enhanced multilingual retrieval. ([Read more](/details/mgte.md)) `multilingual` `long-context` `alibaba`
 - [Mistral Embed](https://docs.mistral.ai/capabilities/embeddings) - State-of-the-art embedding model from Mistral AI that generates 1024-dimensional vectors for text, supporting semantic search, clustering, and retrieval-augmented generation applications. ([Read more](/details/mistral-embed.md)) `Embeddings` `multilingual` `api`
 - [Mixedbread AI](https://www.mixedbread.com/) - AI startup providing state-of-the-art embedding and reranking models through accessible APIs, offering both open-source and proprietary models optimized for various use cases. ([Read more](/details/mixedbread-ai.md)) `Embeddings` `re-ranking` `api`
 - [ModernBERT Embed](https://huggingface.co/nomic-ai/modernbert-embed-base) - Open-source embedding model from Nomic AI based on ModernBERT-base with 149M parameters. Supports 8192 token sequences and Matryoshka Representation Learning for 3x memory reduction. ([Read more](/details/modernbert-embed.md)) `Open Source` `Embeddings` `nlp`
@@ -544,7 +547,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [Apache Cassandra Vector Search](https://cassandra.apache.org/) - Distributed NoSQL database with vector search capabilities via Storage-Attached Indexes (SAI) in Cassandra 5.0+. Uses Lucene HNSW for approximate nearest neighbor search. This is an OSS database under Apache 2.0 license. ([Read more](/details/apache-cassandra-vector-search.md)) `Open Source` `Distributed` `nosql`
 - [FalkorDB GraphRAG](https://www.falkordb.com/) - A unified knowledge graph and vector database solution built on Redis that seamlessly integrates graph traversal and vector similarity search for building advanced GenAI applications with both relational reasoning and semantic search capabilities. ([Read more](/details/falkordb-graphrag.md)) `Knowledge Graph` `Graph Database` `graphrag`
 - [Rockset](https://rockset.com/) - Real-time analytics database with vector search capabilities, built on RocksDB with converged indexing. Acquired by OpenAI in 2024 to power retrieval infrastructure. This was a commercial service. ([Read more](/details/rockset.md)) `Commercial` `Real Time` `Analytics`
-- [AtlasDB](https://github.com/palantir/atlasdb) - Distributed, transactional key-value store developed by Palantir Technologies, designed for general-purpose data storage with high performance and horizontal scalability across multiple nodes. ([Read more](/details/atlasdb.md)) `Distributed` `transactional` `key-value-store`
+- [AtlasDB](https://github.com/palantir/atlasdb) - Distributed, transactional key-value store developed by Palantir Technologies, designed for general-purpose data storage with high performance and horizontal scalability across multiple nodes. ([Read more](/details/atlasdb.md)) `Distributed` `transactional` `[redacted secret]`
 - [Couchbase Vector Search](https://www.couchbase.com/products/vector-search/) - NoSQL database with vector search capabilities through Search Vector Indexes. Couchbase 8.0 introduces Hyperscale Vector Index for billion+ scale searches. This is a commercial database with free community edition. ([Read more](/details/couchbase-vector-search.md)) `Commercial` `nosql` `Hybrid Search`
 - [CozoDB](https://cozodb.org) - General-purpose, transactional, relational-graph-vector database that uses Datalog for queries. Embeddable but capable of handling large amounts of data and concurrency with HNSW indices for high-performance vector similarity searches. ([Read more](/details/cozodb.md)) `Graph Database` `Vector Search` `datalog`
 - [Mixpeek](https://mixpeek.com) - Multimodal AI indexing infrastructure for searching video, audio, images, and documents with natural language. Results link to exact scenes, pages, or frames with ColBERT and hybrid search support. ([Read more](/details/mixpeek.md)) `Multimodal` `search-api` `indexing`
@@ -602,7 +605,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [pgvector-rust](https://github.com/pgvector/pgvector-rust) - Rust client and examples for pgvector, offering idiomatic Rust APIs for embedding storage and similarity queries in PostgreSQL. ([Read more](/details/pgvector-rust.md)) `Sdk` `Pgvector` `Vector Store`
 - [pgvector-swift](https://github.com/pgvector/pgvector-swift) - Swift bindings and examples for pgvector, allowing Swift and server-side Swift apps to use PostgreSQL as a vector database. ([Read more](/details/pgvector-swift.md)) `Sdk` `Pgvector` `Vector Store`
 - [Product-Quantization](https://github.com/jatin7gupta/Product-Quantization) - Product-Quantization is a GitHub repository implementing the inverted multi-index structure for product-quantization-based approximate nearest neighbor search, providing building blocks for scalable vector search engines. ([Read more](/details/product-quantization.md)) `product-quantization` `Ann` `vector-indexing`
-- [pymilvus](https://github.com/milvus-io/pymilvus) - pymilvus is the official Python SDK for Milvus, allowing developers to interact programmatically with the Milvus vector database. It provides utilities for transforming unstructured data into vector embeddings and supports advanced features such as reranking for optimized search results. The pymilvus[model] variant includes utilities for generating vector embeddings from text using built-in models. `Python` `Milvus` `Vector Embeddings` `Sdk`
+- [pymilvus](https://github.com/milvus-io/pymilvus) - pymilvus is the official Python SDK for Milvus, allowing developers to interact programmatically with the Milvus vector database. It provides utilities for transforming unstructured data into vector embeddings and supports advanced features such as reranking for optimized search results. The pymilvus\[model\] variant includes utilities for generating vector embeddings from text using built-in models. `Python` `Milvus` `Vector Embeddings` `Sdk`
 - [Qinco](https://github.com/facebookresearch/Qinco) - Qinco is an open-source implementation from Facebook Research for Residual Quantization with Implicit Neural Codebooks. It provides quantization and indexing methods for compact vector representations to accelerate similarity and nearest neighbor search, making it relevant as a low-level vector indexing and compression component for vector databases and large-scale AI retrieval systems. ([Read more](/details/qinco.md)) `vector-compression` `Similarity Search` `Open Source`
 - [RaBitQ](https://github.com/gaoj0017/RaBitQ) - RaBitQ is an open-source library implementing the "Quantizing High-Dimensional Vectors with a Theoretical Error Bound for Approximate Nearest Neighbor Search" method, providing vector quantization and compression techniques designed to improve efficiency and accuracy of ANN search engines and vector databases operating in high-dimensional spaces. ([Read more](/details/rabitq.md)) `Ann` `vector-compression` `high-dimensional`
 - [Reconfigurable Inverted Index](https://yusukematsui.me/project/rii/) - Reconfigurable Inverted Index (Rii) is a research project and open-source library for approximate nearest neighbor and similarity search over high-dimensional vectors. It focuses on flexible, reconfigurable inverted index structures that support efficient vector search, making it directly relevant as a vector-search engine component for AI and multimedia retrieval applications. ([Read more](/details/reconfigurable-inverted-index.md)) `Ann` `vector-indexing` `Similarity Search`
@@ -981,7 +984,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 
 - [VectorChord](https://github.com/tensorchord/VectorChord) - PostgreSQL extension for scalable, high-performance vector search, successor to pgvecto.rs. Features RaBitQ quantization enabling 6x cost savings vs Pinecone. Fully compatible with pgvector. This is an OSS extension. ([Read more](/details/vectorchord.md)) `Open Source` `Postgresql` `Quantization`
 - [Apache Solr Dense Vector Search](https://solr.apache.org/guide/solr/latest/query-guide/dense-vector-search.html) - Vector search capabilities in Apache Solr with HNSW indexing, early termination optimization, and integrated text-to-vector capabilities for hybrid search applications. ([Read more](/details/apache-solr-dense-vector-search.md)) `Open Source` `Hybrid Search` `Java` `Search Engine`
-- [GridStore](https://qdrant.tech/articles/gridstore-key-value-storage/) - Qdrant's custom-built storage engine written in Rust, replacing RocksDB with improved performance and lower latency for payload and sparse vector storage. ([Read more](/details/gridstore.md)) `storage-engine` `Rust` `Performance`
+- [GridStore](https://qdrant.tech/articles/gridstore-[redacted secret]/) - Qdrant's custom-built storage engine written in Rust, replacing RocksDB with improved performance and lower latency for payload and sparse vector storage. ([Read more](/details/gridstore.md)) `storage-engine` `Rust` `Performance`
 - [Neo4j Vector Index](https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/) - Vector search capabilities in Neo4j graph database using HNSW indexing. Enables combining knowledge graphs with semantic similarity search for hybrid retrieval that leverages both graph relationships and vector embeddings. ([Read more](/details/neo4j-vector-index.md)) `Graph Database` `Hnsw` `Knowledge Graph`
 - [ParadeDB](https://github.com/paradedb/paradedb) - PostgreSQL extension enabling fast full-text, faceted, and hybrid search over Postgres tables using the BM25 algorithm. Built on Tantivy for production-ready search with ACID guarantees and transactional consistency. ([Read more](/details/paradedb.md)) `Postgresql` `Bm25` `Hybrid Search`
 - [PGLite](https://pglite.dev) - Lightweight WASM Postgres build packaged into a TypeScript client library that enables running PostgreSQL in the browser, Node.js, Bun, and Deno with pgvector support. At only 3MB gzipped, it provides full Postgres functionality including vector search capabilities without requiring separate database installation. ([Read more](/details/pglite.md)) `WebAssembly` `PostgreSQL` `Lightweight`
@@ -991,11 +994,11 @@ The public-facing website is based on the open-source [Directory Website Templat
 
 ## vector-database-extensions
 
-- [k-NN plugin](https://github.com/opensearch-project/k-NN) - An OpenSearch plugin that expands its capabilities with the custom `knn_vector` data type, enabling storage of embeddings and providing methods for k-NN similarity searches, including Approximate k-NN, Script Score k-NN, and Painless extensions. ([Read more](/details/k-nn-plugin.md)) `opensearch` `k-nn` `Vector Search`
+- [k-NN plugin](https://github.com/opensearch-project/k-NN) - An OpenSearch plugin that expands its capabilities with the custom \`knn_vector\` data type, enabling storage of embeddings and providing methods for k-NN similarity searches, including Approximate k-NN, Script Score k-NN, and Painless extensions. ([Read more](/details/k-nn-plugin.md)) `opensearch` `k-nn` `Vector Search`
 - [HeatWave](https://docs.oracle.com/en-us/iaas/mysql-database/home.htm) - A feature for MySQL that integrates vector store capabilities, allowing users to store and process vector embeddings for AI applications. ([Read more](/details/heatwave.md)) `mysql` `Vector Store` `extension`
 - [MariaDB Vector](https://mariadb.org/projects/mariadb-vector/) - MariaDB Vector is an extension or feature of MariaDB, providing capabilities for handling and querying vector data within the MariaDB ecosystem. ([Read more](/details/mariadb-vector.md)) `relational-database` `Vector Search` `extension`
 - [Neo4j Vector Search](https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes) - An enhancement to the Neo4j graph database providing vector search capabilities through dedicated indexes. ([Read more](/details/neo4j-vector-search.md)) `Graph Database` `Vector Search` `extension`
-- [OpenSearch Neural Search / Hybrid Search](https://opensearch.org/docs/latest/search-plugins/neural-search/) - Neural and hybrid search capability in OpenSearch that combines lexical queries with vector-based neural search using a pipeline of normalization and score combination techniques. It enables semantic (vector) search and hybrid search over indices such as `neural_search_pqa`, suitable for AI and vector database-style retrieval use cases. ([Read more](/details/opensearch-neural-search-hybrid-search.md)) `Hybrid Search` `Semantic Search` `Vector Search`
+- [OpenSearch Neural Search / Hybrid Search](https://opensearch.org/docs/latest/search-plugins/neural-search/) - Neural and hybrid search capability in OpenSearch that combines lexical queries with vector-based neural search using a pipeline of normalization and score combination techniques. It enables semantic (vector) search and hybrid search over indices such as \`neural_search_pqa\`, suitable for AI and vector database-style retrieval use cases. ([Read more](/details/opensearch-neural-search-hybrid-search.md)) `Hybrid Search` `Semantic Search` `Vector Search`
 
 ## AI Agent Optimized VDBs
 
@@ -1085,7 +1088,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [OpenSearch](https://opensearch.org/) - Open-source search and analytics suite with native k-NN vector search capabilities. ([Read more](/details/opensearch.md)) `Open Source` `Knn` `Analytics`
 - [pgvector-node](https://github.com/pgvector/pgvector-node) - JavaScript/TypeScript SDK/client (Node.js/Deno/Bun) for pgvector PostgreSQL extension, enabling async vector storage and similarity queries. Supports REST-like ops via pg driver, Prisma integration. For JS app integration in RAG/semantic search; official bindings vs. direct SQL or other SDKs. ([Read more](/details/pgvector-node.md)) `Nodejs` `Javascript` `Async Client` `Postgres Client` `Multi-Language SDK`
 - [Qdrant](https://qdrant.tech/) - Qdrant is a vector similarity search engine with Rust-based core for high performance, supporting filtered search, payloads, and binary quantization. It features NGT/HNSW indexing and multi-modal support. Suited for real-time AI apps and edge; compares to Milvus by being lighter/more embeddable. ([Read more](/details/qdrant.md)) `Rust Based` `Filtered Search`
-- [Rivestack](https://rivestack.io) - Managed PostgreSQL with pgvector for AI workloads. Built-in SQL editor lets you query your database with natural language (automatically converted to vector embeddings). Free tier includes 2GB storage. ([Read more](/details/rivestack.md)) `Managed Service` `Postgresql` `pgvector`
+- [Rivestack](https://rivestack.com/) - Managed PostgreSQL with pgvector for AI workloads, featuring HNSW indexing and embedding search. ([Read more](/details/rivestack.md)) `Managed` `Postgres` `Pgvector`
 - [SingleStore](https://www.singlestore.com/) - Analytics and vector database supporting real-time analytics combined with vector search. Handles high-performance queries on large-scale datasets. ([Read more](/details/singlestore.md)) `Analytics` `Real Time` `Vector Search`
 - [SuperDuperDB](https://github.com/SuperDuperDB/super-duperdb) - Open-source database that turns any DB into a vector DB with AI capabilities. ([Read more](/details/superduperdb.md)) `Open Source` `Ai Native` `Flexible`
 - [TiDB Vector Search](https://tidb.io/) - Open-source distributed SQL database with integrated vector search for storing embeddings alongside relational data, offering strong SQL-based filtering, hybrid search, and high scalability for production RAG and AI applications. ([Read more](/details/tidb-vector-search.md)) `Open Source` `Hybrid Search` `Distributed` `Sql`
@@ -1139,6 +1142,11 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [Chroma](https://www.trychroma.com/) - Chroma is an AI-native open-source embedding database for LLM apps with simple Python API and persistent storage using HNSW. It includes DuckDB integration and auto-embedding features. Great for prototyping RAG; vs Pinecone easier local dev but less scalable managed. ([Read more](/details/chroma.md)) `Python Native` `Local First`
 - [LanceDB](https://lancedb.com/) - LanceDB is an embedded vector database built on Apache Arrow/Lance format for multimodal data, supports SQL queries, zero-copy reads, disk-based indexes like IVF-PQ. Ideal for ML pipelines and analytics; vs Chroma more columnar/multimodal focus. Features: serverless cloud, Python/Rust SDKs. ([Read more](/details/lancedb.md)) `columnar storage` `sql vector` `Multimodal` `arrow native`
 - [Milvus Lite](https://milvus.io/) - Lightweight, in-process Python library for vector similarity search using Milvus engine (HNSW/IVF), zero deps beyond pip, optional disk, no server/K8s. Supports millions of vectors locally; for mobile/edge AI prototyping, LangChain integration; faster startup than Qdrant client, easier than full Milvus vs Chroma. ([Read more](/details/milvus-lite.md)) `Zero Dep` `Local First` `Python` `Hnsw` `Edge Ai`
+
+## Embedded Vector Libraries
+
+- [AI Image Cleaner](https://ai-image-cleaner.com/) - AI Image Cleaner: Remove Objects from Photos `Managed` `Search Engine` `Memory Efficient`
+- [AI Image Cleaner](https://ai-image-cleaner.com/) - AI Image Cleaner: Remove Objects from Photos `Managed` `Search Engine` `Memory Efficient`
 
 ## Evaluation & Observability
 
@@ -1252,6 +1260,11 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [RAFT](https://github.com/rapidsai/raft) - RAFT is a suite of GPU-accelerated libraries for data science, including support for vector search and similarity operations, often used in vector database scenarios. ([Read more](/details/raft.md)) `Open Source` `Gpu Acceleration` `Vector Search` `data-science`
 - [reor](https://press.ai/best-vector-databases/) - reor is an open-source vector database solution focused on fast and scalable storage of high-dimensional vectors for AI and ML applications. ([Read more](/details/reor.md)) `Open Source` `Vector Database` `Scalable` `Ai`
 - [Valkey](https://valkey.io/) - Valkey is an open-source in-memory key-value data store that supports vector search operations, making it useful for AI and machine learning vector database workloads. It is also a specialized open-source vector database designed for efficient management and retrieval of high-dimensional vector data, offering advanced APIs and optimized storage for AI workloads. ([Read more](/details/valkey.md)) `Open Source` `Vector Search` `In Memory` `Ai`
+
+## Postgres Vector Extensions
+
+- [AI Image Cleaner](https://ai-image-cleaner.com/) - AI Image Cleaner: Remove Objects from Photos `Managed` `Search Engine` `Memory Efficient`
+- [AI Image Cleaner](https://ai-image-cleaner.com/) - AI Image Cleaner: Remove Objects from Photos `Managed` `Search Engine` `Memory Efficient`
 
 ## Quantum-Safe Vector DBs
 
@@ -1436,6 +1449,11 @@ The public-facing website is based on the open-source [Directory Website Templat
 - [Unstructured](https://unstructured.io/) - Open-source library for preprocessing unstructured documents (PDFs, Word, HTML, images) for RAG and LLM applications. Handles extraction, chunking, and cleaning of diverse document types. ([Read more](/details/document-parsing-unstructured.md)) `document-processing` `etl` `Rag` `Open Source`
 - [VectorETL](https://github.com/ContextData/VectorETL) - An open-source ETL tool for building data pipelines for vector databases and AI applications. Simplifies ingestion, transformation, and loading of data into vector stores with support for multiple databases. ([Read more](/details/vectoretl-data-pipeline.md)) `etl` `data-pipeline` `ingestion` `Open Source`
 
+## Vector Database
+
+- [AI Image Cleaner](https://ai-image-cleaner.com/) - AI Image Cleaner: Remove Objects from Photos `Managed` `Search Engine` `Memory Efficient`
+- [AI Image Cleaner](https://ai-image-cleaner.com/) - AI Image Cleaner: Remove Objects from Photos `Managed` `Search Engine` `Memory Efficient`
+
 ## Vector Indexing Libraries
 
 - [Autofaiss](https://github.com/criteo/autofaiss) - Automatic index selection and tuning library for FAISS that selects optimal KNN index configurations to maximize recall given memory and query speed constraints, eliminating manual hyperparameter tuning. ([Read more](/details/autofaiss.md)) `Open Source` `Python` `optimization`
@@ -1452,7 +1470,7 @@ The public-facing website is based on the open-source [Directory Website Templat
 
 ## ⭐ Star History
 
-[![Star History Chart](https://stats-github.ever.works/svg?repos=ever-works/awesome-vector-databases&type=Date)](https://stats-github.ever.works/#ever-works/awesome-vector-databases&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=ever-works/awesome-vector-databases&type=Date)](https://star-history.com/#ever-works/awesome-vector-databases&Date)
 
 ## Legal
 
